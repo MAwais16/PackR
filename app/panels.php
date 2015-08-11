@@ -1,3 +1,3 @@
-<?php namespace MyPlugin;
+<?php namespace PackR;
 
 /** @var \Herbert\Framework\Panel $panel */

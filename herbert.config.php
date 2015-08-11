@@ -61,32 +61,32 @@ return [
      * The routes to auto-load.
      */
     'routes' => [
-        'MyPlugin' => __DIR__ . '/app/routes.php'
+        'PackR' => __DIR__ . '/app/routes.php'
     ],
 
     /**
      * The panels to auto-load.
      */
     'panels' => [
-        'MyPlugin' => __DIR__ . '/app/panels.php'
+        'PackR' => __DIR__ . '/app/panels.php'
     ],
 
     /**
      * The APIs to auto-load.
      */
     'apis' => [
-        'MyPlugin' => __DIR__ . '/app/api.php'
+        'PackR' => __DIR__ . '/app/api.php'
     ],
 
     /**
      * The view paths to register.
      *
-     * E.G: 'MyPlugin' => __DIR__ . '/views'
-     * can be referenced via @MyPlugin/
+     * E.G: 'PackR' => __DIR__ . '/views'
+     * can be referenced via @PackR/
      * when rendering a view in twig.
      */
     'views' => [
-        'MyPlugin' => __DIR__ . '/resources/views'
+        'PackR' => __DIR__ . '/resources/views'
     ],
 
     /**
