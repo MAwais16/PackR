@@ -3,7 +3,4 @@
 /** @var \Herbert\Framework\Shortcode $shortcode */
 
 
-$shortcode->add(
-	'PackR',
-	__NAMESPACE__ . '\Controllers\FormController@getForm'
-	);
+$shortcode->add('PackR','PackR::getForm');

@@ -1,0 +1,60 @@
+
+    <!-- Second row with version -->
+    <form action="" method="POST">
+        <div class="row">
+            <div class="col-md-10">
+                <h4>{{qLabel}}</h4></div>
+            <div class="col-md-2"> ab 39,- image</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default package">
+                    <div class="panel-heading text-center">
+                        <h3 class="panel-title">Basic</h3>
+                    </div>
+                    <div class="panel-body packImg">
+                        image goes here
+                    </div>
+                    <div class="panel-footer">
+                        <div class="radio-wrapper">
+                            <input type="radio" name="package" value="professional" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default package">
+                    <div class="panel-heading text-center">
+                        <h3 class="panel-title">Professional</h3>
+                    </div>
+                    <div class="panel-body packImg">
+                        image goes here
+                    </div>
+                    <div class="panel-footer">
+                        <div class="radio-wrapper">
+                            <input type="radio" name="package" value="professional" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <input type="hidden" value="1" name="step"/>
+    <!-- Third Row -->
+    <div class="row bg-info">
+        <div class='col-md-1'>
+        </div>
+        <div class='col-md-11 '>
+            <h4>{{term}}:</h4>
+            <p>{{termInfo}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div>some text here</div>
+    </div>
+
+    <div class="row">
+        <button type='submit' class="btn btn-primary">{{form1Submit}}</button>
+    </div>
+
+</form>
+

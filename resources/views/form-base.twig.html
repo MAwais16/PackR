@@ -1,0 +1,17 @@
+<div class="container-fluid">
+	
+	{% if error %}
+		<div class="alert alert-danger" role="alert">
+			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+			<span class="sr-only">Error:</span>
+			{{errorDescription}}
+		</div>
+	{% endif %}
+
+	{% include "@PackR/header-row.twig.html" %}
+
+	{% include form %}
+	
+	{% include "@PackR/footer-row.twig.html" %}
+
+</div>

@@ -3,9 +3,9 @@
 /** @var \Herbert\Framework\Router $router */
 
 /*
-$router->get([
+$router->post([
     'as'   => 'register',
-    'uri'  => '/register',
-    'uses' => __NAMESPACE__ . '\Controllers\FormController@getForm'
+    'uri'  => 'register',
+    'uses' => __NAMESPACE__ . '\Controllers\FormController@form1POST'
 ]);
 */

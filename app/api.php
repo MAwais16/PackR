@@ -13,3 +13,14 @@ $api->add('helper', function ()
 
     return forward_static_call_array(__NAMESPACE__ . '\\Helper::' . $method, $args);
 });
+
+use PackR\Controllers\FormController; 
+
+
+$api->add('getForm', function ()
+{	
+
+	$formCtrl=new FormController();
+	return  $formCtrl->getForm(herbert('http'));
+    
+});
