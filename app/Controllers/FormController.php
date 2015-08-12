@@ -60,11 +60,31 @@ class FormController{
 
 		return view('@PackR/form-base.twig.html', [
     		'steps'   => $steps,
-    		'form1Submit'=>$formButton,
-    		'qLabel' => $q,
-    		'term'=>$term,
-    		'termInfo'=>$termInfo,
-    		'form'=> "@PackR/form2.twig.html"
+
+    		'title'=>$title,
+    		'titleDescription' => $titleDescription,
+    		'form'=> "@PackR/form2.twig.html",
+    		'titleAccount'=> __("Account","PackR"),
+    		'emailLabel'=> __("Email","PackR"),
+    		'passwordLabel'=> __("Password","PackR"),
+    		'confirmPasswordLabel'=> __("Confirm Password","PackR"),
+    		'title2'=> __("Billing and Shipping Address","PackR"),
+    		'companyNameLabel'=> __("Company Name","PackR"),
+    		'firstNameLabel'=> __("First Name","PackR"),
+    		'streetLabel'=> __("Street Address","PackR"),
+    		'postalCodeLabel'=> __("Postal Code","PackR"),
+    		'cityLabel'=> __("City","PackR"),
+    		'extraAddLineLabel'=> __("Extra address line (Optional)","PackR"),
+    		'tittleMessageBox'=> __("Message","PackR"),
+    		'textArealabel'=> __("write your message here","PackR"),
+    		'title3'=> __("Payment","PackR"),
+			'paymentM1'=> __("SEPA Direct Debit","PackR"),
+			'accountNumberLabel'=> __("Account Number","PackR"),
+			'ibanLabel'=> __("IBAN","PackR"),
+			'bicLabel'=> __("BIC","PackR"),
+			'foreignLic'=> __("UST-IdNr. (for foreign corporate clients)","PackR"),
+			'bt_submit'=> __("Proceed to Order Summary","PackR")
+    		
 		]);
 
 	}

@@ -17,3 +17,17 @@ $enqueue->front([
     'src' => Helper::assetUrl('/js/custom.js'),
     'filter' => [ 'hook' => 'FormController.php' ]
 ]);
+
+/*
+$enqueue->front([
+    'as'  => 'form-helper-js',
+    'src' => Helper::assetUrl('/BootstrapFormHelpers/dist/js/bootstrap-formhelpers.min.js'),
+    'filter' => [ 'hook' => 'FormController.php' ]
+]);
+
+$enqueue->front([
+    'as'  => 'form-helper-css',
+    'src' => Helper::assetUrl('/BootstrapFormHelpers/dist/css/bootstrap-formhelpers.min.css')
+]);
+
+*/

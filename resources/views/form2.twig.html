@@ -6,18 +6,20 @@
 	</div>
 	
 	<div class="row">
-		<div class="col-md-10"><h2>{{titleAccount}}</h2></div>
+		<div class="col-md-10"><h4>{{titleAccount}}</h4></div>
+	</div>
 
+	<div class="row center-block">
 		<div class="col-md-4">
 
 			<div class="form-group">
 				<label for="email">{{emailLabel}}</label>
 				<input type="text" class="form-control" id="email" placeholder="Email" name="email"/>
 			</div>
-			
+
 		</div>
 
-		<div class="col-md-4">
+		<div class="col-md-4 col-md-offset-1">
 			<div class="form-group">
 				<label for="email">{{passwordLabel}}</label>
 				<input type="password" class="form-control" id="password" name="password" placeholder="{{passwordLabel}}"/>
@@ -25,10 +27,140 @@
 
 			<div class="form-group">
 				<label for="email">{{confirmPasswordLabel}}</label>
-				<input type="password" class="form-control" id="confirmpassword" placeholder="{{confrmPasswordLabel}}" name="confirmpassword"/>
+				<input type="password" class="form-control" id="confirmPassword" placeholder="{{confirmPasswordLabel}}" name="confirmPassword"/>
 			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="">
+			<h3>{{title2}}</h3>
+		</div>
+		<br>
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="sr-only" for="companyName">{{companyNameLabel}}</label>
+						<input type="text" class="form-control" id="companyName" name="companyName" placeholder="{{companyNameLabel}}">
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label class="sr-only" for="firstName">{{firstNameLabel}}</label>
+							<input type="text" class="form-control" id="firstName" name="firstName" placeholder="{{firstNameLabel}}">
+						</div>
+
+						<div class="form-group col-md-6">
+							<label class="sr-only" for="lastName">{{lastNameLabel}}</label>
+							<input type="text" class="form-control" id="lastName" name="lastName" placeholder="{{lastNameLabel}}">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="sr-only" for="street">{{streetLabel}}</label>
+						<input type="text" class="form-control" id="street" name="street" placeholder="{{streetLabel}}">
+					</div>
+
+					<div class="row">
+						<div class="form-group col-md-4">
+							<label class="sr-only" for="postalCode">{{postalCodeLabel}}</label>
+							<input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="{{postalCodeLabel}}">
+						</div>
+
+						<div class="form-group col-md-8">
+							<label class="sr-only" for="city">{{cityLabel}}</label>
+							<input type="text" class="form-control" id="city" name="city" placeholder="{{cityLabel}}">
+						</div>
+					</div>
+
+					
+					<select name="country" class="form-control">
+						<option value="DE">Deutschland</option>
+						<option value="AT">Österreich</option>
+						<option value="CH">Schweiz</option>
+						<option value="BE">Belgien</option>
+						<option value="DK">Dänemark</option>
+						<option value="EE">Estland</option>
+						<option value="FI">Finnland</option>
+						<option value="FR">Frankreich</option>
+						<option value="IE">Irland</option>
+						<option value="IT">Italien</option>
+						<option value="HR">Kroatien</option>
+						<option value="LI">Liechtenstein</option>
+						<option value="LU">Luxemburg</option>
+						<option value="NL">Niederlande</option>
+						<option value="SE">Schweden</option>
+						<option value="CZ">Tschechische Republik</option>
+						<option value="HU">Ungarn</option>
+					</select>
+
+					<br/>
+					
+					<div class="form-group">
+						<label class="sr-only" for="extraAddress">{{extraAddLineLabel}}</label>
+						<input type="text" class="form-control" id="extraAddress" name="extraAddress" placeholder="{{extraAddLineLabel}}">
+					</div>
+				</div>
+				<div class="col-md-4 col-md-offset-1">
+					<h4>{{tittleMessageBox}}</h4>
+					<textarea name="message" class="form-control">{{textArealabel}}</textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="row">
+		<div class="">
+			<h3>{{title3}}</h3>
+		</div>
+		<br>
+		
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{paymentM1}}</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<label class="sr-only" for="accountNumber">{{accountNumberLabel}}</label>
+						<input type="text" class="form-control" id="accountNumber" name="accountNumber" placeholder="{{accountNumberLabel}}">
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="iban">{{ibanLabel}}</label>
+						<input type="text" class="form-control" id="iban" name="iban" placeholder="{{ibanLabel}}">
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="bic">{{bicLabel}}</label>
+						<input type="text" class="form-control" id="bic" name="bic" placeholder="{{bicLabel}}">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
 
 		</div>
 	</div>
-	
+
+	<div class="row">
+		<div class="col-md-4">
+			<div class="form-group">
+				<label class="" for="bic">{{foreignLic}}</label>
+				<input type="text" class="form-control" id="bic" name="bic" placeholder="z.B AT2737489723xxx">
+			</div>
+		</div>
+		<div class="col-md-6">
+			<input type="hidden" name="step" value="2"/>
+		</div>
+	</div>
+
+<br/>
+	<div class="row">
+		<div class="col-md-12">
+			<button type="submit">{{bt_submit}}</button>
+		</div>
+	</div>
+
 </form>
