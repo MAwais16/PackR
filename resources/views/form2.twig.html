@@ -99,7 +99,7 @@
 					
 					<div class="form-group">
 						<label class="sr-only" for="extraAddress">{{extraAddLineLabel}}</label>
-						<input type="text" class="form-control" id="extraAddress" name="extraAddress" placeholder="{{extraAddLineLabel}}">
+						<input type="text" class="form-control" id="extraAddress" name="extraAddress" placeholder="{{extraAddLineLabel}}" value="{% if not resp['extraAddress'][0] %}{{resp['extraAddress'][2]}}{% endif %}">
 					</div>
 				</div>
 				<div class="col-md-4 col-md-offset-1">
@@ -148,7 +148,7 @@
 		<div class="col-md-4">
 			<div class="form-group">
 				<label class="" for="ustID">{{foreignLic}}</label>
-				<input type="text" class="form-control" id="ustID" name="ustID" placeholder="z.B AT2737489723xxx">
+				<input type="text" class="form-control" id="ustID" name="ustID" placeholder="z.B AT2737489723xxx" value="{% if not resp['ustID'][0] %}{{resp['ustID'][2]}}{% endif %}"/>
 			</div>
 		</div>
 		<div class="col-md-6">
@@ -156,10 +156,10 @@
 		</div>
 	</div>
 
-<br/>
+	<br/>
 	<div class="row">
 		<div class="col-md-12">
-			<button type="submit">{{bt_submit}}</button>
+			<button type="submit" class="btn btn-primary">{{bt_submit}}</button>
 		</div>
 	</div>
 

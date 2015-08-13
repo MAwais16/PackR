@@ -1,10 +1,10 @@
 
-    <!-- Second row with version -->
-    <br/>
-    <form action="" method="POST">
-        <div class="row">
-            <div class="col-md-10">
-                <h4>{{qLabel}}</h4></div>
+<!-- Second row with version -->
+<br/>
+<form action="" method="POST">
+    <div class="row">
+        <div class="col-md-10">
+            <h4>{{qLabel}}</h4></div>
             <div class="col-md-2"> ab 39,- image</div>
         </div>
         <br/>
@@ -19,7 +19,7 @@
                     </div>
                     <div class="panel-footer">
                         <div class="radio-wrapper">
-                            <input type="radio" name="package" value="professional" />
+                            <input type="radio" name="package" value="basic" />
                         </div>
                     </div>
                 </div>
@@ -40,26 +40,26 @@
                 </div>
             </div>
         </div>
-    <input type="hidden" value="1" name="step"/>
-    <br/>
-    <!-- Third Row -->
-    <div class="row bg-info">
-        <div class='col-md-1'>
+        <input type="hidden" value="1" name="step"/>
+        <br/>
+        <!-- Third Row -->
+        <div class="row bg-info">
+            <div class='col-md-1'>
+            </div>
+            <div class='col-md-11 '>
+                <h4>{{term}}:</h4>
+                <p>{{termInfo}}</p>
+            </div>
         </div>
-        <div class='col-md-11 '>
-            <h4>{{term}}:</h4>
-            <p>{{termInfo}}</p>
+
+        <br/>
+        <div class="row">
+            <div>some text here</div>
         </div>
-    </div>
+        <br/>
+        <div class="row">
+            <button type='submit' class="btn btn-primary">{{form1Submit}}</button>
+        </div>
 
-    <br/>
-    <div class="row">
-        <div>some text here</div>
-    </div>
-<br/>
-    <div class="row">
-        <button type='submit' class="btn btn-primary">{{form1Submit}}</button>
-    </div>
-
-</form>
+    </form>
 

@@ -12,20 +12,22 @@ class FormController{
 	
 	public function getForm(Http $http){
 		if(strcasecmp($http->method(), "GET")==0){
+			$_SESSION['PackR_step']=1;
 			return $this->getFirstForm();
 		}else if(strcasecmp($http->method(), "POST")==0){
-			if($http->get("step")=="1"){
+			if($_SESSION['PackR_step']=="1"){
 				if($http->has("package")){
-					$_SESSION["user_package"]=$package;
+					$_SESSION["PackR_package"]=$package;
+					$_SESSION['PackR_step']=2;
 					return $this->getSecondForm($http);
 				}else{
+					$_SESSION['PackR_step']=1;
 					return $this->getFirstForm(true,__("Please select a Package","PackR"));
 				}
-			}else if($http->get("step")=="2"){
-				//validate fields
+			}else if($_SESSION['PackR_step']=="2"){
 				return $this->validateInput($http);
-
-
+			}else if($_SESSION['PackR_step']=="3"){
+				return $this->getThirdForm($http);
 			}
 			
 		}else{
@@ -33,7 +35,93 @@ class FormController{
 		}
 	}
 
+	public function getThirdForm(Http $http){
+		$_SESSION['step']=3;
+		$steps= $this->getSteps(3);
+
+		$tax = 7;
+		
+		$price=39;
+		if($_SESSION['PackR_package']=="basic"){
+			$price = 39;
+		}else{
+			$price = 69;
+		}
+
+
+		return view('@PackR/form-base.twig.html', [
+			'steps'   => $steps,
+			'form'=> "@PackR/form3.twig.html",
+			'error'=> $err,
+			'errorDescription'=>$errDetail,
+
+			'title'=>__("Your order overview","PackR"),
+			'title2'=>__("Billing Address","PackR"),
+
+			'companyName'=>$_SESSION['PackR_companyName'],
+			'firstName'=>$_SESSION['PackR_firstName'],
+			'lastName'=>$_SESSION['PackR_lastName'],
+			'street'=>$_SESSION['PackR_street'],
+			'postalCode'=>$_SESSION['PackR_postalCode'],
+			'city'=>$_SESSION['PackR_city'],
+			'country'=>$_SESSION['PackR_country'],
+			'email'=>$_SESSION['PackR_email'],
+
+			
+			'titleProduct'=>__("Product","PackR"),
+			'productVal'=>$_SESSION['PackR_package'],
+			'productVal1'=>__("Vislog basic version subscription","PackR"),
+			'productVal2'=>__("/year","PackR"),
+			'productImageSrc'=>"...",
+
+
+			'titlePrice'=>__("Price","PackR"),
+			'priceVal'=>$price." Euro",
+
+			'titleTax'=>__("Tax","PackR"),
+			'taxVal'=>$tax."%",
+
+			'titleTotalPrice'=>__("Total Price","PackR"),
+			'totalPriceVal'=>$price." Euro",
+
+			'titleShipping'=>__("Shipping","PackR"),
+			'shippingVal'=>"0.00 Euro",
+
+			'titleTotalNet'=>__("Total Net","PackR"),
+			'totalNetVal'=>"$price Euro",
+
+			'titlePlusVat'=>__("plus 7% vat","PackR"),
+			'plusVatVal'=>"$price Euro",
+
+			'titleTotalGross'=>__("Total Gross","PackR"),
+			'totalGrossVal'=>"$price Euro",
+
+			'title3'=>__("Payment","PackR"),
+
+			'sepaTitle'=>__("SEPA Link (opens in new window)","PackR"),
+			'sepaLink'=>"http://www.google.com",
+			
+			'iAgree1p1'=>__("I agree to the","PackR"),
+			'iAgree1p2'=>__("Terms & Condition","PackR"),
+			'iAgree1p3'=>__(". ","PackR"),
+			'iAgree1Link'=>"/termsandcondition",
+
+			'iAgree2p1'=>__("I agree to the","PackR"),
+			'iAgree2p2'=>__("Privacy Policy","PackR"),
+			'iAgree2p3'=>__(". ","PackR"),
+			'iAgree2Link'=>"/privacypolicy",
+			
+			'bt_submit' => __("Confirm & Finish"),
+
+			]);
+
+			//confirm
+
+
+	}
+
 	function validateInput(Http $http){
+
 		$email=$http->get("email");
 		$password=$http->get("password");
 		$confirmPassword=$http->get("confirmPassword");
@@ -73,7 +161,7 @@ class FormController{
 		}else if ($this->isStrEmpty($confirmPassword)) {
 			$resp['confirmPassword'][0]=true;
 			$resp['confirmPassword'][1]=__("required","PackR");
-		}else if(!(strcmp($password, $confirmPassword)==1)){
+		}else if(!(strcmp($password, $confirmPassword)==0)){
 			$resp['confirmPassword'][0]=true;
 			$resp['password'][0]=true;
 			$resp['confirmPassword'][1]=__("not matched","PackR");
@@ -89,7 +177,6 @@ class FormController{
 		}else{
 			$resp['companyName'][0]=false;
 			$resp['companyName'][2]=$companyName;
-			
 		}
 
 		if($this->isStrEmpty($firstName)){
@@ -98,7 +185,6 @@ class FormController{
 		}else{
 			$resp['firstName'][0]=false;
 			$resp['firstName'][2]=$firstName;
-			
 		}
 
 		if($this->isStrEmpty($lastName)){
@@ -107,7 +193,6 @@ class FormController{
 		}else{
 			$resp['lastName'][0]=false;	
 			$resp['lastName'][2]=$lastName;
-			
 		}
 
 		if($this->isStrEmpty($street)){
@@ -116,7 +201,6 @@ class FormController{
 		}else{
 			$resp['street'][0]=false;
 			$resp['street'][2]=$street;
-			
 		}
 
 		if($this->isStrEmpty($city)){
@@ -125,7 +209,6 @@ class FormController{
 		}else{
 			$resp['city'][0]=false;
 			$resp['city'][2]=$city;
-			
 		}
 
 		if($this->isStrEmpty($postalCode)){
@@ -134,7 +217,6 @@ class FormController{
 		}else{
 			$resp['postalCode'][0]=false;
 			$resp['postalCode'][2]=$postalCode;
-			
 		}
 
 
@@ -146,7 +228,6 @@ class FormController{
 		}else{
 			$resp['accountNumber'][0]=false;
 			$resp['accountNumber'][2]=$accountNumber;
-			
 		}
 
 
@@ -156,7 +237,6 @@ class FormController{
 		}else{
 			$resp['bic'][0]=false;
 			$resp['bic'][2]=$bic;
-			
 		}
 
 		if($this->isStrEmpty($accountNumber)){
@@ -165,23 +245,46 @@ class FormController{
 		}else{
 			$resp['iban'][0]=false;
 			$resp['iban'][2]=$iban;
-			
 		}
 
+
+		$resp['extraAddress'][0]=false;
+		$resp['extraAddress'][2]=$extraAddress;
+
+		$resp['ustID'][0]=false;
+		$resp['ustID'][2]=$ustID;
+		
 		$process = true;
 		foreach ($resp as $item) {
-			//error_log("asdasd:".$item[0]);
 			$process = $process && (!$item[0]);
 		}
 
 		if($process){
-			//process data
-		}else{
+			$_SESSION["PackR_email"]=$email;
+			$_SESSION["PackR_password"]=wp_hash_password($password);
+			$_SESSION["PackR_companyName"]=$companyName;
+			$_SESSION["PackR_firstName"]=$firstName;
+			$_SESSION["PackR_lastName"]=$lastName;
+			$_SESSION["PackR_street"]=$street;
+			$_SESSION["PackR_postalCode"]=$postalCode;
+			$_SESSION["PackR_city"]=$city;
+			$_SESSION["PackR_country"]=$country;
+			$_SESSION["PackR_extraAddress"]=$extraAddress;
+			$_SESSION["PackR_message"]=$message;
 
+			$_SESSION["PackR_accountNumber"]=$accountNumber;
+			$_SESSION["PackR_bic"]=$bic;
+			$_SESSION["PackR_iban"]=$iban;
+			$_SESSION["PackR_ustID"]=$ustID;
+
+			return $this->getThirdForm($http);
+
+		}else{
 			return $this->getSecondForm($http,true,$resp);
 		}
 
 	}
+
 
 	public function isStrEmpty($str){
 		$str = trim($str);
