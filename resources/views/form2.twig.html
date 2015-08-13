@@ -1,4 +1,4 @@
-<form>
+<form action="" method="POST">
 	
 	<div class="row">
 		<h2>{{title}}</h2>
@@ -12,21 +12,21 @@
 	<div class="row center-block">
 		<div class="col-md-4">
 
-			<div class="form-group">
+			<div class="form-group {% if resp['email'][0] %}has-error{% endif %}">
 				<label for="email">{{emailLabel}}</label>
-				<input type="text" class="form-control" id="email" placeholder="Email" name="email"/>
+				<input type="text" class="form-control" id="email" placeholder="Email" name="email" value="{% if not resp['email'][0] %}{{resp['email'][2]}}{% endif %}"/>
 			</div>
 
 		</div>
 
 		<div class="col-md-4 col-md-offset-1">
-			<div class="form-group">
-				<label for="email">{{passwordLabel}}</label>
+			<div class="form-group {% if resp['password'][0] %}has-error{% endif %}">
+				<label for="password">{{passwordLabel}}</label>
 				<input type="password" class="form-control" id="password" name="password" placeholder="{{passwordLabel}}"/>
 			</div>
 
-			<div class="form-group">
-				<label for="email">{{confirmPasswordLabel}}</label>
+			<div class="form-group {% if resp['confirmPassword'][0] %}has-error{% endif %}">
+				<label for="confirmPassword">{{confirmPasswordLabel}}</label>
 				<input type="password" class="form-control" id="confirmPassword" placeholder="{{confirmPasswordLabel}}" name="confirmPassword"/>
 			</div>
 		</div>
@@ -40,37 +40,37 @@
 		<div class="col-md-12">
 			<div class="row">
 				<div class="col-md-4">
-					<div class="form-group">
+					<div class="form-group {% if resp['companyName'][0] %}has-error{% endif %}">
 						<label class="sr-only" for="companyName">{{companyNameLabel}}</label>
-						<input type="text" class="form-control" id="companyName" name="companyName" placeholder="{{companyNameLabel}}">
+						<input type="text" class="form-control" id="companyName" name="companyName" placeholder="{{companyNameLabel}}" value="{% if not resp['companyName'][0] %}{{resp['companyName'][2]}}{% endif %}">
 					</div>
 
 					<div class="row">
-						<div class="form-group col-md-6">
+						<div class="form-group col-md-6 {% if resp['firstName'][0] %}has-error{% endif %}">
 							<label class="sr-only" for="firstName">{{firstNameLabel}}</label>
-							<input type="text" class="form-control" id="firstName" name="firstName" placeholder="{{firstNameLabel}}">
+							<input type="text" class="form-control" id="firstName" name="firstName" placeholder="{{firstNameLabel}}" value="{% if not resp['firstName'][0] %}{{resp['firstName'][2]}}{% endif %}"/>
 						</div>
 
-						<div class="form-group col-md-6">
+						<div class="form-group col-md-6 {% if resp['lastName'][0] %}has-error{% endif %}">
 							<label class="sr-only" for="lastName">{{lastNameLabel}}</label>
-							<input type="text" class="form-control" id="lastName" name="lastName" placeholder="{{lastNameLabel}}">
+							<input type="text" class="form-control" id="lastName" name="lastName" placeholder="{{lastNameLabel}}" value="{% if not resp['lastName'][0] %}{{resp['lastName'][2]}}{% endif %}">
 						</div>
 					</div>
 
-					<div class="form-group">
+					<div class="form-group {% if resp['street'][0] %}has-error{% endif %}">
 						<label class="sr-only" for="street">{{streetLabel}}</label>
-						<input type="text" class="form-control" id="street" name="street" placeholder="{{streetLabel}}">
+						<input type="text" class="form-control" id="street" name="street" placeholder="{{streetLabel}}" value="{% if not resp['street'][0] %}{{resp['street'][2]}}{% endif %}">
 					</div>
 
 					<div class="row">
-						<div class="form-group col-md-4">
+						<div class="form-group col-md-4 {% if resp['postalCode'][0] %}has-error{% endif %}">
 							<label class="sr-only" for="postalCode">{{postalCodeLabel}}</label>
-							<input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="{{postalCodeLabel}}">
+							<input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="{{postalCodeLabel}}" value="{% if not resp['postalCode'][0] %}{{resp['postalCode'][2]}}{% endif %}"/>
 						</div>
 
-						<div class="form-group col-md-8">
+						<div class="form-group col-md-8 {% if resp['city'][0] %}has-error{% endif %}">
 							<label class="sr-only" for="city">{{cityLabel}}</label>
-							<input type="text" class="form-control" id="city" name="city" placeholder="{{cityLabel}}">
+							<input type="text" class="form-control" id="city" name="city" placeholder="{{cityLabel}}" value="{% if not resp['city'][0] %}{{resp['city'][2]}}{% endif %}"/>
 						</div>
 					</div>
 
@@ -124,17 +124,17 @@
 					<h3 class="panel-title">{{paymentM1}}</h3>
 				</div>
 				<div class="panel-body">
-					<div class="form-group">
+					<div class="form-group {% if resp['accountNumber'][0] %}has-error{% endif %}">
 						<label class="sr-only" for="accountNumber">{{accountNumberLabel}}</label>
-						<input type="text" class="form-control" id="accountNumber" name="accountNumber" placeholder="{{accountNumberLabel}}">
+						<input type="text" class="form-control" id="accountNumber" name="accountNumber" placeholder="{{accountNumberLabel}}" value="{% if not resp['accountNumber'][0] %}{{resp['accountNumber'][2]}}{% endif %}">
 					</div>
-					<div class="form-group">
+					<div class="form-group {% if resp['iban'][0] %}has-error{% endif %}">
 						<label class="sr-only" for="iban">{{ibanLabel}}</label>
-						<input type="text" class="form-control" id="iban" name="iban" placeholder="{{ibanLabel}}">
+						<input type="text" class="form-control" id="iban" name="iban" placeholder="{{ibanLabel}}" value="{% if not resp['iban'][0] %}{{resp['iban'][2]}}{% endif %}">
 					</div>
-					<div class="form-group">
+					<div class="form-group {% if resp['bic'][0] %}has-error{% endif %}">
 						<label class="sr-only" for="bic">{{bicLabel}}</label>
-						<input type="text" class="form-control" id="bic" name="bic" placeholder="{{bicLabel}}">
+						<input type="text" class="form-control" id="bic" name="bic" placeholder="{{bicLabel}}" value="{% if not resp['bic'][0] %}{{resp['bic'][2]}}{% endif %}"/>
 					</div>
 				</div>
 			</div>
@@ -147,8 +147,8 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">
-				<label class="" for="bic">{{foreignLic}}</label>
-				<input type="text" class="form-control" id="bic" name="bic" placeholder="z.B AT2737489723xxx">
+				<label class="" for="ustID">{{foreignLic}}</label>
+				<input type="text" class="form-control" id="ustID" name="ustID" placeholder="z.B AT2737489723xxx">
 			</div>
 		</div>
 		<div class="col-md-6">
