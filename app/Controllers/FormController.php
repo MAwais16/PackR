@@ -16,13 +16,11 @@ class FormController{
 	public function getForm(Http $http){
 		$this->logoSrc =Helper::assetUrl("/images/vislog_logo.png");
 		if(strcasecmp($http->method(), "GET")==0){
-			$_SESSION['PackR_step']=1;
 			return $this->getFirstForm();
 		}else if(strcasecmp($http->method(), "POST")==0){
 			if($_SESSION['PackR_step']=="1"){
 				if($http->has("package")){
 					$_SESSION["PackR_package"]=$http->get("package");
-					$_SESSION['PackR_step']=2;
 					return $this->getSecondForm($http);
 				}else{
 					$_SESSION['PackR_step']=1;
@@ -378,6 +376,7 @@ public function isStrEmpty($str){
 }
 
 public function getFirstForm($err=false,$errDetail=""){
+	$_SESSION['PackR_step']=1;
 	$steps= $this->getSteps(1);
 
 	$q= __("Which version of vislog you would like to you use?","PackR");
@@ -413,6 +412,7 @@ public function getFirstForm($err=false,$errDetail=""){
 }
 
 function getSecondForm(Http $http,$error=false,$resp=array()){
+	$_SESSION['PackR_step']=2;
 	$steps= $this->getSteps(2);
 
 	$title=__("Address & Payment","PackR");

@@ -9,6 +9,7 @@
  * Author:            Awais
  * Author URI:        http://fotaxis.com/
  * License:           MIT
+ * Text Domain:        PackR
  */
 
 require_once __DIR__ . '/vendor/autoload.php';
