@@ -93,3 +93,7 @@ p.price{
 .table td{
 	 white-space: nowrap;
 }
+/*used in header-row.twig.html*/
+.progress-indicator{ 
+	margin-top:18px;
+}

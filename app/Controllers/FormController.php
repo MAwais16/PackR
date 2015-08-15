@@ -11,9 +11,10 @@ use PackR\Models\Order;
 
 
 class FormController{
-
+	public $logoSrc;
 	
 	public function getForm(Http $http){
+		$this->logoSrc =Helper::assetUrl("/images/vislog_logo.png");
 		if(strcasecmp($http->method(), "GET")==0){
 			$_SESSION['PackR_step']=1;
 			return $this->getFirstForm();
@@ -91,10 +92,11 @@ class FormController{
 			$order->save();
 			if($order->id>0){
 				return view('@PackR/form-base.twig.html', [
+					'logoSrc'=>$this->logoSrc,
 					'steps'   => $steps,
 					'form'=> "@PackR/form4.twig.html",
-					'error'=> true,
-					'errorDescription'=>$order->id,
+					'error'=> false,
+					'errorDescription'=>"",
 					'title'=>__("Thank you!","PackR"),
 					'desc1'=>__("Dear ","PackR"),
 					'cname'=>$_SESSION['PackR_firstName']." ".$_SESSION['PackR_lastName'],
@@ -133,6 +135,7 @@ class FormController{
 
 
 		return view('@PackR/form-base.twig.html', [
+			'logoSrc'=>$this->logoSrc,
 			'steps'   => $steps,
 			'form'=> "@PackR/form3.twig.html",
 			'error'=> $err,
@@ -385,6 +388,7 @@ public function getFirstForm($err=false,$errDetail=""){
 	$formButton=__("Go to Address & Payment","PackR");
 
 	return view('@PackR/form-base.twig.html', [
+		'logoSrc'=>$this->logoSrc,
 		'steps'   => $steps,
 		'form1Submit'=>$formButton,
 		'qLabel' => $q,
@@ -416,7 +420,7 @@ function getSecondForm(Http $http,$error=false,$resp=array()){
 
 	return view('@PackR/form-base.twig.html', [
 		'steps'   => $steps,
-
+		'logoSrc'=>$this->logoSrc,
 		'title'=>$title,
 		'titleDescription' => $titleDescription,
 		'form'=> "@PackR/form2.twig.html",

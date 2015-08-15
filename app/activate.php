@@ -10,34 +10,38 @@
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
-Capsule::schema()->create('packr_orders', function($table)
+$schem=Capsule::schema();
+
+if (! $schem->hasTable('packr_orders'))
 {
-    $table->increments('id');
-    $table->string('email');
-    $table->string('password');
-    
-    $table->string('company_name');
-    $table->string('first_name');
-    $table->string('last_name');
-    $table->string('street');
-    $table->string('city');
-    $table->string('postal_code');
-    $table->string('country_code');
+    $schem->create('packr_orders', function($table)
+    {
+        $table->increments('id');
+        $table->string('email');
+        $table->string('password');
 
-    $table->string('extra_address');
-    $table->string('message');
+        $table->string('company_name');
+        $table->string('first_name');
+        $table->string('last_name');
+        $table->string('street');
+        $table->string('city');
+        $table->string('postal_code');
+        $table->string('country_code');
 
-    $table->string('package');
-    
-    $table->string('account_number');
-    $table->string('iban');
-    $table->string('bic');
+        $table->string('extra_address');
+        $table->string('message');
 
-    $table->string('ust_id');
+        $table->string('package');
 
-	$table->string('voucher_code');
+        $table->string('account_number');
+        $table->string('iban');
+        $table->string('bic');
 
-    $table->timestamps();	//Adds created_at and updated_at columns
+        $table->string('ust_id');
 
+        $table->string('voucher_code');
 
-});
+        $table->timestamps();   //Adds created_at and updated_at columns
+
+    });
+}
