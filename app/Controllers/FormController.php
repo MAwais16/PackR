@@ -5,7 +5,10 @@
 /** @var \Herbert\Framework\Http $http */
 
 use \Herbert\Framework\Http;
+use PackR\Helper;
+use PackR\Models\Order;
 //use \Herbert\Framework\Notifier;
+
 
 class FormController{
 
@@ -17,7 +20,7 @@ class FormController{
 		}else if(strcasecmp($http->method(), "POST")==0){
 			if($_SESSION['PackR_step']=="1"){
 				if($http->has("package")){
-					$_SESSION["PackR_package"]=$package;
+					$_SESSION["PackR_package"]=$http->get("package");
 					$_SESSION['PackR_step']=2;
 					return $this->getSecondForm($http);
 				}else{
@@ -27,7 +30,18 @@ class FormController{
 			}else if($_SESSION['PackR_step']=="2"){
 				return $this->validateInput($http);
 			}else if($_SESSION['PackR_step']=="3"){
-				return $this->getThirdForm($http);
+				
+				if($http->get("terms")=="terms"){
+					if($http->get("privacy")=="privacy"){
+						
+						Order::all();
+						return $this->getThirdForm($http);
+					}else{
+						return $this->getThirdForm($http,true,__("Please agree to Privacy Policy.","PackR"));
+					}
+				}else{
+					return $this->getThirdForm($http,true,__("Please agree to Terms & conditions.","PackR"));
+				}
 			}
 			
 		}else{
@@ -35,18 +49,27 @@ class FormController{
 		}
 	}
 
-	public function getThirdForm(Http $http){
-		$_SESSION['step']=3;
+	public function getThirdForm(Http $http,$err=false,$errDetail=""){
+		$_SESSION['PackR_step']=3;
 		$steps= $this->getSteps(3);
 
 		$tax = 7;
 		
 		$price=39;
-		if($_SESSION['PackR_package']=="basic"){
+
+
+		$imgSrc=Helper::assetUrl("/images/basic.png");
+		$package=$_SESSION['PackR_package'];
+		if($package=="basic"){
 			$price = 39;
+			$imgSrc=Helper::assetUrl("/images/basic.png");
 		}else{
 			$price = 69;
+			$imgSrc=Helper::assetUrl("/images/professional.png");
 		}
+
+		$taxPrice=$price*($tax/100);
+
 
 
 		return view('@PackR/form-base.twig.html', [
@@ -69,32 +92,32 @@ class FormController{
 
 			
 			'titleProduct'=>__("Product","PackR"),
-			'productVal'=>$_SESSION['PackR_package'],
+			'productVal'=>$package,
 			'productVal1'=>__("Vislog basic version subscription","PackR"),
 			'productVal2'=>__("/year","PackR"),
-			'productImageSrc'=>"...",
+			'productImageSrc'=>$imgSrc,
 
 
 			'titlePrice'=>__("Price","PackR"),
-			'priceVal'=>$price." Euro",
+			'priceVal'=>$price." €",
 
 			'titleTax'=>__("Tax","PackR"),
 			'taxVal'=>$tax."%",
 
 			'titleTotalPrice'=>__("Total Price","PackR"),
-			'totalPriceVal'=>$price." Euro",
+			'totalPriceVal'=>$price." €",
 
 			'titleShipping'=>__("Shipping","PackR"),
-			'shippingVal'=>"0.00 Euro",
+			'shippingVal'=>"0.00 €",
 
 			'titleTotalNet'=>__("Total Net","PackR"),
-			'totalNetVal'=>"$price Euro",
+			'totalNetVal'=>"$price €",
 
-			'titlePlusVat'=>__("plus 7% vat","PackR"),
-			'plusVatVal'=>"$price Euro",
+			'titlePlusVat'=>__("plus $tax % vat","PackR"),
+			'plusVatVal'=>"$taxPrice €",
 
 			'titleTotalGross'=>__("Total Gross","PackR"),
-			'totalGrossVal'=>"$price Euro",
+			'totalGrossVal'=>$price+$taxPrice." €",
 
 			'title3'=>__("Payment","PackR"),
 
@@ -102,7 +125,7 @@ class FormController{
 			'sepaLink'=>"http://www.google.com",
 			
 			'iAgree1p1'=>__("I agree to the","PackR"),
-			'iAgree1p2'=>__("Terms & Condition","PackR"),
+			'iAgree1p2'=>__("Terms & Conditions","PackR"),
 			'iAgree1p3'=>__(". ","PackR"),
 			'iAgree1Link'=>"/termsandcondition",
 
@@ -115,7 +138,7 @@ class FormController{
 
 			]);
 
-			//confirm
+			
 
 
 	}
@@ -309,7 +332,19 @@ class FormController{
 			'termInfo'=>$termInfo,
 			'form'=> "@PackR/form1.twig.html",
 			'error'=> $err,
-			'errorDescription'=>$errDetail
+			'errorDescription'=>$errDetail,
+			'basicImageSrc'=>Helper::assetUrl("/images/basic.png"),
+			'profImageSrc'=>Helper::assetUrl("/images/professional.png"),
+			'voucherLabel'=>__("Voucher:","PackR"),
+			'voucherPlaceHolder'=>__("(inserted)","PackR"),
+			'voucherPriceText1'=>__("Monthly Price: 0 Euro, for first ","PackR"),
+			'voucherPriceMonth'=>__("6 Monate","PackR"),
+			'voucherPriceText2'=>__(", then","PackR"),
+			'voucherPrice2'=>__("39 €","PackR"),
+			'title4'=>__("Details","PackR"),
+			'priceTag'=>__("ab","PackR"),
+			'priceTagVal'=>__("39 €","PackR"),
+
 			]);
 	}
 
@@ -332,6 +367,7 @@ class FormController{
 			'title2'=> __("Billing and Shipping Address","PackR"),
 			'companyNameLabel'=> __("Company Name","PackR"),
 			'firstNameLabel'=> __("First Name","PackR"),
+			'lastNameLabel'=> __("Last Name","PackR"),
 			'streetLabel'=> __("Street Address","PackR"),
 			'postalCodeLabel'=> __("Postal Code","PackR"),
 			'cityLabel'=> __("City","PackR"),

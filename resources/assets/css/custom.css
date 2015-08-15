@@ -9,3 +9,87 @@
 .radio-wrapper{
 	text-align:center;
 }
+
+.price_badge{
+	z-index: 3;
+	width: 100px;
+	height: 100px;
+	background: -moz-linear-gradient(bottom, #89ac25, #beca3d 60%, #ccd243 100%);
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #89ac25), color-stop(0.6, #beca3d), color-stop(1, #ccd243));
+	background: -o-linear-gradient(bottom, #89ac25, #beca3d 60%, #ccd243 100%);
+	background: -ms-linear-gradient(bottom, #89ac25, #beca3d 60%, #ccd243 100%);
+	border-radius: 52px;
+	-moz-border-radius: 52px;
+	display: block;
+	margin: 200px auto 0 auto;
+	position: relative;
+	border: 1px solid #62791e;
+	border-top: 1px solid #698320;
+	border-bottom: 1px solid #5b711d;
+	box-shadow: 0 0 1px rgba(0,0,0, 0.2);
+	-moz-box-shadow: 0 0 1px rgba(0,0,0, 0.2);
+	position: absolute;
+	/*left: 50%;
+	top: 150px;*/
+
+	margin: 0 0 0 -51px;
+	clip:rect(-2px,104px,92px,-2px);
+	-webkit-transform:rotate(-45deg);
+	-moz-transform:rotate(-45deg);
+	-o-transform:rotate(-45deg);
+	-ms-transform:rotate(-45deg);
+}
+
+.price_badge:before{
+	width: 94px;
+	height: 94px;
+	background: -webkit-linear-gradient(bottom, #000 88%, #999 88%, #fff 100%);
+	background: -moz-linear-gradient(bottom, #000 88%, #999 88%, #fff 100%);
+	background: -o-linear-gradient(bottom, #000 88%, #999 88%, #fff 100%);
+	background: -ms-linear-gradient(bottom, #000 88%, #999 88%, #fff 100%);
+	border-radius: 50px;
+	-moz-border-radius: 50px;
+	display: block;
+	position: relative;
+	border: 1px solid #698320;
+	position: absolute;
+	top: 80px;
+	left: 2px;
+	content: "";
+	z-index: 1;
+}
+
+.price_badge:after{
+	width: 58px;
+	height: 50px;
+	background: #888;
+	content: "";
+	z-index: 2;
+	position: absolute;
+	top: 90px;
+	left: 22px;
+}			
+
+p.price{
+	font-family: impact, helvetica, arial, "sans serif";
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 25px;
+	color: #FFFFFF;
+	clip:rect(-2px,104px,92px,-2px);
+	/*-webkit-transform:rotate(15deg);
+	-moz-transform:rotate(15deg);
+	-o-transform:rotate(15deg);
+	-ms-transform:rotate(15deg);*/
+	text-align: center;
+	/*margin-left: 15px;*/
+	/*width: 75px;*/
+	/*height: 25px;*/
+	/*margin-top:10px;*/
+	text-shadow: 0 1px 1px rgba(255,255,255, 0.6);
+	-mox-text-shadow: 0 1px 1px rgba(255,255,255, 0.6);
+}
+
+.table td{
+	 white-space: nowrap;
+}

@@ -23,10 +23,17 @@ Capsule::schema()->create('packr_orders', function($table)
     $table->string('city');
     $table->string('postal_code');
     $table->string('country_code');
+
+    $table->string('extra_address');
+    $table->string('message');
+
+    $table->string('package');
     
     $table->string('account_number');
     $table->string('iban');
     $table->string('bic');
+
+    $table->string('ust_id');
 
 	$table->string('voucher_code');
 

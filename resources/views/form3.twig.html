@@ -38,18 +38,28 @@
                 <tbody>
                     <tr>
                         <td>
-                            <div class="media">
+
+                            <div class="col-md-2">
+                                <img src="{{productImageSrc}}"/>
+                            </div>
+                            <div class="col-md-2">
+                                <h4>{{productVal}}</h4>
+                                <small>{{productVal1}}</small>
+                                <p>{{productVal2}}</p>
+                            </div>
+
+                            <!-- <div class="media">
                               <div class="media-left">
                                 <a href="#">
-                                    <img class="media-object" src="{{productImageSrc}}"/>
+                                    <img src="{{productImageSrc}}"/>
                                 </a>
                             </div>
                             <div class="media-body">
                                 <h5 class="media-heading">{{productVal}}</h5>
-                                <small>{{productVal1}}}</small>
+                                <small>{{productVal1}}</small>
                                 <p>{{productVal2}}</p>
                             </div>
-                        </div>
+                        </div> -->
                     </td>
                     <td>{{priceVal}}</td>
                     <td>{{taxVal}}</td>
@@ -94,7 +104,7 @@
 <div class="row">
     <div class="checkbox">
         <label>
-          <input type="checkbox"/> {{iAgree1p1}} <a href="{{iAgree1Link}}"> {{iAgree1p2}} </a> {{iAgree1p3}}
+          <input type="checkbox" name="terms" value="terms"/> {{iAgree1p1}} <a href="{{iAgree1Link}}"> {{iAgree1p2}} </a> {{iAgree1p3}}
       </label>
   </div>
 </div>
@@ -102,7 +112,7 @@
 <div class="row">
     <div class="checkbox">
         <label>
-            <input type="checkbox" /> {{iAgree2p1}} <a href="{{iAgree2Link}}"> {{iAgree2p2}} </a> {{iAgree2p3}}
+            <input type="checkbox" name="privacy" value="privacy"/> {{iAgree2p1}} <a href="{{iAgree2Link}}"> {{iAgree2p2}} </a> {{iAgree2p3}}
         </label>
     </div>
 </div>
