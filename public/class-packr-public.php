@@ -73,7 +73,8 @@ class PackR_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/plugin-name-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/packr-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name."-progress-wizard", plugin_dir_url( __FILE__ ) . 'css-progress-wizard-master/css/progress-wizard.min.css', array(), $this->version, 'all' );
 
 	}
 
@@ -96,7 +97,7 @@ class PackR_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/packr-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 
@@ -111,7 +112,7 @@ class PackR_Public {
 		//echo "yes its working";
 		$method=$_SERVER['REQUEST_METHOD'];
 		if($method=="GET"){
-
+			$this->getFirstForm();
 		}else if($method=="POST"){
 
 		}else{
@@ -136,11 +137,24 @@ class PackR_Public {
 
 
 	/**
-	*function to draw the very first step
+	*function to draw the very first form
 	*
 	*
 	*/
-	public  function getFirstForm(){
+	public  function getFirstForm($error=false,$errorDescription=""){
+
+		$_SESSION['PackR_step']=1;
+		$steps= $this->getSteps(1);
+
+		$form="form1.php";
+		
+		//echo "okay";
+
+		//echo  plugin_dir_url( __FILE__ );
+		
+		require_once("partials/form-base.php");
+
+		/*
 		$_SESSION['PackR_step']=1;
 		$steps= $this->getSteps(1);
 
@@ -174,9 +188,11 @@ class PackR_Public {
 			'priceTagVal'=>__("39 €","PackR"),
 
 			]);
-	}
 
 	}
+	
+	*/
+}
 	/**
 	*function its empty or nto
 	*
@@ -187,6 +203,25 @@ class PackR_Public {
 		return !(strlen($str) > 0);
 	}
 
+	/**
+	*function to generates steps headers
+	*
+	*
+	*/
+	private	function getSteps($step=0){
+		$arr= array(
+			array(__("Select Product","PackR"),false),
+			array(__("Account & Billing","PackR"),false),
+			array(__("Overview","PackR"),false),
+			array(__("Confirmation","PackR"),false)
+			);
+
+		for($i=0;$i<$step;$i++){
+			$arr[$i][1]=true;
+		}
+
+		return $arr;
+	}
 
 /*
 	public function getForm(){

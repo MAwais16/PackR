@@ -101,7 +101,7 @@ class PackR_Loader {
 	 * @param      int      Optional    $accepted_args    The number of arguments that should be passed to the $callback.
 	 * @return   type                                   The collection of actions and filters registered with WordPress.
 	 */
-	private function add( $hooks, $hook, $component, $callback, $priority, $accepted_args ) {
+	private function add( $hooks, $hook, $component, $callback, $priority="", $accepted_args="" ) {
 
 		$hooks[] = array(
 			'hook'          => $hook,

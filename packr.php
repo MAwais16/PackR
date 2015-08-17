@@ -30,6 +30,8 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+define("PACKR_BASE_URL",plugin_dir_url( __FILE__ ));
+
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-plugin-name-activator.php
