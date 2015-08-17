@@ -1,0 +1,81 @@
+
+<!-- Second row with version -->
+<br/>
+<form action="" method="POST">
+    <div class="row">
+        <div class="col-md-8">
+            <h4>{{qLabel}}</h4></div>
+            <div class="" style="float:right;margin-right:100px;"> 
+                <div class="price_badge">
+                    <p class="price" style="font-size:14px;left-margin:20px;margin-top:15px;">{{priceTag}}</p>
+                    <p class="price" style="font-size:25px;top:-10px;position:relative;">{{priceTagVal}}</p>
+                </div>
+
+            </div>
+            <div style="clear:right;"></div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-1 ">
+                <div class="panel panel-default package">
+                    <div class="panel-heading text-center">
+                        <h3 class="panel-title">Basic</h3>
+                    </div>
+                    <div class="panel-body packImg">
+                        <img src="{{basicImageSrc}}" class="img-responsive center-block"/>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="radio-wrapper">
+                            <input type="radio" name="package" value="basic" id="radio-basic"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-md-offset-1">
+                <div class="panel panel-default package">
+                    <div class="panel-heading text-center">
+                        <h3 class="panel-title">Professional</h3>
+                    </div>
+                    <div class="panel-body packImg">
+                       <img src="{{profImageSrc}}" class="img-responsive center-block"/>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="radio-wrapper">
+                            <input type="radio" name="package" value="professional" id="radio-professional"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" value="1" name="step"/>
+        <br/>
+        <!-- Third Row -->
+        <div class="row bg-info">
+            <div class='col-md-1'>
+            </div>
+            <div class='col-md-11 '>
+                <h4>{{term}}:</h4>
+                <p>{{termInfo}}</p>
+            </div>
+        </div>
+
+        <br/>
+        <div class="row bg-info">
+            <h4>{{title4}}</h4>
+            <div class="col-md-2">{{voucherLabel}}</div>
+            <div class="col-md-2">
+                <input class="form-control" id="disabledInput" type="text" placeholder="{{voucherPlaceHolder}}"  disabled />
+            </div>
+            <br/>
+            <br/>
+            <div class="col-md-12">
+                {{voucherPriceText1}} <i class='voucher-months'>{{voucherPriceMonth}} </i>{{voucherPriceText2}} <i class="voucher-price">{{voucherPrice2}}</i>{{voucherPriceText3}}
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <button type='submit' class="btn btn-primary">{{form1Submit}}</button>
+        </div>
+
+    </form>
+
