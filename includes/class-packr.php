@@ -173,6 +173,10 @@ class PackR {
 
 		$this->loader->add_shortcode("PackR",$plugin_public,'handleShortCode');
 
+		$this->loader->add_action('wp_ajax_nopriv_packr_voucher_validate',$plugin_public,'packr_voucher_validate_callback'); //for non logged in
+		//$this->loader->add_action('wp_ajax_packr_voucher_validate',$plugin_public,'packr_voucher_validate_callback'); //for admin
+		
+
 	}
 
 	/**

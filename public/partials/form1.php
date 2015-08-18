@@ -64,20 +64,14 @@
             <h4><?php _e("Details",$this->plugin_name);?></h4>
             <div class="col-md-2"><?php _e("Voucher:",$this->plugin_name);?></div>
             <div class="col-md-2">
-                <input class="form-control" id="disabledInput" type="text" placeholder="{{voucherPlaceHolder}}"  disabled />
+                <input class="form-control" id="voucher_code" name="voucher_code" type="text" placeholder='<?php _e("Enter voucher code",$this->plugin_name);?>' />
+            </div>
+            <div class="col-md-2">
+                <button class="btn" onclick="return PackR.onVoucherSubmit();" id="bt_voucher"><?php _e("Add Voucher",$this->plugin_name);?></button>
             </div>
             <br/>
-            <br/>
-            <div class="col-md-12">
-                <?php  _e("Monthly Price: 0 Euro, for first ",$this->plugin_name); ?>
-                <i class='voucher-months'>
-                    <?php  _e("6 Monate",$this->plugin_name); ?>
-                </i>
-                <?php  _e(", then",$this->plugin_name); ?>
-                <i class="voucher-price">
-                     <?php  _e("39 €",$this->plugin_name); ?>
-                </i>
-                
+            <div class="col-md-12 voucher_result">
+                <br/>
             </div>
         </div>
         <br/>
@@ -86,4 +80,3 @@
         </div>
 
     </form>
-

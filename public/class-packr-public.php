@@ -97,7 +97,11 @@ class PackR_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/packr-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name."-publicjs", plugin_dir_url( __FILE__ ) . 'js/packr-public.js', array( 'jquery' ), $this->version, false );
+
+		//for using ajax
+		wp_localize_script( $this->plugin_name."-publicjs", 'ajax_object',array('ajax_url' => admin_url( 'admin-ajax.php')));
+
 
 	}
 
@@ -114,6 +118,35 @@ class PackR_Public {
 		if($method=="GET"){
 			$this->getFirstForm();
 		}else if($method=="POST"){
+			if($_SESSION['PackR_step']=="1"){
+				
+				if($http->has("package")){
+					$_SESSION["PackR_package"]=$http->get("package");
+					//return $this->getSecondForm($http);
+				}else{
+					$_SESSION['PackR_step']=1;
+					return $this->getFirstForm(true,__("Please select a Package","PackR"));
+				}
+			}else if($_SESSION['PackR_step']=="2"){
+				//return $this->validateInput($http);
+			}else if($_SESSION['PackR_step']=="3"){
+				/*
+				if($http->get("terms")=="terms"){
+					if($http->get("privacy")=="privacy"){
+						
+						//error_log("as=".Order::all());
+						//return $this->getThirdForm($http);
+						return $this->getForthForm($http);
+					}else{
+						return $this->getThirdForm($http,true,__("Please agree to Privacy Policy.","PackR"));
+					}
+				}else{
+					return $this->getThirdForm($http,true,__("Please agree to Terms & conditions.","PackR"));
+				}*/
+			}else{
+				$_SESSION['PackR_step']=1;
+				return $this->getFirstForm();
+			}
 
 		}else{
 			_e("method not supported!",$this->plugin_name);
@@ -148,51 +181,11 @@ class PackR_Public {
 
 		$form="form1.php";
 		
-		//echo "okay";
-
-		//echo  plugin_dir_url( __FILE__ );
-		
 		require_once("partials/form-base.php");
 
-		/*
-		$_SESSION['PackR_step']=1;
-		$steps= $this->getSteps(1);
-
-		$q= __("Which version of vislog you would like to you use?","PackR");
-
-		$term= __("Period of Validity","PackR");
-		$termInfo= __("The subscription is initially for one year and will be automatically extended for another year unless written notice is given within 4 weeks before year ends","PackR");
-
-		$formButton=__("Go to Address & Payment","PackR");
-
-		return view('@PackR/form-base.twig.html', [
-			'logoSrc'=>$this->logoSrc,
-			'steps'   => $steps,
-			'form1Submit'=>$formButton,
-			'qLabel' => $q,
-			'term'=>$term,
-			'termInfo'=>$termInfo,
-			'form'=> "@PackR/form1.twig.html",
-			'error'=> $err,
-			'errorDescription'=>$errDetail,
-			'basicImageSrc'=>Helper::assetUrl("/images/basic.png"),
-			'profImageSrc'=>Helper::assetUrl("/images/professional.png"),
-			'voucherLabel'=>__("Voucher:","PackR"),
-			'voucherPlaceHolder'=>__("(inserted)","PackR"),
-			'voucherPriceText1'=>__("Monthly Price: 0 Euro, for first ","PackR"),
-			'voucherPriceMonth'=>__("6 Monate","PackR"),
-			'voucherPriceText2'=>__(", then","PackR"),
-			'voucherPrice2'=>__("39 €","PackR"),
-			'title4'=>__("Details","PackR"),
-			'priceTag'=>__("ab","PackR"),
-			'priceTagVal'=>__("39 €","PackR"),
-
-			]);
-
 	}
-	
-	*/
-}
+
+
 	/**
 	*function its empty or nto
 	*
@@ -202,6 +195,8 @@ class PackR_Public {
 		$str = trim($str);
 		return !(strlen($str) > 0);
 	}
+
+
 
 	/**
 	*function to generates steps headers
@@ -222,6 +217,36 @@ class PackR_Public {
 
 		return $arr;
 	}
+
+	public function packr_voucher_validate_callback() {
+		$resp=$this->validateVoucher($_POST['voucher_code'],$_POST['package']);
+		echo json_encode($resp);
+		wp_die();
+	}
+
+
+	private function validateVoucher($vc,$package){
+		if(isset($vc)){
+			$end=" <i class='voucher-price'> 39 €</i>";
+				if($package=="basic"){
+					$end=" <i class='voucher-price'> 39 €</i>";
+				}else{
+					$end=" <i class='voucher-price'> 69 €</i>";
+				}
+
+			if($vc=="EarlyBird2015"){
+				$_SESSION['PackR_voucherCode']=$vc;
+				return  array("valid"=>true,"desc"=>__("Monthly Price: 0 Euro, for first 6 Months then ",$this->plugin_name).$end);	//6months
+			}else if($vc=="Supporter2015"){
+				$_SESSION['PackR_voucherCode']=$vc;
+				return  array("valid"=>true,"desc"=>__("Monthly Price: 0 Euro, for first 3 Months then ",$this->plugin_name).$end); //3 months
+			}else{
+					return  array("valid"=>false,"desc"=>__("Invalid voucher code",$this->plugin_name));
+			}
+		}
+	}
+
+
 
 /*
 	public function getForm(){

@@ -6,6 +6,8 @@ if(window.PackR == undefined){
     window.PackR = {};
 }
 
+PackR.selectedPackage="basic";
+
 PackR.initRadiosClick=function(){
 	
 	jQuery("#radio-basic").prop("checked",true);
@@ -19,16 +21,42 @@ PackR.initRadiosClick=function(){
 
 	jQuery('#radio-basic').change(function(){
         if (jQuery(this).is(':checked')) {
-            jQuery(".voucher-price").text("39 Euro");
+            jQuery(".voucher-price").text("39 €");
+            PackR.selectedPackage="basic";
         }
     });
 
     jQuery('#radio-professional').change(function(){
         if (jQuery(this).is(':checked')) {
-            jQuery(".voucher-price").text("69 Euro");
+            jQuery(".voucher-price").text("69 €");
+            PackR.selectedPackage="professional";
         }
     });
+}
 
+PackR.onVoucherSubmit=function(){
+
+	var data = {
+		'action': 'packr_voucher_validate',
+		'voucher_code': jQuery("#voucher_code").val(),
+		'package': PackR.selectedPackage
+	};
+	// We can also pass the url value separately from ajaxurl for front end AJAX implementations
+	jQuery.post(ajax_object.ajax_url, data, function(response) {
+		var resp=JSON.parse(response);
+		if(resp.valid){
+			jQuery("#bt_voucher").hide();
+			jQuery("#voucher_code").attr("disabled","disabled");
+			jQuery(".voucher_result").removeClass("bg-danger");
+			jQuery(".voucher_result").addClass("bg-success");
+		}else{
+			jQuery(".voucher_result").addClass("bg-danger");
+			jQuery(".voucher_result").removeClass("bg-success");	
+		}
+		jQuery(".voucher_result").html(resp.desc);
+		
+	});
+	return false; //so form is not submit
 }
 
 
