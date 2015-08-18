@@ -4,21 +4,20 @@
 <form action="" method="POST">
 
     <div class="row">
-        <div><h2 class="col-md-12">{{title}}</h2></div>
+        <div><h2 class="col-md-12"><?php _e("Your order overview",$this->plugin_name);?></h2></div>
     </div>
     <br/>
     <div class="row">
         <div class="col-md-6">
-            <h4>{{title2}}</h4>
-            <div>{{companyName}}</div>
-            <div>{{firstName}} {{lastName}}</div>
-            <div>{{street}}</div>
-            <div>{{postalCode}} {{city}} {{country}}</div>
-
-            <div>{{extraAddress}}</div>
+            <h4><?php _e("Billing Address",$this->plugin_name);?></h4>
+            <div><?php echo $_SESSION['PackR_companyName']; ?></div>
+            <div><?php echo $_SESSION['PackR_firstName']." ".$_SESSION['PackR_lastName']; ?></div>
+            <div><?php echo $_SESSION['PackR_street']; ?></div>
+            <div><?php echo $_SESSION['PackR_postalCode']." ".$_SESSION['PackR_city']." ".$_SESSION['PackR_country']; ?></div>
+            <div><?php echo $_SESSION['PackR_extraAddress'];?></div>
             <br/>
             <div>
-                <b>Email</b>:{{email}}
+                <b>Email</b>:<?php echo $_SESSION['PackR_email']; ?>
             </div>
         </div>
     </div>
@@ -29,10 +28,10 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>{{titleProduct}}</th>
-                        <th>{{titlePrice}}</th>
-                        <th>{{titleTax}}</th>
-                        <th>{{titleTotalPrice}}</th>
+                        <th><?php _e("Product",$this->plugin_name);?></th>
+                        <th><?php _e("Price",$this->plugin_name);?></th>
+                        <th><?php _e("Tax",$this->plugin_name);?></th>
+                        <th><?php _e("Total Price",$this->plugin_name);?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,12 +39,12 @@
                         <td>
 
                             <div class="col-md-2">
-                                <img src="{{productImageSrc}}"/>
+                                <img src="<?php echo $imgSrc; ?>"/>
                             </div>
                             <div class="col-md-2">
-                                <h4>{{productVal}}</h4>
-                                <small>{{productVal1}}</small>
-                                <p>{{productVal2}}</p>
+                                <h4><?php echo $package;?></h4>
+                                <small><?php echo $package." ".__("version subscription for one year",$this->plugin_name);?></small>
+                                <p><?php //_e("Your order overview",$this->plugin_name);?></p>
                             </div>
 
                             <!-- <div class="media">
@@ -61,29 +60,24 @@
                             </div>
                         </div> -->
                     </td>
-                    <td>{{priceVal}}</td>
-                    <td>{{taxVal}}</td>
-                    <td>{{totalPriceVal}}</td>
+                    <td><?php echo $price." €";?></td>
+                    <td><?php echo $tax." %";?></td>
+                    <td><?php echo $price." €";?></td>
                 </tr>
 
                 <tr>
-                    <th colspan="3" class="text-right">{{titleShipping}}</th>
-                    <td>{{shippingVal}}</td>
+                    <th colspan="3" class="text-right"><?php _e("Total Net",$this->plugin_name);?></th>
+                    <td><?php echo $price." €";?></td>
                 </tr>
 
                 <tr>
-                    <th colspan="3" class="text-right">{{titleTotalNet}}</th>
-                    <td>{{totalNetVal}}</td>
-                </tr>
-
-                <tr>
-                    <th colspan="3" class="text-right">{{titlePlusVat}}</th>
-                    <td>{{plusVatVal}}</td>
+                    <th colspan="3" class="text-right"><?php _e("plus $tax % vat",$this->plugin_name);?></th>
+                    <td><?php echo $taxPrice." €";?></td>
                 </tr>
 
                 <tr class="active">
-                    <th colspan="3" class="text-right">{{titleTotalGross}}</th>
-                    <td>{{totalGrossVal}}</td>
+                    <th colspan="3" class="text-right"><?php _e("Total Gross",$this->plugin_name);?></th>
+                    <td><?php echo $price+$taxPrice." €";?></td>
                 </tr>
             </tbody>
         </table>
@@ -93,18 +87,10 @@
 
 
 <div class="row">
-
-    <h4>{{title3}}</h4>
-    <div>
-        <a href="{{sepaLink}}" target="_blank"><h6>{{sepaTitle}}</h6></a>
-    </div>
-</div>
-</br>
-
-<div class="row">
+    <h4><?php _e("Payment",$this->plugin_name);?></h4>
     <div class="checkbox">
         <label>
-          <input type="checkbox" name="terms" value="terms"/> {{iAgree1p1}} <a href="{{iAgree1Link}}"> {{iAgree1p2}} </a> {{iAgree1p3}}
+          <input type="checkbox" name="sepa" value="sepa"/><?php _e("I Agree to ",$this->plugin_name);?><a href=""> <?php _e("SEPA Terms & Conditions",$this->plugin_name);?> </a>
       </label>
   </div>
 </div>
@@ -112,14 +98,22 @@
 <div class="row">
     <div class="checkbox">
         <label>
-            <input type="checkbox" name="privacy" value="privacy"/> {{iAgree2p1}} <a href="{{iAgree2Link}}"> {{iAgree2p2}} </a> {{iAgree2p3}}
+          <input type="checkbox" name="terms" value="terms"/> <?php _e("I Agree to ",$this->plugin_name);?> <a href="/termsandconditions"><?php _e("Terms & Conditions",$this->plugin_name);?></a>
+      </label>
+  </div>
+</div>
+
+<div class="row">
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" name="privacy" value="privacy"/> <?php _e("I Agree to ",$this->plugin_name);?> <a href="/privacypolicy"> <?php _e("privacy policy",$this->plugin_name); ?> </a>
         </label>
     </div>
 </div>
 
 <br/>
 <div>
-    <button type="submit" class="btn btn-primary">{{bt_submit}}</button>
+    <button type="submit" class="btn btn-primary"><?php _e("Confirm & Finish",$this->plugin_name);?></button>
 </div>
 
 </form>

@@ -423,8 +423,8 @@ class PackR_Public {
 			$_SESSION["PackR_iban"]=$iban;
 			$_SESSION["PackR_ustID"]=$ustID;
 
-		//$this->getThirdForm($http);
-			echo "weheh";
+			$this->getThirdForm();
+			//echo "weheh";
 
 		}else{
 			$this->getSecondForm(true,$resp);
@@ -445,7 +445,7 @@ public function getThirdForm($err=false,$errDescription=""){
 	$price=39;
 
 	$imgSrc=PACKR_BASE_URL. '/public/images/basic.png';
-	
+
 	$package=$_SESSION['PackR_package'];
 	if($package=="basic"){
 		$price = 39;
@@ -457,28 +457,15 @@ public function getThirdForm($err=false,$errDescription=""){
 
 	$taxPrice=$price*($tax/100);
 
+	$form="form3.php";
+	require_once("partials/form-base.php");
+
+
+
 
 	/*
 	return view('@PackR/form-base.twig.html', [
-		'logoSrc'=>$this->logoSrc,
-		'steps'   => $steps,
-		'form'=> "@PackR/form3.twig.html",
-		'error'=> $err,
-		'errorDescription'=>$errDetail,
-
-		'title'=>__("Your order overview","PackR"),
-		'title2'=>__("Billing Address","PackR"),
-
-		'companyName'=>$_SESSION['PackR_companyName'],
-		'firstName'=>$_SESSION['PackR_firstName'],
-		'lastName'=>$_SESSION['PackR_lastName'],
-		'street'=>$_SESSION['PackR_street'],
-		'postalCode'=>$_SESSION['PackR_postalCode'],
-		'city'=>$_SESSION['PackR_city'],
-		'country'=>$_SESSION['PackR_country'],
-		'email'=>$_SESSION['PackR_email'],
-
-
+		
 		'titleProduct'=>__("Product","PackR"),
 		'productVal'=>$package,
 		'productVal1'=>__("Vislog basic version subscription","PackR"),
