@@ -129,21 +129,8 @@ class PackR_Public {
 			}else if($_SESSION['PackR_step']=="2"){
 				$this->validateSecondForm();
 			}else if($_SESSION['PackR_step']=="3"){
-				/*
-				if($http->get("terms")=="terms"){
-					if($http->get("privacy")=="privacy"){
-						
-						//error_log("as=".Order::all());
-						//return $this->getThirdForm($http);
-						return $this->getForthForm($http);
-					}else{
-						return $this->getThirdForm($http,true,__("Please agree to Privacy Policy.","PackR"));
-					}
-				}else{
-					return $this->getThirdForm($http,true,__("Please agree to Terms & conditions.","PackR"));
-				}*/
+				$this->validateThirdForm();
 			}else{
-				error_log("message");
 				return $this->getFirstForm();
 			}
 
@@ -438,7 +425,7 @@ class PackR_Public {
 *
 */
 
-public function getThirdForm($err=false,$errDescription=""){
+private function getThirdForm($err=false,$errorDescription=""){
 	$_SESSION['PackR_step']=3;
 	$steps= $this->getSteps(3);
 	$tax = 19;
@@ -460,58 +447,58 @@ public function getThirdForm($err=false,$errDescription=""){
 	$form="form3.php";
 	require_once("partials/form-base.php");
 
+}
 
+private function validateThirdForm(){
+	if($this->get("terms")=="terms"){
+		if($this->get("privacy")=="privacy"){
+			if($this->get("privacy")=="privacy"){
+				$this->getForthForm();
+			}else{
+				$this->getThirdForm(true,__("Please agree to SEPA Terms & Conditions.",$this->plugin_name));
+			}
+		}else{
+			$this->getThirdForm(true,__("Please agree to Privacy Policy.",$this->plugin_name));
+		}
+	}else{
+		$this->getThirdForm(true,__("Please agree to Terms & conditions.",$this->plugin_name));
+	}
+}
+
+private function getForthForm(){
+	$_SESSION['PackR_step']=4;
+	$steps= $this->getSteps(4);
 
 
 	/*
-	return view('@PackR/form-base.twig.html', [
+
+	$order = new Order;
+		$order->email=$_SESSION["PackR_email"];
+		$order->password=$_SESSION["PackR_password"];
+		$order->company_name=$_SESSION["PackR_companyName"];
+		$order->first_name=$_SESSION["PackR_firstName"];
+		$order->last_name=$_SESSION["PackR_lastName"];
+		$order->street=$_SESSION["PackR_street"];
+		$order->postal_code=$_SESSION["PackR_postalCode"];
+		$order->city=$_SESSION["PackR_city"];
+		$order->country_code=$_SESSION["PackR_country"];
+		$order->extra_address=$_SESSION["PackR_extraAddress"];
+
+		$order->message=$_SESSION["PackR_message"];
+
+		$order->account_number=$_SESSION["PackR_accountNumber"];
+		$order->bic=$_SESSION["PackR_bic"];
+		$order->iban=$_SESSION["PackR_iban"];
+		$order->ust_id=$_SESSION["PackR_ustID"];
+
+		$order->package=$_SESSION["PackR_package"];
+
+	*/
+
 		
-		'titleProduct'=>__("Product","PackR"),
-		'productVal'=>$package,
-		'productVal1'=>__("Vislog basic version subscription","PackR"),
-		'productVal2'=>__("/year","PackR"),
-		'productImageSrc'=>$imgSrc,
 
-
-		'titlePrice'=>__("Price","PackR"),
-		'priceVal'=>$price." €",
-
-		'titleTax'=>__("Tax","PackR"),
-		'taxVal'=>$tax."%",
-
-		'titleTotalPrice'=>__("Total Price","PackR"),
-		'totalPriceVal'=>$price." €",
-
-		'titleShipping'=>__("Shipping","PackR"),
-		'shippingVal'=>"0.00 €",
-
-		'titleTotalNet'=>__("Total Net","PackR"),
-		'totalNetVal'=>"$price €",
-
-		'titlePlusVat'=>__("plus $tax % vat","PackR"),
-		'plusVatVal'=>"$taxPrice €",
-
-		'titleTotalGross'=>__("Total Gross","PackR"),
-		'totalGrossVal'=>$price+$taxPrice." €",
-
-		'title3'=>__("Payment","PackR"),
-
-		'sepaTitle'=>__("SEPA Link (opens in new window)","PackR"),
-		'sepaLink'=>"http://www.google.com",
-
-		'iAgree1p1'=>__("I agree to the","PackR"),
-		'iAgree1p2'=>__("Terms & Conditions","PackR"),
-		'iAgree1p3'=>__(". ","PackR"),
-		'iAgree1Link'=>"/termsandcondition",
-
-		'iAgree2p1'=>__("I agree to the","PackR"),
-		'iAgree2p2'=>__("Privacy Policy","PackR"),
-		'iAgree2p3'=>__(". ","PackR"),
-		'iAgree2Link'=>"/privacypolicy",
-
-		'bt_submit' => __("Confirm & Finish"),
-
-		]);*/
+	$form="form4.php";
+	require_once("partials/form-base.php");
 
 }
 
