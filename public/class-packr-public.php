@@ -51,7 +51,7 @@ class PackR_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-
+		// session_start();
 	}
 
 	/**
@@ -119,16 +119,15 @@ class PackR_Public {
 			$this->getFirstForm();
 		}else if($method=="POST"){
 			if($_SESSION['PackR_step']=="1"){
-				
-				if($http->has("package")){
-					$_SESSION["PackR_package"]=$http->get("package");
-					//return $this->getSecondForm($http);
+				if(isset($_POST["package"])){
+					$_SESSION["PackR_package"]=$_POST["package"];
+					$this->getSecondForm();
 				}else{
-					$_SESSION['PackR_step']=1;
+					$_SESSION['PackR_step']="1";
 					return $this->getFirstForm(true,__("Please select a Package","PackR"));
 				}
 			}else if($_SESSION['PackR_step']=="2"){
-				//return $this->validateInput($http);
+				$this->validateSecondForm();
 			}else if($_SESSION['PackR_step']=="3"){
 				/*
 				if($http->get("terms")=="terms"){
@@ -144,7 +143,7 @@ class PackR_Public {
 					return $this->getThirdForm($http,true,__("Please agree to Terms & conditions.","PackR"));
 				}*/
 			}else{
-				$_SESSION['PackR_step']=1;
+				error_log("message");
 				return $this->getFirstForm();
 			}
 
@@ -176,13 +175,10 @@ class PackR_Public {
 	*/
 	public  function getFirstForm($error=false,$errorDescription=""){
 
-		$_SESSION['PackR_step']=1;
+		$_SESSION['PackR_step']="1";
 		$steps= $this->getSteps(1);
-
 		$form="form1.php";
-		
 		require_once("partials/form-base.php");
-
 	}
 
 
@@ -218,21 +214,29 @@ class PackR_Public {
 		return $arr;
 	}
 
+	/**
+	*function to to handle ajax request validating voucher
+	*
+	*/
+
 	public function packr_voucher_validate_callback() {
 		$resp=$this->validateVoucher($_POST['voucher_code'],$_POST['package']);
 		echo json_encode($resp);
 		wp_die();
 	}
 
-
+	/**
+	*function to validate voucher and generate resulting json string
+	*
+	*/
 	private function validateVoucher($vc,$package){
 		if(isset($vc)){
 			$end=" <i class='voucher-price'> 39 €</i>";
-				if($package=="basic"){
-					$end=" <i class='voucher-price'> 39 €</i>";
-				}else{
-					$end=" <i class='voucher-price'> 69 €</i>";
-				}
+			if($package=="basic"){
+				$end=" <i class='voucher-price'> 39 €</i>";
+			}else{
+				$end=" <i class='voucher-price'> 69 €</i>";
+			}
 
 			if($vc=="EarlyBird2015"){
 				$_SESSION['PackR_voucherCode']=$vc;
@@ -241,54 +245,290 @@ class PackR_Public {
 				$_SESSION['PackR_voucherCode']=$vc;
 				return  array("valid"=>true,"desc"=>__("Monthly Price: 0 Euro, for first 3 Months then ",$this->plugin_name).$end); //3 months
 			}else{
-					return  array("valid"=>false,"desc"=>__("Invalid voucher code",$this->plugin_name));
+				return  array("valid"=>false,"desc"=>__("Invalid voucher code",$this->plugin_name));
 			}
 		}
 	}
 
+	/**
+	*function to generate second form
+	*
+	*/
+	private function getSecondForm($error=false,$resp=array()){
+		$_SESSION['PackR_step']=2;
+		$steps= $this->getSteps(2);
+		$form="form2.php";
+		require_once("partials/form-base.php");
+	}
+
+	/**
+	*validating second form
+	*
+	*/
+
+	private function validateSecondForm(){
+
+		$email=$this->get("email");
+		$password=$this->get("password");
+		$confirmPassword=$this->get("confirmPassword");
+		$companyName=$this->get("companyName");
+		$firstName=$this->get("firstName");
+		$lastName=$this->get("lastName");
+		$street=$this->get("street");
+		$postalCode=$this->get("postalCode");
+		$city=$this->get("city");
+		$country=$this->get("country");
+		$extraAddress=$this->get("extraAddress");
+		$message=$this->get("message");
+
+		$accountOwner=$this->get("accountOwner");
+		$iban=$this->get("iban");
+		$bic=$this->get("bic");
+
+		$ustID=$this->get("ustID");
+
+		$resp=array();
 
 
-/*
-	public function getForm(){
-
-		$_SERVER['REQUEST_METHOD'];
-		$this->logoSrc =Helper::assetUrl("/images/vislog_logo.png");
-		if(strcasecmp($http->method(), "GET")==0){
-			return $this->getFirstForm();
-		}else if(strcasecmp($http->method(), "POST")==0){
-			if($_SESSION['PackR_step']=="1"){
-				if($http->has("package")){
-					$_SESSION["PackR_package"]=$http->get("package");
-					return $this->getSecondForm($http);
-				}else{
-					$_SESSION['PackR_step']=1;
-					return $this->getFirstForm(true,__("Please select a Package","PackR"));
-				}
-			}else if($_SESSION['PackR_step']=="2"){
-				return $this->validateInput($http);
-			}else if($_SESSION['PackR_step']=="3"){
-				
-				if($http->get("terms")=="terms"){
-					if($http->get("privacy")=="privacy"){
-						
-						//error_log("as=".Order::all());
-						//return $this->getThirdForm($http);
-						return $this->getForthForm($http);
-					}else{
-						return $this->getThirdForm($http,true,__("Please agree to Privacy Policy.","PackR"));
-					}
-				}else{
-					return $this->getThirdForm($http,true,__("Please agree to Terms & conditions.","PackR"));
-				}
-			}else{
-				$_SESSION['PackR_step']=1;
-				return $this->getFirstForm();
-			}
-			
+		if($this->isStrEmpty($email)){
+			$resp['email'][0]=true;
+			$resp['email'][1]=__("required","PackR");
+		}else if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			$resp['email'][0]=true;
+			$resp['email'][1]=__("is invalid","PackR");
 		}else{
-			return "method not supported";
+			$resp['email'][0]=false;
+			$resp['email'][2]=$email;
 		}
+
+		if($this->isStrEmpty($password)){
+			$resp['password'][0]=true;
+			$resp['password'][1]=__("required","PackR");
+		}else if ($this->isStrEmpty($confirmPassword)) {
+			$resp['confirmPassword'][0]=true;
+			$resp['confirmPassword'][1]=__("required","PackR");
+		}else if(!(strcmp($password, $confirmPassword)==0)){
+			$resp['confirmPassword'][0]=true;
+			$resp['password'][0]=true;
+			$resp['confirmPassword'][1]=__("not matched","PackR");
+			$resp['password'][1]=__("not matched","PackR");;
+		}else{
+			$resp['confirmPassword'][0]=false;
+			$resp['password'][0]=false;
+		}
+
+		if($this->isStrEmpty($companyName)){
+			$resp['companyName'][0]=true;
+			$resp['companyName'][1]=__("required","PackR");
+		}else{
+			$resp['companyName'][0]=false;
+			$resp['companyName'][2]=$companyName;
+		}
+
+		if($this->isStrEmpty($firstName)){
+			$resp['firstName'][0]=true;
+			$resp['firstName'][1]=__("required","PackR");
+		}else{
+			$resp['firstName'][0]=false;
+			$resp['firstName'][2]=$firstName;
+		}
+
+		if($this->isStrEmpty($lastName)){
+			$resp['lastName'][0]=true;
+			$resp['lastName'][1]=__("required","PackR");
+		}else{
+			$resp['lastName'][0]=false;	
+			$resp['lastName'][2]=$lastName;
+		}
+
+		if($this->isStrEmpty($street)){
+			$resp['street'][0]=true;
+			$resp['street'][1]=__("required","PackR");
+		}else{
+			$resp['street'][0]=false;
+			$resp['street'][2]=$street;
+		}
+
+		if($this->isStrEmpty($city)){
+			$resp['city'][0]=true;
+			$resp['city'][1]=__("required","PackR");
+		}else{
+			$resp['city'][0]=false;
+			$resp['city'][2]=$city;
+		}
+
+		if($this->isStrEmpty($postalCode)){
+			$resp['postalCode'][0]=true;
+			$resp['postalCode'][1]=__("required","PackR");
+		}else{
+			$resp['postalCode'][0]=false;
+			$resp['postalCode'][2]=$postalCode;
+		}
+
+
+		//payment detail validation
+
+		if($this->isStrEmpty($accountOwner)){
+			$resp['accountOwner'][0]=true;
+			$resp['accountOwner'][1]=__("required","PackR");
+		}else{
+			$resp['accountOwner'][0]=false;
+			$resp['accountOwner'][2]=$accountOwner;
+		}
+
+
+		if($this->isStrEmpty($bic)){
+			$resp['bic'][0]=true;
+			$resp['bic'][1]=__("required","PackR");
+		}else{
+			$resp['bic'][0]=false;
+			$resp['bic'][2]=$bic;
+		}
+
+		if($this->isStrEmpty($iban)){
+			$resp['iban'][0]=true;
+			$resp['iban'][1]=__("required","PackR");
+		}else{
+			$resp['iban'][0]=false;
+			$resp['iban'][2]=$iban;
+		}
+
+
+		$resp['extraAddress'][0]=false;
+		$resp['extraAddress'][2]=$extraAddress;
+
+		$resp['ustID'][0]=false;
+		$resp['ustID'][2]=$ustID;
+
+		$process = true;
+		foreach ($resp as $item) {
+			$process = $process && (!$item[0]);
+		}
+
+		if($process){
+			$_SESSION["PackR_email"]=$email;
+			$_SESSION["PackR_password"]=wp_hash_password($password);
+			$_SESSION["PackR_companyName"]=$companyName;
+			$_SESSION["PackR_firstName"]=$firstName;
+			$_SESSION["PackR_lastName"]=$lastName;
+			$_SESSION["PackR_street"]=$street;
+			$_SESSION["PackR_postalCode"]=$postalCode;
+			$_SESSION["PackR_city"]=$city;
+			$_SESSION["PackR_country"]=$country;
+			$_SESSION["PackR_extraAddress"]=$extraAddress;
+			$_SESSION["PackR_message"]=$message;
+
+			$_SESSION["PackR_accountOwner"]=$accountOwner;
+			$_SESSION["PackR_bic"]=$bic;
+			$_SESSION["PackR_iban"]=$iban;
+			$_SESSION["PackR_ustID"]=$ustID;
+
+		//$this->getThirdForm($http);
+			echo "weheh";
+
+		}else{
+			$this->getSecondForm(true,$resp);
+		}
+
 	}
+
+
+/**
+*for third form
+*
 */
+
+public function getThirdForm($err=false,$errDescription=""){
+	$_SESSION['PackR_step']=3;
+	$steps= $this->getSteps(3);
+	$tax = 19;
+	$price=39;
+
+	$imgSrc=PACKR_BASE_URL. '/public/images/basic.png';
+	
+	$package=$_SESSION['PackR_package'];
+	if($package=="basic"){
+		$price = 39;
+		$imgSrc=PACKR_BASE_URL. '/public/images/basic.png';
+	}else{
+		$price = 69;
+		$imgSrc=PACKR_BASE_URL. '/public/images/professional.png';
+	}
+
+	$taxPrice=$price*($tax/100);
+
+
+	/*
+	return view('@PackR/form-base.twig.html', [
+		'logoSrc'=>$this->logoSrc,
+		'steps'   => $steps,
+		'form'=> "@PackR/form3.twig.html",
+		'error'=> $err,
+		'errorDescription'=>$errDetail,
+
+		'title'=>__("Your order overview","PackR"),
+		'title2'=>__("Billing Address","PackR"),
+
+		'companyName'=>$_SESSION['PackR_companyName'],
+		'firstName'=>$_SESSION['PackR_firstName'],
+		'lastName'=>$_SESSION['PackR_lastName'],
+		'street'=>$_SESSION['PackR_street'],
+		'postalCode'=>$_SESSION['PackR_postalCode'],
+		'city'=>$_SESSION['PackR_city'],
+		'country'=>$_SESSION['PackR_country'],
+		'email'=>$_SESSION['PackR_email'],
+
+
+		'titleProduct'=>__("Product","PackR"),
+		'productVal'=>$package,
+		'productVal1'=>__("Vislog basic version subscription","PackR"),
+		'productVal2'=>__("/year","PackR"),
+		'productImageSrc'=>$imgSrc,
+
+
+		'titlePrice'=>__("Price","PackR"),
+		'priceVal'=>$price." €",
+
+		'titleTax'=>__("Tax","PackR"),
+		'taxVal'=>$tax."%",
+
+		'titleTotalPrice'=>__("Total Price","PackR"),
+		'totalPriceVal'=>$price." €",
+
+		'titleShipping'=>__("Shipping","PackR"),
+		'shippingVal'=>"0.00 €",
+
+		'titleTotalNet'=>__("Total Net","PackR"),
+		'totalNetVal'=>"$price €",
+
+		'titlePlusVat'=>__("plus $tax % vat","PackR"),
+		'plusVatVal'=>"$taxPrice €",
+
+		'titleTotalGross'=>__("Total Gross","PackR"),
+		'totalGrossVal'=>$price+$taxPrice." €",
+
+		'title3'=>__("Payment","PackR"),
+
+		'sepaTitle'=>__("SEPA Link (opens in new window)","PackR"),
+		'sepaLink'=>"http://www.google.com",
+
+		'iAgree1p1'=>__("I agree to the","PackR"),
+		'iAgree1p2'=>__("Terms & Conditions","PackR"),
+		'iAgree1p3'=>__(". ","PackR"),
+		'iAgree1Link'=>"/termsandcondition",
+
+		'iAgree2p1'=>__("I agree to the","PackR"),
+		'iAgree2p2'=>__("Privacy Policy","PackR"),
+		'iAgree2p3'=>__(". ","PackR"),
+		'iAgree2Link'=>"/privacypolicy",
+
+		'bt_submit' => __("Confirm & Finish"),
+
+		]);*/
+
+}
+
+
+
 
 }

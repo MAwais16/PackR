@@ -13,7 +13,7 @@
 			if($resp){
 				?>
 			<ul><?php
-			foreach ($response as $key => $value) {
+			foreach ($resp as $key => $value) {
 				if($value[0]){
 					echo "<li>".$key." is ".$value[1]."</li>";
 				}
