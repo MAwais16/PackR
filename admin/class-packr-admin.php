@@ -10,6 +10,10 @@
  * @subpackage PackR/admin
  */
 
+
+require_once(PACKR_BASE_PATH."includes/class-packr-db.php");
+require_once PACKR_BASE_PATH."models/Order.php";
+
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -20,6 +24,7 @@
  * @subpackage PackR/admin
  * @author     Your Name <email@example.com>
  */
+
 class PackR_Admin {
 
 	/**
@@ -51,7 +56,7 @@ class PackR_Admin {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-
+		PackR_DB::initiateActiveRecord(); //activate Active Record
 	}
 
 	/**
@@ -97,6 +102,19 @@ class PackR_Admin {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-admin.js', array( 'jquery' ), $this->version, false );
+
+	}
+
+	public function addAdminMenu(){
+		add_menu_page( $this->plugin_name,$this->plugin_name, 'manage_options', $this->plugin_name.'-admin-menu', array($this,"getAdminPage"));
+	}
+	public function getAdminPage(){
+		
+		$columns=Order::connection()->columns(PACKR_DB_TABLE_NAME);
+
+		$orders=Order::find('all',array('order' => 'id desc'));
+
+		require_once ("partials/admin-display.php");
 
 	}
 

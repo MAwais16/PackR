@@ -20,6 +20,11 @@
  * @subpackage PackR/public
  * @author     awais <awaisakhtar16@yahoo.com>
  */
+
+require_once(PACKR_BASE_PATH."includes/class-packr-db.php");
+require_once PACKR_BASE_PATH."models/Order.php";
+
+
 class PackR_Public {
 
 	/**
@@ -51,7 +56,7 @@ class PackR_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-		// session_start();
+		PackR_DB::initiateActiveRecord(); //activate Active Record
 	}
 
 	/**
@@ -161,6 +166,8 @@ class PackR_Public {
 	*
 	*/
 	public  function getFirstForm($error=false,$errorDescription=""){
+
+		//error_log('mysql://'.DB_USER.':'.DB_PASSWORD.'@'.DB_HOST.'/'.DB_NAME);
 
 		$_SESSION['PackR_step']="1";
 		$steps= $this->getSteps(1);
@@ -425,7 +432,7 @@ class PackR_Public {
 *
 */
 
-private function getThirdForm($err=false,$errorDescription=""){
+private function getThirdForm($error=false,$errorDescription=""){
 	$_SESSION['PackR_step']=3;
 	$steps= $this->getSteps(3);
 	$tax = 19;
@@ -452,7 +459,7 @@ private function getThirdForm($err=false,$errorDescription=""){
 private function validateThirdForm(){
 	if($this->get("terms")=="terms"){
 		if($this->get("privacy")=="privacy"){
-			if($this->get("privacy")=="privacy"){
+			if($this->get("sepa")=="sepa"){
 				$this->getForthForm();
 			}else{
 				$this->getThirdForm(true,__("Please agree to SEPA Terms & Conditions.",$this->plugin_name));
@@ -469,36 +476,42 @@ private function getForthForm(){
 	$_SESSION['PackR_step']=4;
 	$steps= $this->getSteps(4);
 
+	//save all the data in table;
+	$order = new Order();
 
-	/*
+	$order->email=$_SESSION["PackR_email"];
+	$order->password=$_SESSION["PackR_password"];
+	$order->company_name=$_SESSION["PackR_companyName"];
+	$order->first_name=$_SESSION["PackR_firstName"];
+	$order->last_name=$_SESSION["PackR_lastName"];
+	$order->street=$_SESSION["PackR_street"];
+	$order->postal_code=$_SESSION["PackR_postalCode"];
+	$order->city=$_SESSION["PackR_city"];
+	$order->country_code=$_SESSION["PackR_country"];
+	$order->extra_address=$_SESSION["PackR_extraAddress"];
 
-	$order = new Order;
-		$order->email=$_SESSION["PackR_email"];
-		$order->password=$_SESSION["PackR_password"];
-		$order->company_name=$_SESSION["PackR_companyName"];
-		$order->first_name=$_SESSION["PackR_firstName"];
-		$order->last_name=$_SESSION["PackR_lastName"];
-		$order->street=$_SESSION["PackR_street"];
-		$order->postal_code=$_SESSION["PackR_postalCode"];
-		$order->city=$_SESSION["PackR_city"];
-		$order->country_code=$_SESSION["PackR_country"];
-		$order->extra_address=$_SESSION["PackR_extraAddress"];
+	$order->message=$_SESSION["PackR_message"];
 
-		$order->message=$_SESSION["PackR_message"];
+	$order->account_name=$_SESSION["PackR_accountOwner"];
+	$order->bic=$_SESSION["PackR_bic"];
+	$order->iban=$_SESSION["PackR_iban"];
+	$order->ust_id=$_SESSION["PackR_ustID"];
+	$order->package=$_SESSION["PackR_package"];
+	$order->voucher_code=$_SESSION["PackR_voucherCode"];
 
-		$order->account_number=$_SESSION["PackR_accountNumber"];
-		$order->bic=$_SESSION["PackR_bic"];
-		$order->iban=$_SESSION["PackR_iban"];
-		$order->ust_id=$_SESSION["PackR_ustID"];
+	try{
+		$order->save();
+		if($order->id>0){
 
-		$order->package=$_SESSION["PackR_package"];
+			$form="form4.php";
+			require_once("partials/form-base.php");
 
-	*/
-
-		
-
-	$form="form4.php";
-	require_once("partials/form-base.php");
+		}else{
+			$this->getSecondForm(true,__("Ops, something went wrong, please try again","PackR"));
+		}
+	}catch(Exception $ex){
+		$this->getSecondForm(true,__("Ops, something went wrong, please try again","PackR"));
+	}
 
 }
 

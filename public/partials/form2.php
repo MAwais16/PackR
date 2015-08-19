@@ -134,7 +134,7 @@
 					</div>
 					<div class="form-group <?php if($resp['bic'][0]){echo "has-error";}?>">
 						<label class="sr-only" for="bic"><?php _e('BIC',$this->plugin_name);?></label>
-						<input type="text" class="form-control" id="bic" name="bic" placeholder="<?php _e('IBAN',$this->plugin_name);?>" value="<?php if(!$resp['bic'][0]){echo $resp['bic'][2];}?>"/>
+						<input type="text" class="form-control" id="bic" name="bic" placeholder="<?php _e('BIC',$this->plugin_name);?>" value="<?php if(!$resp['bic'][0]){echo $resp['bic'][2];}?>"/>
 					</div>
 				</div>
 			</div>

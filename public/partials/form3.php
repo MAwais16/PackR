@@ -90,7 +90,7 @@
     <h4><?php _e("Payment",$this->plugin_name);?></h4>
     <div class="checkbox">
         <label>
-          <input type="checkbox" name="sepa" value="sepa"/><?php _e("I Agree to ",$this->plugin_name);?><a href=""> <?php _e("SEPA Terms & Conditions",$this->plugin_name);?> </a>
+         <input type="checkbox" name="sepa" value="sepa"/><?php _e("I Agree to ",$this->plugin_name);?><a href="" data-toggle="modal" data-target="#myModal"> <?php _e("SEPA Terms & Conditions",$this->plugin_name);?> </a>
       </label>
   </div>
 </div>
@@ -98,7 +98,7 @@
 <div class="row">
     <div class="checkbox">
         <label>
-          <input type="checkbox" name="terms" value="terms"/> <?php _e("I Agree to ",$this->plugin_name);?> <a href="/termsandconditions"><?php _e("Terms & Conditions",$this->plugin_name);?></a>
+          <input type="checkbox" name="terms" value="terms"/> <?php _e("I Agree to ",$this->plugin_name);?> <a href="/termsandconditions" target="__blank"><?php _e("Terms & Conditions",$this->plugin_name);?></a>
       </label>
   </div>
 </div>
@@ -106,7 +106,7 @@
 <div class="row">
     <div class="checkbox">
         <label>
-            <input type="checkbox" name="privacy" value="privacy"/> <?php _e("I Agree to ",$this->plugin_name);?> <a href="/privacypolicy"> <?php _e("privacy policy",$this->plugin_name); ?> </a>
+            <input type="checkbox" name="privacy" value="privacy"/> <?php _e("I Agree to ",$this->plugin_name);?> <a href="/privacypolicy" target="__blank"> <?php _e("privacy policy",$this->plugin_name); ?> </a>
         </label>
     </div>
 </div>
@@ -114,6 +114,25 @@
 <br/>
 <div>
     <button type="submit" class="btn btn-primary"><?php _e("Confirm & Finish",$this->plugin_name);?></button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">SEPA Mandate</h4>
+      </div>
+      <div class="modal-body">
+        //SEPA Mandate Goes here
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
 </div>
 
 </form>

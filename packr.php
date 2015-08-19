@@ -31,6 +31,8 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 define("PACKR_BASE_URL",plugin_dir_url( __FILE__ ));
+define( 'PACKR_BASE_PATH', plugin_dir_path( __FILE__ ) );
+define( 'PACKR_DB_TABLE_NAME', "wp_packr_order");
 
 /**
  * The code that runs during plugin activation.

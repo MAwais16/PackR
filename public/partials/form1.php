@@ -24,6 +24,15 @@
                     <div class="panel-body packImg">
                         <img src="<?php echo PACKR_BASE_URL. '/public/images/basic.png'; ?>" class="img-responsive center-block"/>
                     </div>
+                    <table class="table text-center">
+                        <tr class="bg-info"><td><?php _e("€ 39 net / month",$this->plugin_name);?></td></tr>
+                        <tr><td><?php _e("Interactive Map",$this->plugin_name);?></td></tr>
+                        <tr><td><?php _e("Order Management",$this->plugin_name);?></td></tr>
+                        <tr><td><?php _e("Marketplace",$this->plugin_name);?></td></tr>
+                        <tr><td><?php _e("Communication",$this->plugin_name);?></td></tr>
+                        <tr><td><?php _e("Up to 5 contacts (outgoing)",$this->plugin_name);?></td></tr>
+                        <tr><td><?php _e("Up to 5 contacts (inbound)",$this->plugin_name);?></td></tr>
+                    </table>
                     <div class="panel-footer">
                         <div class="radio-wrapper">
                             <input type="radio" name="package" value="basic" id="radio-basic"/>
@@ -39,6 +48,15 @@
                     <div class="panel-body packImg">
                        <img src="<?php echo PACKR_BASE_URL . '/public/images/professional.png'; ?>" class="img-responsive center-block"/>
                     </div>
+                    <table class="table text-center">
+                        <tr class="bg-info"><td><?php _e("€ 69 net / month",$this->plugin_name);?></td></tr>
+                        <tr><td><?php _e("Interactive Map",$this->plugin_name);?></td></tr>
+                        <tr><td><?php _e("Order Management",$this->plugin_name);?></td></tr>
+                        <tr><td><?php _e("Marketplace",$this->plugin_name);?></td></tr>
+                        <tr><td><?php _e("Communication",$this->plugin_name);?></td></tr>
+                        <tr><td><?php _e("Unlimited contacts (outgoing)",$this->plugin_name);?></td></tr>
+                        <tr><td><?php _e("Unlimited contacts (inbound)",$this->plugin_name);?></td></tr>
+                    </table>
                     <div class="panel-footer">
                         <div class="radio-wrapper">
                             <input type="radio" name="package" value="professional" id="radio-professional"/>
@@ -69,6 +87,7 @@
             <div class="col-md-2">
                 <button class="btn" onclick="return PackR.onVoucherSubmit();" id="bt_voucher"><?php _e("Add Voucher",$this->plugin_name);?></button>
             </div>
+            <br/>
             <br/>
             <div class="col-md-12 voucher_result">
                 <br/>
