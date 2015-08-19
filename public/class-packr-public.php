@@ -77,7 +77,9 @@ class PackR_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
+		wp_enqueue_style( "boostrap-css", PACKR_BASE_URL. 'libraries/bootstrap/css/bootstrap.min.css', array(), $this->version, 'all' );
+		wp_enqueue_style( "boostrap-theme", PACKR_BASE_URL. 'libraries/bootstrap/css/bootstrap-theme.min.css', array(), $this->version, 'all' );
+		
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/packr-public.css', array(), $this->version, 'all' );
 		wp_enqueue_style( $this->plugin_name."-progress-wizard", plugin_dir_url( __FILE__ ) . 'css-progress-wizard-master/css/progress-wizard.min.css', array(), $this->version, 'all' );
 
@@ -102,6 +104,8 @@ class PackR_Public {
 		 * class.
 		 */
 
+		
+		wp_enqueue_script( "boostrap-js", PACKR_BASE_URL. 'libraries/bootstrap/js/bootstrap.min.js', array('jquery'), $this->version, 'all' );
 		wp_enqueue_script( $this->plugin_name."-publicjs", plugin_dir_url( __FILE__ ) . 'js/packr-public.js', array( 'jquery' ), $this->version, false );
 
 		//for using ajax
@@ -450,8 +454,8 @@ private function getThirdForm($error=false,$errorDescription=""){
 	}
 
 	$taxPrice=$price*($tax/100);
-
 	$form="form3.php";
+
 	require_once("partials/form-base.php");
 
 }

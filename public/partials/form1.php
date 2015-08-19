@@ -10,7 +10,7 @@
                     <p class="price" style="font-size:14px;left-margin:20px;margin-top:15px;"><?php _e("from",$this->plugin_name);?></p>
                     <p class="price" style="font-size:25px;top:-10px;position:relative;"><?php _e("39 €",$this->plugin_name);?></p>
                 </div>
-
+                
             </div>
             <div style="clear:right;"></div>
         </div>

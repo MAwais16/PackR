@@ -78,7 +78,11 @@ class PackR_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/plugin-name-admin.css', array(), $this->version, 'all' );
+		//wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/plugin-name-admin.css', array(), $this->version, 'all' );
+		
+		wp_enqueue_style( "boostrap-css", PACKR_BASE_URL. 'libraries/bootstrap/css/bootstrap.min.css', array(), $this->version, 'all' );
+		wp_enqueue_style( "boostrap-theme", PACKR_BASE_URL. 'libraries/bootstrap/css/bootstrap-theme.min.css', array(), $this->version, 'all' );
+
 
 	}
 
@@ -101,7 +105,8 @@ class PackR_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-admin.js', array( 'jquery' ), $this->version, false );
+		//wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( "boostrap-js", PACKR_BASE_URL. 'libraries/bootstrap/js/bootstrap.min.js', array('jquery'), $this->version, 'all' );
 
 	}
 

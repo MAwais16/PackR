@@ -12,10 +12,11 @@
  * @subpackage Plugin_Name/admin/partials
  */
 ?>
-
+<br/>
+<br/>
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 <div class="container">
-<table class="table table-striped">
+<table class="table-hover table-bordered table-condensed table-responsive">
 	<thead>
 		<tr>
 		<?php
