@@ -80,7 +80,7 @@ class PackR_Public {
 		wp_enqueue_style( "boostrap-css", PACKR_BASE_URL. 'libraries/bootstrap/css/bootstrap.min.css', array(), $this->version, 'all' );
 		wp_enqueue_style( "boostrap-theme", PACKR_BASE_URL. 'libraries/bootstrap/css/bootstrap-theme.min.css', array(), $this->version, 'all' );
 		
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/packr-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name."-public", plugin_dir_url( __FILE__ ) . 'css/packr-public.css', array(), $this->version, 'all' );
 		wp_enqueue_style( $this->plugin_name."-progress-wizard", plugin_dir_url( __FILE__ ) . 'css-progress-wizard-master/css/progress-wizard.min.css', array(), $this->version, 'all' );
 
 	}

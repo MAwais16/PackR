@@ -97,3 +97,17 @@ p.price{
 .progress-indicator{ 
 	margin-top:18px;
 }
+
+/**
+* some custom css with !important to override vislog theme
+* theme fix;
+*/
+
+.packr button{
+	margin:0px !important;
+}
+
+.packr .checkbox input[type=checkbox]{
+	width:auto;
+	height:auto;
+}
