@@ -32,6 +32,7 @@ PackR.initRadiosClick=function(){
             PackR.selectedPackage="professional";
         }
     });
+
 }
 
 PackR.onVoucherSubmit=function(){

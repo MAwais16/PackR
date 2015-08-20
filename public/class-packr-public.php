@@ -103,9 +103,8 @@ class PackR_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
 		
-		wp_enqueue_script( "boostrap-js", PACKR_BASE_URL. 'libraries/bootstrap/js/bootstrap.min.js', array('jquery'), $this->version, 'all' );
+		//wp_enqueue_script( "boostrap-js", PACKR_BASE_URL. 'libraries/bootstrap/js/bootstrap.min.js', array('jquery'), $this->version, 'all' );
 		wp_enqueue_script( $this->plugin_name."-publicjs", plugin_dir_url( __FILE__ ) . 'js/packr-public.js', array( 'jquery' ), $this->version, false );
 
 		//for using ajax
@@ -173,7 +172,7 @@ class PackR_Public {
 
 		//error_log('mysql://'.DB_USER.':'.DB_PASSWORD.'@'.DB_HOST.'/'.DB_NAME);
 
-		$_SESSION['PackR_step']="1";
+		$_SESSION['PackR_step']=1;
 		$steps= $this->getSteps(1);
 		$form="form1.php";
 		require_once("partials/form-base.php");
