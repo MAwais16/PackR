@@ -62,10 +62,10 @@ PackR.onVoucherSubmit=function(){
 
 //called from footer-row.php
 PackR.onReady=function(){
-	
+
 	jQuery(document).ready(function(){
 
-		var modal=jQuery(".modals");
+		var modal=jQuery(".modals").html();
 		jQuery(".modals").remove();
 		jQuery("body").append(modal);
 

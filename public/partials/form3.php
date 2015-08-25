@@ -128,7 +128,15 @@
                 <h4 class="modal-title" id="myModalLabel">SEPA Mandate</h4>
             </div>
             <div class="modal-body">
-                //SEPA Mandate Goes here
+                \\SEPA MANDATE HERE
+                <br/><br/><br/>
+                <br/><br/><br/><br/><br/><br/>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="" value="" style="width:auto;height:auto;"/> <?php _e("I Agree to ",$this->plugin_name)."...";?> 
+                    </label>
+                </div>
+
             </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -147,7 +155,7 @@
             </div>
             <div class="modal-body">
                 <!--Privacy statment -->
-                
+
                 <?php include "privacypolicy.php"; ?>
 
             </div>
