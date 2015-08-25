@@ -1,6 +1,5 @@
 <div class="container-fluid packr">
 	
-	
 	<?php
 	//requires $error, $errorDescription, $response array; 
 

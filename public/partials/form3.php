@@ -43,8 +43,8 @@
                             </div>
                             <div class="col-md-2">
                                 <h4><?php echo $package;?></h4>
-                                <small><?php echo $package." ".__("version subscription for one year",$this->plugin_name);?></small>
-                                <p><?php //_e("Your order overview",$this->plugin_name);?></p>
+                                <p><?php echo __("Monthly fee for",$this->plugin_name)." $package version";?></p>
+                                <small><?php echo __("subscription for 1 year",$this->plugin_name) ?></small>
                             </div>
 
                             <!-- <div class="media">
@@ -90,7 +90,7 @@
     <h4><?php _e("Payment",$this->plugin_name);?></h4>
     <div class="checkbox">
         <label>
-         <input type="checkbox" name="sepa" value="sepa"/><?php _e("I Agree to ",$this->plugin_name);?><a href="" data-toggle="modal" data-target="#myModal"> <?php _e("SEPA Terms & Conditions",$this->plugin_name);?> </a>
+         <input type="checkbox" class="hidden" name="sepa" value="sepa"/><?php _e("Kindly Agree to: ",$this->plugin_name);?><a href="" data-toggle="modal" data-target="#sepaModal"> <?php _e("SEPA Terms & Conditions",$this->plugin_name);?> </a>
       </label>
   </div>
 </div>
@@ -98,7 +98,7 @@
 <div class="row">
     <div class="checkbox">
         <label>
-          <input type="checkbox" name="terms" value="terms"/> <?php _e("I Agree to ",$this->plugin_name);?> <a href="/termsandconditions" target="__blank"><?php _e("Terms & Conditions",$this->plugin_name);?></a>
+          <input type="checkbox" name="terms" value="terms"/> <?php _e("I Agree to ",$this->plugin_name);?> <a href="" data-toggle="modal" data-target="#termsModal"><?php _e("Terms & Conditions",$this->plugin_name);?></a>
       </label>
   </div>
 </div>
@@ -106,7 +106,7 @@
 <div class="row">
     <div class="checkbox">
         <label>
-            <input type="checkbox" name="privacy" value="privacy"/> <?php _e("I Agree to ",$this->plugin_name);?> <a href="/privacypolicy" target="__blank"> <?php _e("privacy policy",$this->plugin_name); ?> </a>
+            <input type="checkbox" name="privacy" value="privacy"/> <?php _e("I Agree to ",$this->plugin_name);?> <a href="" data-toggle="modal" data-target="#privacyModal"> <?php _e("privacy policy",$this->plugin_name); ?> </a>
         </label>
     </div>
 </div>
@@ -116,24 +116,69 @@
     <button type="submit" class="btn btn-primary"><?php _e("Confirm & Finish",$this->plugin_name);?></button>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">SEPA Mandate</h4>
-      </div>
-      <div class="modal-body">
-        //SEPA Mandate Goes here
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-       
-      </div>
-    </div>
-  </div>
-</div>
+<!-- these modals are pushed to body for proper view via packr-public.js -->
+<div class="modals">
 
+    <!-- Modal sepa-->
+    <div class="modal fade" id="sepaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">SEPA Mandate</h4>
+            </div>
+            <div class="modal-body">
+                //SEPA Mandate Goes here
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal privacy-->
+    <div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><?php _e("Privacy Policy",$this->plugin_name);?></h4>
+            </div>
+            <div class="modal-body">
+                <!--Privacy statment -->
+                
+                <?php include "privacypolicy.php"; ?>
+
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal terms & conditions-->
+    <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><?php _e("Terms & Conditions",$this->plugin_name);?></h4>
+            </div>
+            <div class="modal-body">
+                //Terms and conditions Goes here
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
 </form>
 

@@ -119,11 +119,9 @@
 		<br>
 		
 		<div class="col-md-4">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title"><?php _e('SEPA Direct Debit',$this->plugin_name);?></h3>
-				</div>
-				<div class="panel-body">
+			<div class="">
+				<h4 class=""><?php _e('SEPA Direct Debit',$this->plugin_name);?></h4>
+				<div class="">
 					<div class="form-group <?php if($resp['accountOwner'][0]){echo "has-error";}?>">
 						<label class="sr-only" for="accountOwner"><?php _e('Account Owner',$this->plugin_name);?></label>
 						<input type="text" class="form-control" id="accountOwner" name="accountOwner" placeholder="<?php _e('Account Owner',$this->plugin_name);?>" value="<?php if(!$resp['accountOwner'][0]){echo $resp['accountOwner'][2];}?>">

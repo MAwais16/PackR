@@ -1,9 +1,10 @@
 <div class="row">
+
     <div class="col-md-3">
         <img src="<?php
         echo PACKR_BASE_URL.'/public/images/vislog_logo.png'; ?>" class="img-responsive"/>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-8 col-md-offset-1">
         <ul class="progress-indicator">
 
             <?php
@@ -21,3 +22,4 @@
         </ul>
     </div>
 </div>
+<br/>

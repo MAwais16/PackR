@@ -22,7 +22,7 @@
 	-moz-border-radius: 52px;
 	display: block;
 	margin: 200px auto 0 auto;
-	position: relative;
+	
 	border: 1px solid #62791e;
 	border-top: 1px solid #698320;
 	border-bottom: 1px solid #5b711d;
@@ -32,12 +32,12 @@
 	/*left: 50%;
 	top: 150px;*/
 
-	margin: 0 0 0 -51px;
+	margin: 0 0 0 -60px;
 	clip:rect(-2px,104px,92px,-2px);
-	-webkit-transform:rotate(-45deg);
-	-moz-transform:rotate(-45deg);
-	-o-transform:rotate(-45deg);
-	-ms-transform:rotate(-45deg);
+	-webkit-transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	-ms-transform:rotate(45deg);
 }
 
 .price_badge:before{
@@ -71,7 +71,7 @@
 }			
 
 p.price{
-	font-family: impact, helvetica, arial, "sans serif";
+	font-family: calibri,Arial,impact, helvetica, arial, "sans serif";
 	font-weight: bold;
 	font-size: 20px;
 	line-height: 25px;
@@ -110,4 +110,8 @@ p.price{
 .packr .checkbox input[type=checkbox]{
 	width:auto;
 	height:auto;
+}
+
+.packr input[type=radio]{
+	height: auto;
 }

@@ -60,4 +60,17 @@ PackR.onVoucherSubmit=function(){
 	return false; //so form is not submit
 }
 
+//called from footer-row.php
+PackR.onReady=function(){
+	
+	jQuery(document).ready(function(){
+
+		var modal=jQuery(".modals");
+		jQuery(".modals").remove();
+		jQuery("body").append(modal);
+
+	});
+
+}
+
 

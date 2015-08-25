@@ -69,18 +69,18 @@
         <br/>
         <!-- Third Row -->
         <div class="row bg-info">
-            <div class='col-md-1'>
-            </div>
-            <div class='col-md-11 '>
-                <h4><?php _e("Period of Validity",$this->plugin_name);?>:</h4>
-                <p><?php _e("The subscription is initially for one year and will be automatically extended for another year unless written notice is given within 3 months before year ends",$this->plugin_name);?></p>
+            <div class='col-md-12'>
+                <h4><?php _e("Period of Validity",$this->plugin_name);?></h4>
+                <div class="col-md-offset-1"><p><?php _e("The subscription is initially for one year and will be automatically extended for another year unless written notice is given within 3 months before year ends",$this->plugin_name);?></p></div>
             </div>
         </div>
 
         <br/>
         <div class="row bg-info">
+            <div class="col-md-12">
             <h4><?php _e("Details",$this->plugin_name);?></h4>
-            <div class="col-md-2"><?php _e("Voucher:",$this->plugin_name);?></div>
+            </div>
+            <div class="col-md-2 col-md-offset-1"><?php _e("Voucher:",$this->plugin_name);?></div>
             <div class="col-md-2">
                 <input class="form-control" id="voucher_code" name="voucher_code" type="text" placeholder='<?php _e("Enter voucher code",$this->plugin_name);?>' />
             </div>
