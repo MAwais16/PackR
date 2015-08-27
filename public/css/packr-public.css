@@ -34,10 +34,10 @@
 
 	margin: 0 0 0 -60px;
 	clip:rect(-2px,104px,92px,-2px);
-	-webkit-transform:rotate(45deg);
+	/*-webkit-transform:rotate(45deg);
 	-moz-transform:rotate(45deg);
 	-o-transform:rotate(45deg);
-	-ms-transform:rotate(45deg);
+	-ms-transform:rotate(45deg);*/
 }
 
 .price_badge:before{

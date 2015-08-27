@@ -69,7 +69,7 @@ class PackR {
 	public function __construct() {
 		session_start();
 		
-		$this->plugin_name = 'PackR2';
+		$this->plugin_name = 'PackR';
 		$this->version = '1.0.0';
 
 		$this->load_dependencies();

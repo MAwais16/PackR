@@ -132,7 +132,7 @@ class PackR_Public {
 					$this->getSecondForm();
 				}else{
 					$_SESSION['PackR_step']="1";
-					return $this->getFirstForm(true,__("Please select a Package","PackR"));
+					return $this->getFirstForm(true,__("Please select a Package",$this->plugin_name));
 				}
 			}else if($_SESSION['PackR_step']=="2"){
 				$this->validateSecondForm();
@@ -198,10 +198,10 @@ class PackR_Public {
 	*/
 	private	function getSteps($step=0){
 		$arr= array(
-			array(__("Select Product","PackR"),false),
-			array(__("Account & Billing","PackR"),false),
-			array(__("Overview","PackR"),false),
-			array(__("Confirmation","PackR"),false)
+			array(__("Select Product",$this->plugin_name),false),
+			array(__("Account & Billing",$this->plugin_name),false),
+			array(__("Overview",$this->plugin_name),false),
+			array(__("Confirmation",$this->plugin_name),false)
 			);
 
 		for($i=0;$i<$step;$i++){
@@ -289,10 +289,10 @@ class PackR_Public {
 
 		if($this->isStrEmpty($email)){
 			$resp['email'][0]=true;
-			$resp['email'][1]=__("required","PackR");
+			$resp['email'][1]=__("required",$this->plugin_name);
 		}else if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
 			$resp['email'][0]=true;
-			$resp['email'][1]=__("is invalid","PackR");
+			$resp['email'][1]=__("is invalid",$this->plugin_name);
 		}else{
 			$resp['email'][0]=false;
 			$resp['email'][2]=$email;
@@ -300,15 +300,15 @@ class PackR_Public {
 
 		if($this->isStrEmpty($password)){
 			$resp['password'][0]=true;
-			$resp['password'][1]=__("required","PackR");
+			$resp['password'][1]=__("required",$this->plugin_name);
 		}else if ($this->isStrEmpty($confirmPassword)) {
 			$resp['confirmPassword'][0]=true;
-			$resp['confirmPassword'][1]=__("required","PackR");
+			$resp['confirmPassword'][1]=__("required",$this->plugin_name);
 		}else if(!(strcmp($password, $confirmPassword)==0)){
 			$resp['confirmPassword'][0]=true;
 			$resp['password'][0]=true;
-			$resp['confirmPassword'][1]=__("not matched","PackR");
-			$resp['password'][1]=__("not matched","PackR");;
+			$resp['confirmPassword'][1]=__("not matched",$this->plugin_name);
+			$resp['password'][1]=__("not matched",$this->plugin_name);;
 		}else{
 			$resp['confirmPassword'][0]=false;
 			$resp['password'][0]=false;
@@ -316,7 +316,7 @@ class PackR_Public {
 
 		if($this->isStrEmpty($companyName)){
 			$resp['companyName'][0]=true;
-			$resp['companyName'][1]=__("required","PackR");
+			$resp['companyName'][1]=__("required",$this->plugin_name);
 		}else{
 			$resp['companyName'][0]=false;
 			$resp['companyName'][2]=$companyName;
@@ -324,7 +324,7 @@ class PackR_Public {
 
 		if($this->isStrEmpty($firstName)){
 			$resp['firstName'][0]=true;
-			$resp['firstName'][1]=__("required","PackR");
+			$resp['firstName'][1]=__("required",$this->plugin_name);
 		}else{
 			$resp['firstName'][0]=false;
 			$resp['firstName'][2]=$firstName;
@@ -332,7 +332,7 @@ class PackR_Public {
 
 		if($this->isStrEmpty($lastName)){
 			$resp['lastName'][0]=true;
-			$resp['lastName'][1]=__("required","PackR");
+			$resp['lastName'][1]=__("required",$this->plugin_name);
 		}else{
 			$resp['lastName'][0]=false;	
 			$resp['lastName'][2]=$lastName;
@@ -340,7 +340,7 @@ class PackR_Public {
 
 		if($this->isStrEmpty($street)){
 			$resp['street'][0]=true;
-			$resp['street'][1]=__("required","PackR");
+			$resp['street'][1]=__("required",$this->plugin_name);
 		}else{
 			$resp['street'][0]=false;
 			$resp['street'][2]=$street;
@@ -348,7 +348,7 @@ class PackR_Public {
 
 		if($this->isStrEmpty($city)){
 			$resp['city'][0]=true;
-			$resp['city'][1]=__("required","PackR");
+			$resp['city'][1]=__("required",$this->plugin_name);
 		}else{
 			$resp['city'][0]=false;
 			$resp['city'][2]=$city;
@@ -356,7 +356,7 @@ class PackR_Public {
 
 		if($this->isStrEmpty($postalCode)){
 			$resp['postalCode'][0]=true;
-			$resp['postalCode'][1]=__("required","PackR");
+			$resp['postalCode'][1]=__("required",$this->plugin_name);
 		}else{
 			$resp['postalCode'][0]=false;
 			$resp['postalCode'][2]=$postalCode;
@@ -367,7 +367,7 @@ class PackR_Public {
 
 		if($this->isStrEmpty($accountOwner)){
 			$resp['accountOwner'][0]=true;
-			$resp['accountOwner'][1]=__("required","PackR");
+			$resp['accountOwner'][1]=__("required",$this->plugin_name);
 		}else{
 			$resp['accountOwner'][0]=false;
 			$resp['accountOwner'][2]=$accountOwner;
@@ -376,7 +376,7 @@ class PackR_Public {
 
 		if($this->isStrEmpty($bic)){
 			$resp['bic'][0]=true;
-			$resp['bic'][1]=__("required","PackR");
+			$resp['bic'][1]=__("required",$this->plugin_name);
 		}else{
 			$resp['bic'][0]=false;
 			$resp['bic'][2]=$bic;
@@ -384,7 +384,7 @@ class PackR_Public {
 
 		if($this->isStrEmpty($iban)){
 			$resp['iban'][0]=true;
-			$resp['iban'][1]=__("required","PackR");
+			$resp['iban'][1]=__("required",$this->plugin_name);
 		}else{
 			$resp['iban'][0]=false;
 			$resp['iban'][2]=$iban;
@@ -510,10 +510,10 @@ private function getForthForm(){
 			require_once("partials/form-base.php");
 
 		}else{
-			$this->getSecondForm(true,__("Ops, something went wrong, please try again","PackR"));
+			$this->getSecondForm(true,__("Ops, something went wrong, please try again",$this->plugin_name));
 		}
 	}catch(Exception $ex){
-		$this->getSecondForm(true,__("Ops, something went wrong, please try again","PackR"));
+		$this->getSecondForm(true,__("Ops, something went wrong, please try again",$this->plugin_name));
 	}
 
 }

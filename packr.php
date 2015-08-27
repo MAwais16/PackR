@@ -13,7 +13,7 @@
  * @package           PackR
  *
  * @wordpress-plugin
- * Plugin Name:       PackR2
+ * Plugin Name:       PackR
  * Plugin URI:        http://gitlab.vislog.net:9090/Awais/PackR/commits/dev2
  * Description:       For Vislog Package Registration
  * Version:           2.0.0
