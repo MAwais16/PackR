@@ -3,7 +3,7 @@
 
 
 if(window.PackR == undefined){
-    window.PackR = {};
+	window.PackR = {};
 }
 
 PackR.selectedPackage="basic";
@@ -20,18 +20,18 @@ PackR.initRadiosClick=function(){
 	});
 
 	jQuery('#radio-basic').change(function(){
-        if (jQuery(this).is(':checked')) {
-            jQuery(".voucher-price").text("39 €");
-            PackR.selectedPackage="basic";
-        }
-    });
+		if (jQuery(this).is(':checked')) {
+			jQuery(".voucher-price").text("39 €");
+			PackR.selectedPackage="basic";
+		}
+	});
 
-    jQuery('#radio-professional').change(function(){
-        if (jQuery(this).is(':checked')) {
-            jQuery(".voucher-price").text("69 €");
-            PackR.selectedPackage="professional";
-        }
-    });
+	jQuery('#radio-professional').change(function(){
+		if (jQuery(this).is(':checked')) {
+			jQuery(".voucher-price").text("69 €");
+			PackR.selectedPackage="professional";
+		}
+	});
 
 }
 
@@ -68,6 +68,14 @@ PackR.onReady=function(){
 		var modal=jQuery(".modals").html();
 		jQuery(".modals").remove();
 		jQuery("body").append(modal);
+
+		jQuery('#cb_pop_sepa').change(function(){
+			if (jQuery(this).is(':checked')) {
+				jQuery('#cb_sepa').prop("checked","checked");
+			}else{
+				jQuery('#cb_sepa').removeProp("checked");
+			}
+		});
 
 	});
 

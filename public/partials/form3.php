@@ -88,9 +88,9 @@
 
 <div class="row">
     <h4><?php _e("Payment",$this->plugin_name);?></h4>
-    <div class="checkbox">
+    <div class="checkbox disabled">
         <label>
-         <input type="checkbox" class="hidden" name="sepa" value="sepa"/><?php _e("Kindly Agree to: ",$this->plugin_name);?><a href="" data-toggle="modal" data-target="#sepaModal"> <?php _e("SEPA Terms & Conditions",$this->plugin_name);?> </a>
+         <input type="checkbox" disabled name="sepa" value="sepa" id="cb_sepa"/><?php _e("Kindly Agree to: ",$this->plugin_name);?><a href="" data-toggle="modal" data-target="#sepaModal"> <?php _e("SEPA Terms & Conditions",$this->plugin_name);?> </a>
       </label>
   </div>
 </div>
@@ -125,18 +125,10 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">SEPA Mandate</h4>
+                <h4 class="modal-title" id="myModalLabel"><?php _e("SEPA Business to Business Direct Debit Mandate",$this->plugin_name);?></h4>
             </div>
             <div class="modal-body">
-                \\SEPA MANDATE HERE
-                <br/><br/><br/>
-                <br/><br/><br/><br/><br/><br/>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="" value="" style="width:auto;height:auto;"/> <?php _e("I Agree to ",$this->plugin_name)."...";?> 
-                    </label>
-                </div>
-
+                <?php include "sepa.php"; ?>
             </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -176,7 +168,7 @@
                 <h4 class="modal-title" id="myModalLabel"><?php _e("Terms & Conditions",$this->plugin_name);?></h4>
             </div>
             <div class="modal-body">
-                //Terms and conditions Goes here
+                <?php include "terms.php"; ?>
             </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
