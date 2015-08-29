@@ -72,8 +72,10 @@ PackR.onReady=function(){
 		jQuery('#cb_pop_sepa').change(function(){
 			if (jQuery(this).is(':checked')) {
 				jQuery('#cb_sepa').prop("checked","checked");
+				jQuery('#inp_sepa').val("sepa");
 			}else{
 				jQuery('#cb_sepa').removeProp("checked");
+				jQuery('#inp_sepa').val("");
 			}
 		});
 

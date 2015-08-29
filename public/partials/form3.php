@@ -90,7 +90,9 @@
     <h4><?php _e("Payment",$this->plugin_name);?></h4>
     <div class="checkbox disabled">
         <label>
-         <input type="checkbox" disabled name="sepa" value="sepa" id="cb_sepa"/><?php _e("Kindly Agree to: ",$this->plugin_name);?><a href="" data-toggle="modal" data-target="#sepaModal"> <?php _e("SEPA Terms & Conditions",$this->plugin_name);?> </a>
+            <!-- won't be posted because disabled -->
+         <input type="checkbox" disabled="disabled" id="cb_sepa"/><?php _e("Kindly Agree to: ",$this->plugin_name);?><a href="" data-toggle="modal" data-target="#sepaModal"> <?php _e("SEPA Terms & Conditions",$this->plugin_name);?> </a>
+         <input name="sepa" type="hidden" id="inp_sepa"/>
       </label>
   </div>
 </div>
