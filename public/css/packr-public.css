@@ -131,3 +131,7 @@ p.price{
 .packrBold{
 	font-weight: bold;
 }
+
+.sepaInner p{
+	color:#333;
+}
