@@ -460,18 +460,18 @@ private function getThirdForm($error=false,$errorDescription=""){
 }
 
 private function validateThirdForm(){
-	if($this->get("terms")=="terms"){
-		if($this->get("privacy")=="privacy"){
-			if($this->get("sepa")=="sepa"){
+	if($this->get("sepa")=="sepa"){
+		if($this->get("terms")=="terms"){
+			if($this->get("privacy")=="privacy"){
 				$this->getForthForm();
 			}else{
-				$this->getThirdForm(true,__("Please agree to SEPA Terms & Conditions.",$this->plugin_name));
+				$this->getThirdForm(true,__("Please agree to Privacy Policy.",$this->plugin_name));
 			}
 		}else{
-			$this->getThirdForm(true,__("Please agree to Privacy Policy.",$this->plugin_name));
+			$this->getThirdForm(true,__("Please agree to Terms & conditions.",$this->plugin_name));
 		}
 	}else{
-		$this->getThirdForm(true,__("Please agree to Terms & conditions.",$this->plugin_name));
+		$this->getThirdForm(true,__("Please agree to SEPA Terms & Conditions.",$this->plugin_name));
 	}
 }
 

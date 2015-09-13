@@ -143,9 +143,12 @@
 	</div>
 
 	<div class="row">
+		<div class="col-md-12">
+			<h4><?php _e('UST-IdNr. (for foreign corporate clients)',$this->plugin_name);?></h4>
+		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label class="" for="ustID"><?php _e('UST-IdNr. (for foreign corporate clients)',$this->plugin_name);?></label>
+				<label class="sr-only" for="ustID"><?php _e('UST-IdNr. (for foreign corporate clients)',$this->plugin_name);?></label>
 				<input type="text" class="form-control" id="ustID" name="ustID" placeholder="z.B AT2737489723xxx" value="<?php if(!$resp['ustID'][0]){echo $resp['ustID'][2];}?>"/>
 			</div>
 		</div>

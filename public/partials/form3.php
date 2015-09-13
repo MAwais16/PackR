@@ -62,22 +62,22 @@
                     </td>
                     <td><?php echo $price." €";?></td>
                     <td><?php echo $tax." %";?></td>
-                    <td><?php echo $price." €";?></td>
+                    <td class="text-right"><?php echo $price." €";?></td>
                 </tr>
 
                 <tr>
                     <th colspan="3" class="text-right"><?php _e("Total Net",$this->plugin_name);?></th>
-                    <td><?php echo $price." €";?></td>
+                    <td class="text-right"><?php echo $price." €";?></td>
                 </tr>
 
                 <tr>
                     <th colspan="3" class="text-right"><?php _e("plus $tax % vat",$this->plugin_name);?></th>
-                    <td><?php echo $taxPrice." €";?></td>
+                    <td class="text-right"><?php echo $taxPrice." €";?></td>
                 </tr>
 
                 <tr class="active">
                     <th colspan="3" class="text-right"><?php _e("Total Gross",$this->plugin_name);?></th>
-                    <td><?php echo $price+$taxPrice." €";?></td>
+                    <td class="text-right"><?php echo $price+$taxPrice." €";?></td>
                 </tr>
             </tbody>
         </table>
