@@ -21,13 +21,13 @@
 
 		<div class="col-md-4 col-md-offset-1">
 			<div class="form-group <?php if($resp['password'][0]){echo "has-error";}?>">
-				<label for="password">Password</label>
-				<input type="password" class="form-control" id="password" name="password" placeholder="Password"/>
+				<label for="password"><?php _e("Password",$this->plugin_name);?></label>
+				<input type="password" class="form-control" id="password" name="password" placeholder="Passwort"/>
 			</div>
 
 			<div class="form-group <?php if($resp['confirmPassword'][0]){echo "has-error";}?>">
-				<label for="confirmPassword">Confirm Password</label>
-				<input type="password" class="form-control" id="confirmPassword" placeholder="confirm password" name="confirmPassword"/>
+				<label for="confirmPassword"><?php _e("Confirm Password",$this->plugin_name);?></label>
+				<input type="password" class="form-control" id="confirmPassword" placeholder="Passwort bestätigen" name="confirmPassword"/>
 			</div>
 		</div>
 	</div>

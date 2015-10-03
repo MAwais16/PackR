@@ -1,0 +1,479 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PackR\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Thu Aug 27 2015 02:40:16 GMT+0200 (CEST)\n"
+"PO-Revision-Date: Thu Oct 01 2015 14:00:40 GMT+0200 (Mitteleuropäische "
+"Sommerzeit)\n"
+"Last-Translator: drnoman <mail@vislog.net>\n"
+"Language-Team: \n"
+"Language: German\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: de_DE\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#. Name of the plugin
+msgid "PackR"
+msgstr ""
+
+#. URI of the plugin
+msgid "http://gitlab.vislog.net:9090/Awais/PackR/commits/dev2"
+msgstr ""
+
+#. Description of the plugin
+msgid "For Vislog Package Registration"
+msgstr ""
+
+#. Author of the plugin
+msgid "Awais"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://fotaxis.com"
+msgstr ""
+
+#: ../public/partials/form3.php:74
+msgid "plus 19 % vat"
+msgstr "zzgl. 19% MwSt."
+
+#: ../public/class-packr-public.php:135
+msgid "Please select a Package"
+msgstr "Bitte wählen Sie eine Version"
+
+#: ../public/class-packr-public.php:146
+msgid "method not supported!"
+msgstr "Methode ist nicht unterstützt!"
+
+#: ../public/class-packr-public.php:201
+msgid "Select Product"
+msgstr "Version auswählen"
+
+#: ../public/class-packr-public.php:202
+msgid "Account & Billing"
+msgstr "Daten & Zahlungsinformationen"
+
+#: ../public/class-packr-public.php:203
+msgid "Overview"
+msgstr "Übersicht"
+
+#: ../public/class-packr-public.php:204
+msgid "Confirmation"
+msgstr "Bestätigung"
+
+#: ../public/class-packr-public.php:240
+msgid "Monthly Price: 0 Euro, for first 6 Months then "
+msgstr "Monatliche Gebühr: 0 Euro für die ersten 6 Monate, danach"
+
+#: ../public/class-packr-public.php:243
+msgid "Monthly Price: 0 Euro, for first 3 Months then "
+msgstr "Monatliche Gebühr: 0 Euro für die ersten 3 Monate, danach"
+
+#: ../public/class-packr-public.php:245
+msgid "Invalid voucher code"
+msgstr "Ungültiger Gutschein"
+
+#: ../public/class-packr-public.php:292 ../public/class-packr-public.php:303 ..
+#: /public/class-packr-public.php:306 ../public/class-packr-public.php:319 ..
+#: /public/class-packr-public.php:327 ../public/class-packr-public.php:335 ..
+#: /public/class-packr-public.php:343 ../public/class-packr-public.php:351 ..
+#: /public/class-packr-public.php:359 ../public/class-packr-public.php:370 ..
+#: /public/class-packr-public.php:379 ../public/class-packr-public.php:387
+msgid "required"
+msgstr "erforderlich"
+
+#: ../public/class-packr-public.php:295
+msgid "is invalid"
+msgstr "ist ungültig"
+
+#: ../public/class-packr-public.php:310 ../public/class-packr-public.php:311
+msgid "not matched"
+msgstr "stimmen nicht überein"
+
+#: ../public/class-packr-public.php:468
+msgid "Please agree to Privacy Policy."
+msgstr "Bitte stimmen Sie der Datenschutzerklärung zu."
+
+#: ../public/class-packr-public.php:471
+msgid "Please agree to Terms & conditions."
+msgstr "Bitte stimmen Sie den Nutzungsbedingungen zu."
+
+#: ../public/class-packr-public.php:474
+msgid "Please agree to SEPA Terms & Conditions."
+msgstr "Bitte stimmen Sie zu dem SEPA Mandat zu"
+
+#: ../public/class-packr-public.php:513 ../public/class-packr-public.php:516
+msgid "Ops, something went wrong, please try again"
+msgstr "Ups, irgendwas hat nicht geklappt. Bitte versuchen Sie es erneut."
+
+#: ../public/partials/form1.php:7
+msgid "Which version of vislog you would like to you use?"
+msgstr "Welche Version von VisLog möchten Sie nutzen?"
+
+#: ../public/partials/form1.php:10
+msgid "from"
+msgstr "ab"
+
+#: ../public/partials/form1.php:11
+msgid "39 €"
+msgstr "39 €"
+
+#: ../public/partials/form1.php:28
+msgid "€ 39 net / month"
+msgstr "€ 39 netto / Monat"
+
+#: ../public/partials/form1.php:29 ../public/partials/form1.php:52
+msgid "Interactive Map"
+msgstr "Interaktive Karte"
+
+#: ../public/partials/form1.php:30 ../public/partials/form1.php:53
+msgid "Order Management"
+msgstr "Auftragsverwaltung"
+
+#: ../public/partials/form1.php:31 ../public/partials/form1.php:54
+msgid "Marketplace"
+msgstr "Markplatz"
+
+#: ../public/partials/form1.php:32 ../public/partials/form1.php:55
+msgid "Communication"
+msgstr "Kommunikation"
+
+#: ../public/partials/form1.php:33
+msgid "Up to 5 contacts"
+msgstr "Bis zu 5 Kontakte"
+
+#: ../public/partials/form1.php:51
+msgid "€ 69 net / month"
+msgstr "€ 69 netto / Monat"
+
+#: ../public/partials/form1.php:56
+msgid "Unlimited contacts"
+msgstr "Unbegrenzte Kontakte"
+
+#: ../public/partials/form1.php:71
+msgid "Period of Validity"
+msgstr "Dauer der Gültigkeit"
+
+#: ../public/partials/form1.php:72
+msgid ""
+"The subscription is initially for one year and will be automatically "
+"extended for another year unless written notice is given within 3 months "
+"before year ends"
+msgstr ""
+"Die Laufzeit ist zunächst für ein Jahr und verlängert sich automatisch um "
+"ein weiteres Jahr sofern nicht spätestens 3 Monate vor Ende der Laufzeit "
+"gekündigt wurde."
+
+#: ../public/partials/form1.php:79
+msgid "Details"
+msgstr "Details"
+
+#: ../public/partials/form1.php:81
+msgid "Voucher:"
+msgstr "Gutschein:"
+
+#: ../public/partials/form1.php:83
+msgid "Enter voucher code"
+msgstr "Gutscheincode"
+
+#: ../public/partials/form1.php:86
+msgid "Add Voucher"
+msgstr "hinzufügen"
+
+#: ../public/partials/form1.php:96
+msgid "Go to Address & Payment"
+msgstr "Weiter zu Adresse und Zahlungsinformationen"
+
+#: ../public/partials/form4.php:3
+msgid "Thank you!"
+msgstr "Vielen Dank!"
+
+#: ../public/partials/form4.php:6
+msgid "Dear "
+msgstr "Hallo "
+
+#: ../public/partials/form4.php:8
+msgid " thank you for your subscription."
+msgstr ""
+". Vielen Dank für Ihre Anmeldung!\n"
+"\n"
+"\n"
+"Wir prüfen Ihre Anmeldung und setzen uns umgehend mit Ihnen in Kontakt.\n"
+"\n"
+"\n"
+"Ihr Team von VisLog\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+
+#: ../public/partials/form2.php:4
+msgid "Address & Payment"
+msgstr "Daten und Zahlungsinformationen"
+
+#: ../public/partials/form2.php:5
+msgid "Please fill in your billing, address and your payment details."
+msgstr "Bitte füllen Sie Ihre Daten und Zahlungsinformationen aus."
+
+#: ../public/partials/form2.php:9
+msgid "Account"
+msgstr "Anmeldeinformationen"
+
+#: ../public/partials/form2.php:16
+msgid "Email"
+msgstr "Email-Adresse"
+
+#: ../public/partials/form2.php:24
+msgid "Password"
+msgstr "Passwort"
+
+#: ../public/partials/form2.php:29
+msgid "Confirm Password"
+msgstr "Passwort bestätigen"
+
+#: ../public/partials/form2.php:37
+msgid "Billing and Shipping Address"
+msgstr "Rechnungsadresse"
+
+#: ../public/partials/form2.php:44 ../public/partials/form2.php:45
+msgid "Company Name"
+msgstr "Firmenname"
+
+#: ../public/partials/form2.php:50 ../public/partials/form2.php:51
+msgid "First Name"
+msgstr "Vorname"
+
+#: ../public/partials/form2.php:55 ../public/partials/form2.php:56
+msgid "Last Name"
+msgstr "Nachname"
+
+#: ../public/partials/form2.php:61 ../public/partials/form2.php:62
+msgid "Street Address"
+msgstr "Straße"
+
+#: ../public/partials/form2.php:67 ../public/partials/form2.php:68
+msgid "Postal Code"
+msgstr "Postleitzahl"
+
+#: ../public/partials/form2.php:72 ../public/partials/form2.php:73
+msgid "City"
+msgstr "Stadt"
+
+#: ../public/partials/form2.php:101 ../public/partials/form2.php:102
+msgid "Extra address line (Optional)"
+msgstr "Weitere Adressinformation"
+
+#: ../public/partials/form2.php:106
+msgid "Message"
+msgstr "Nachricht"
+
+#: ../public/partials/form2.php:107
+msgid "Your message here"
+msgstr "Ihre Nachricht an uns"
+
+#: ../public/partials/form2.php:117 ../public/partials/form3.php:90
+msgid "Payment"
+msgstr "Zahlungsinformation"
+
+#: ../public/partials/form2.php:123
+msgid "SEPA Direct Debit"
+msgstr "SEPA Lastschrift"
+
+#: ../public/partials/form2.php:126 ../public/partials/form2.php:127
+msgid "Account Owner"
+msgstr "Kontoinhaber"
+
+#: ../public/partials/form2.php:130 ../public/partials/form2.php:131
+msgid "IBAN"
+msgstr "IBAN"
+
+#: ../public/partials/form2.php:134 ../public/partials/form2.php:135
+msgid "BIC"
+msgstr "BIC"
+
+#: ../public/partials/form2.php:147 ../public/partials/form2.php:151
+msgid "UST-IdNr. (for foreign corporate clients)"
+msgstr "Umsatzsteuer-Identifikationsnummer (für ausländische Unternehmen)"
+
+#: ../public/partials/form2.php:161
+msgid "Proceed to Order Summary"
+msgstr "Weiter zur Zusammenfassung"
+
+#: ../public/partials/form3.php:7
+msgid "Your order overview"
+msgstr "Ihre Bestellübersicht"
+
+#: ../public/partials/form3.php:12
+msgid "Billing Address"
+msgstr "Rechnungsadresse"
+
+#: ../public/partials/form3.php:31
+msgid "Product"
+msgstr "Produkt"
+
+#: ../public/partials/form3.php:32
+msgid "Price"
+msgstr "Preis"
+
+#: ../public/partials/form3.php:33
+msgid "Tax"
+msgstr "Steuern"
+
+#: ../public/partials/form3.php:34
+msgid "Total Price"
+msgstr "Gesamtpreis"
+
+#: ../public/partials/form3.php:46
+msgid "Monthly fee for"
+msgstr "Monatliche Gebühr für"
+
+#: ../public/partials/form3.php:47
+msgid "subscription for 1 year"
+msgstr "Laufzeit für 1 Jahr"
+
+#: ../public/partials/form3.php:69
+msgid "Total Net"
+msgstr "Insgesamt netto"
+
+#: ../public/partials/form3.php:79
+msgid "Total Gross"
+msgstr "Insgesamt brutto"
+
+#: ../public/partials/form3.php:94
+msgid "Kindly Agree to: "
+msgstr "Bitte stimmen Sie zu:"
+
+#: ../public/partials/form3.php:94
+msgid "SEPA Terms & Conditions"
+msgstr "SEPA Lastschrift Mandat"
+
+#: ../public/partials/form3.php:103 ../public/partials/form3.php:111
+msgid "I Agree to "
+msgstr "Ich stimme zu"
+
+#: ../public/partials/form3.php:103 ../public/partials/form3.php:170
+msgid "Terms & Conditions"
+msgstr "Nutzungsbedingungen"
+
+#: ../public/partials/form3.php:111
+msgid "privacy policy"
+msgstr "Datenschutzerklärung"
+
+#: ../public/partials/form3.php:118
+msgid "Confirm & Finish"
+msgstr "Fertigstellen"
+
+#: ../public/partials/form3.php:130
+msgid "SEPA Business to Business Direct Debit Mandate"
+msgstr "SEPA Firmenlastschrift Mandat "
+
+#: ../public/partials/form3.php:148
+msgid "Privacy Policy"
+msgstr "Datenschutzerklärung"
+
+#: ../public/partials/sepa.php:7
+msgid "Mandate reference"
+msgstr "Mandatsreferenz"
+
+#: ../public/partials/sepa.php:8
+msgid "Creditor identifier"
+msgstr "Gläubiger Identifikationsnummer"
+
+#: ../public/partials/sepa.php:23
+msgid ""
+"By signing this mandate form, you authorise (A) NETVAI UG to send "
+"instructions to your bank to debit your account and (B) your bank to debit "
+"your account in accordance with the instructions from NETVAI UG."
+msgstr ""
+"Ich ermächtige/ Wir ermächtigen (A) NETVAI UG, Zahlungen von meinem/ unserem\n"
+"Konto mittels Lastschrift einzuziehen. Zugleich (B) weise ich mein/ weisen "
+"wir unser\n"
+"Kreditinstitut an, die von NETVAI UG auf mein/ unser Konto gezogenen "
+"Lastschriften\n"
+"einzulösen.\n"
+
+#: ../public/partials/sepa.php:31
+msgid ""
+"This mandate is only intended for business to business transactions. You are "
+"not entitled to a refund from your bank after your account has been debited, "
+"but you are entitled to request your bank not to debit your account up until "
+"the day on which the payment is due."
+msgstr ""
+"Hinweis: Dieses Lastschriftmandat dient nur dem Einzug von Lastschriften, "
+"die auf Konten von Unternehmern gezogen sind. Ich bin/ Wir sind nicht "
+"berechtigt, nach der erfolgten Einlösung eine Erstattung des belasteten "
+"Betrages zu verlangen. Ich bin/ Wir sind berechtigt, mein/ unser "
+"Kreditinstitut bis zum Fälligkeitstag anzuweisen, Lastschriften nicht "
+"einzulösen."
+
+#: ../public/partials/sepa.php:39
+msgid "Name of the debtor"
+msgstr "Name des Zahlungspflichtigen:"
+
+#: ../public/partials/sepa.php:48
+msgid "SWIFT BIC"
+msgstr "BIC des Zahlungspflichtigen:"
+
+#: ../public/partials/sepa.php:57
+msgid "Account number IBAN"
+msgstr "IBAN des Zahlungspflichtigen:"
+
+#: ../public/partials/sepa.php:70
+msgid "Street"
+msgstr "Straße und Hausnummer:"
+
+#: ../public/partials/sepa.php:79
+msgid "Postal code and city"
+msgstr "Postleitzahl und Ort:"
+
+#: ../public/partials/sepa.php:88
+msgid "Country"
+msgstr "Land:"
+
+#: ../public/partials/sepa.php:98
+msgid "Person signing"
+msgstr "Unterzeichner der Einzugsermächtigung:"
+
+#: ../public/partials/sepa.php:107
+msgid "City or town of signing"
+msgstr "Unterzeichnet in: "
+
+#: ../public/partials/sepa.php:116
+msgid "Type of payment"
+msgstr "Zahlungsart:"
+
+#: ../public/partials/sepa.php:119
+msgid "Recurrent payment"
+msgstr "Wiederkehrende Zahlung"
+
+#: ../public/partials/sepa.php:126
+msgid "Date"
+msgstr "Datum:"
+
+#: ../public/partials/sepa.php:137
+msgid "Approved by"
+msgstr "Zugestimmt von"
+
+#: ../public/partials/sepa.php:152
+msgid ""
+"I certify that the above information is correct and that I am authorized to "
+"sign for the above mentioned bank account.. I give NETVAI UG the "
+"authorization to debit the above mentioned bank account."
+msgstr ""
+"Ich bestätige, dass die obigen Informationen korrekt sind und dass ich für "
+"das oben angegebene Bankkonto zeichnungsbefugt bin. Ich erteile NETVAI UG "
+"die Ermächtigung, das oben angegebene Bankkonto zu belasten."

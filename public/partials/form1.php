@@ -30,8 +30,7 @@
                         <tr><td><?php _e("Order Management",$this->plugin_name);?></td></tr>
                         <tr><td><?php _e("Marketplace",$this->plugin_name);?></td></tr>
                         <tr><td><?php _e("Communication",$this->plugin_name);?></td></tr>
-                        <tr><td><?php _e("Up to 5 contacts (outgoing)",$this->plugin_name);?></td></tr>
-                        <tr><td><?php _e("Up to 5 contacts (inbound)",$this->plugin_name);?></td></tr>
+                        <tr><td><?php _e("Up to 5 contacts",$this->plugin_name);?></td></tr>
                     </table>
                     <div class="panel-footer">
                         <div class="radio-wrapper">
@@ -54,8 +53,7 @@
                         <tr><td><?php _e("Order Management",$this->plugin_name);?></td></tr>
                         <tr><td><?php _e("Marketplace",$this->plugin_name);?></td></tr>
                         <tr><td><?php _e("Communication",$this->plugin_name);?></td></tr>
-                        <tr><td><?php _e("Unlimited contacts (outgoing)",$this->plugin_name);?></td></tr>
-                        <tr><td><?php _e("Unlimited contacts (inbound)",$this->plugin_name);?></td></tr>
+                        <tr><td><?php _e("Unlimited contacts",$this->plugin_name);?></td></tr>
                     </table>
                     <div class="panel-footer">
                         <div class="radio-wrapper">

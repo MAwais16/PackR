@@ -1,74 +1,91 @@
-<p><strong>Nutzungsbedingungen</strong></p>
-<p>§ 1 Gegenstand der Nutzungsbedingungen</p>
+<p>&nbsp;</p>
+<p><strong>§ 1 Gegenstand der Nutzungsbedingungen</strong></p>
 <p>(1) Die NETVAI UG (haftungsbeschränkt) (nachfolgend „Diensteanbieter“ genannt) stellt auf www.vislog.net eine Plattform zur Verfügung (nachfolgend „das Portal“ genannt), die es Speditionen ermöglicht (nachfolgend „Nutzer“ genannt), miteinander in Kontakt zu treten, Informationen zu Touren auszutauschen und verbindliche Verträge über die Durchführung von Touren zu schließen.</p>
 <p>(2) Die vorliegenden Nutzungsbedingungen regeln die Zurverfügungstellung der Dienste durch den Diensteanbieter und die Nutzung dieser Dienste durch den Nutzer.</p>
-<p>§ 2 Anmeldeberechtigung</p>
+<p>&nbsp;</p>
+<p><strong>§ 2 Anmeldeberechtigung</strong></p>
 <p>(1) Die Nutzung der auf dem Portal verfügbaren Dienste setzt eine Anmeldung voraus. Ein Anspruch auf Anmeldung besteht nicht. Der Diensteanbieter ist berechtigt, Anmeldungen ohne Angabe von Gründen zurückzuweisen.</p>
 <p>(2) Die Anmeldung ist nur erlaubt, wenn die Anmeldung in Ausübung einer gewerblichen oder selbständigen beruflichen Tätigkeit erfolgt. Verbrauchern ist eine Anmeldung untersagt. Bei einer juristischen Person muss die Anmeldung durch eine unbeschränkt geschäftsfähige und vertretungsberechtigte natürliche Person erfolgen.</p>
-<p>§ 3 Anmeldung auf dem Portal, Nutzerdaten</p>
+<p>&nbsp;</p>
+<p><strong>§ 3 Anmeldung auf dem Portal, Nutzerdaten</strong></p>
 <p>(1) Die während des Anmeldevorgangs vom Diensteanbieter erfragten Kontaktdaten und sonstigen Angaben müssen vollständig und korrekt angegeben werden. Bei der Anmeldung einer juristischen Person ist zusätzlich die vertretungsberechtigte natürliche Person anzugeben.</p>
 <p>(2) Nach Angabe und Absendung aller erfragten Daten schaltet der Diensteanbieter den beantragten Zugang frei und benachrichtigt den Nutzer hiervon per E-Mail. Die E-Mail gilt als Annahme der Anmeldung. Ab Zugang der E-Mail ist der Nutzer zur Nutzung des Portals im Rahmen dieser Nutzungsbedingungen berechtigt. Hierzu muss der Nutzer vorab seine Freischaltung durch Anklicken des in der E-Mail enthaltenen Links bestätigen.</p>
 <p>(3) Der Nutzer ist dazu verpflichtet, seine Daten aktuell zu halten. Tritt während der Dauer der Nutzung eine Änderung der angegebenen Daten ein, so hat der Nutzer die Angaben unverzüglich auf dem Portal in seinen persönlichen Einstellungen zu korrigieren. Sollte dem Nutzer dies nicht gelingen, so sind die geänderten Daten dem Diensteanbieter unverzüglich per E-Mail mitzuteilen.</p>
-<p>§ 4 Diensteangebot auf dem Portal, Inanspruchnahme der Dienste</p>
+<p>&nbsp;</p>
+<p><strong>§ 4 Diensteangebot auf dem Portal, Inanspruchnahme der Dienste</strong></p>
 <p>(1) Der Diensteanbieter bietet dem Nutzer im Rahmen der Anmeldung die Wahl zwischen verschiedenen Zugängen, die sich nach Leistungsangebot und Entgelt unterscheiden. Nähere Informationen zu den verschiedenen Zugängen, zu den entstehenden Kosten, den Zahlungsbedingungen und den weiteren relevanten Details werden dem Nutzer während des Anmeldevorgangs angezeigt.</p>
 <p>(2) Je nach von dem Nutzer gewähltem Zugang stellt der Diensteanbieter dem Nutzer auf dem Portal unterschiedliche Dienste zur Verfügung. Solche Dienste können z.B. die Möglichkeit sein, mit anderen Nutzern in Kontakt zu treten, Informationen zu Touren auszutauschen und Verträge über die Durchführung von Touren zu schließen.</p>
 <p>(3) Darüber hinaus stellt der Diensteanbieter dem Nutzer auf dem Portal weitere Dienste zur Verfügung, die nicht im Entgelt für die verschiedenen Zugänge enthalten sind. Zur Inanspruchnahme dieser weiteren Dienste muss der Nutzer beim Diensteanbieter sog. Credits erwerben.</p>
 <p>(4) Der Nutzer erhält vor dem Erwerb von Credits und vor Inanspruchnahme der weiteren Dienste nähere Informationen zu den entstehenden Kosten, den Zahlungsbedingungen und den weiteren relevanten Details angezeigt. Erst hiernach hat der Nutzer die Möglichkeit, durch Mausklick auf den entsprechenden Button das Angebot des Diensteanbieters verbindlich anzunehmen.</p>
 <p>(5) Inhalt und Umfang der Dienste bestimmen sich nach den jeweiligen vertraglichen Vereinbarungen, im Übrigen nach den jeweils aktuell auf dem Portal verfügbaren Funktionalitäten.</p>
-<p>§ 5 Informationen zum Vertragsschluss im elektronischen Geschäftsverkehr</p>
+<p>&nbsp;</p>
+<p><strong>§ 5 Informationen zum Vertragsschluss im elektronischen Geschäftsverkehr</strong></p>
 <p>(1) Vor der Absendung der Anmeldung bzw. vor dem Mausklick auf den entsprechenden Button zum Erwerb von Credits oder zur Inanspruchnahme weiterer Dienste erhält der Nutzer eine Zusammenfassung seiner Angaben angezeigt, um Eingabefehler zu erkennen. Mithilfe der Zurück-Funktion seines Browsers und mit Hilfe der im Laufe des Vorgangs zur Verfügung gestellten Eingabefelder und Buttons kann der Nutzer sich innerhalb des Vorgangs bewegen und fehlerhafte Angaben löschen bzw. korrigieren.</p>
 <p>(2) Der Vertragsschluss erfolgt in deutscher Sprache. Der Nutzer hat bei Vertragsschluss die Möglichkeit, die Webseite mit den Vertragsbestimmungen und diese Nutzungsbedingungen mithilfe der Druck- bzw. Speicherfunktion seines Browsers auszudrucken bzw. abzuspeichern. Zudem übermittelt der Diensteanbieter dem Nutzer die Vertragsbestimmungen einschließlich dieser Nutzungsbedingungen innerhalb einer angemessenen Frist nach Vertragsschluss, spätestens jedoch bevor mit der Ausführung der Dienstleistung begonnen wird, per E-Mail. Der Anbieter hält den Vertragstext nach Vertragsschluss gespeichert. Ein Zugriff des Nutzers auf den Vertragstext über den Anbieter ist dann aber nicht mehr möglich.</p>
-<p>§ 6 Erstellung von Benutzerprofilen</p>
+<p>&nbsp;</p>
+<p><strong>§ 6 Erstellung von Benutzerprofilen</strong></p>
 <p>(1) Soweit als Funktionalität auf dem Portal verfügbar, kann der Nutzer sein Benutzerprofil im Rahmen der vorliegenden Nutzungsbedingungen nach seinen Vorstellungen individuell gestalten.</p>
 <p>(2) Der Diensteanbieter führt im Regelfall keine Überprüfung der Identität der Profilinhaber und der Angaben in den Profilen durch. Der Diensteanbieter leistet daher keine Gewähr dafür, dass es sich bei jedem Profilinhaber jeweils um die Person handelt, für die der jeweilige Profilinhaber sich ausgibt, und dass die vom Profilinhaber gemachten Angaben der Wahrheit entsprechen.</p>
-<p>§ 7 Einstellen von eigenen Inhalten durch den Nutzer</p>
+<p>&nbsp;</p>
+<p><strong>§ 7 Einstellen von eigenen Inhalten durch den Nutzer</strong></p>
 <p>(1) Soweit als Funktionalität auf dem Portal verfügbar, kann der Nutzer im Rahmen der vorliegenden Nutzungsbedingungen Inhalte auf dem Portal einstellen und damit für Dritte verfügbar machen.</p>
 <p>(2) Mit dem Einstellen von Inhalten räumt der Nutzer dem Diensteanbieter jeweils ein unentgeltliches und übertragbares Nutzungsrecht an den jeweiligen Inhalten zur Nutzung auf dem Portal ein, insbesondere</p>
-<p>•	zur Speicherung der Inhalte auf dem Server des Diensteanbieters sowie deren Veröffentlichung, insbesondere deren öffentlicher Zugänglichmachung,<br />
-•	zur Bearbeitung und Vervielfältigung, soweit dies für die Vorhaltung bzw. Veröffentlichung der jeweiligen Inhalte erforderlich ist, und<br />
-•	zur Einräumung von &#8211; auch entgeltlichen &#8211; Nutzungsrechten gegenüber Dritten an seinen Inhalten.</p>
-<p>Soweit der Nutzer die von ihm eingestellten Inhalte wieder von dem Portal herunternimmt, erlischt das uns vorstehend eingeräumte Nutzungs- und Verwertungsrecht. Der Diensteanbieter bleibt jedoch berechtigt, zu Sicherungs- und/oder Nachweiszwecken erstellte Kopien aufzubewahren. Die anderen Nutzern an vom Nutzer eingestellten Inhalten bereits eingeräumten Nutzungsrechte bleiben ebenfalls unberührt.</p>
+<p>• zur Speicherung der Inhalte auf dem Server des Diensteanbieters sowie deren Veröffentlichung, insbesondere deren öffentlicher Zugänglichmachung,<br />
+• zur Bearbeitung und Vervielfältigung, soweit dies für die Vorhaltung bzw. Veröffentlichung der jeweiligen Inhalte erforderlich ist, und<br />
+• zur Einräumung von &#8211; auch entgeltlichen &#8211; Nutzungsrechten gegenüber Dritten an seinen Inhalten.</p>
+<p>Soweit der Nutzer die von ihm eingestellten Inhalte wieder von dem Portal herunternimmt, erlischt das uns vorstehend eingeräumte Nutzungs- und Verwertungsrecht. Der Diensteanbieter bleibt jedoch berechtigt, zu Sicherungs- und/oder Nachweiszwecken erstellte Kopien aufzubewahren. Die Nutzungsrechte, die anderen Nutzern eingeräumt wurden, bleiben ebenfalls unberührt.</p>
 <p>(3) Der Diensteanbieter behält sich das Recht vor, Inhalte ohne vorherige Ankündigung zu bearbeiten, zu sperren oder zu entfernen, sofern die Inhalte einen schwerwiegenden Verstoß gegen die vorliegenden Nutzungsbedingungen darstellen. Der Diensteanbieter wird hierbei jedoch auf die berechtigten Interessen des Nutzers Rücksicht nehmen und das mildeste Mittel zur Abwehr des Verstoßes wählen.</p>
-<p>§ 8 Schutz der Inhalte, Verantwortlichkeit für Inhalte Dritter</p>
+<p>&nbsp;</p>
+<p><strong>§ 8 Schutz der Inhalte, Verantwortlichkeit für Inhalte Dritter</strong></p>
 <p>(1) Die auf dem Portal verfügbaren Inhalte sind überwiegend geschützt durch das Urheberrecht oder durch sonstige Schutzrechte und stehen jeweils im Eigentum des Diensteanbieters, der anderen Nutzer oder sonstiger Dritter, welche die jeweiligen Inhalte zur Verfügung gestellt haben. Die Zusammenstellung der Inhalte als Solche ist ggf. geschützt als Datenbank oder Datenbankwerk i.S.d. §§ 4 Abs. 2, 87a Abs. 1 UrhG. Der Nutzer darf diese Inhalte lediglich gemäß diesen Nutzungsbedingungen sowie im auf dem Portal vorgegebenen Rahmen nutzen.</p>
 <p>(2) Die auf dem Portal verfügbaren Inhalte stammen teilweise vom Diensteanbieter und teilweise von anderen Nutzern bzw. sonstigen Dritten. Inhalte der Nutzer sowie sonstiger Dritter werden nachfolgend zusammenfassend „Drittinhalte“ genannt. Der Diensteanbieter führt bei Drittinhalten keine Prüfung auf Vollständigkeit, Richtigkeit und Rechtmäßigkeit durch und übernimmt daher keinerlei Verantwortung oder Gewährleistung für die Vollständigkeit, Richtigkeit, Rechtmäßigkeit und Aktualität der Drittinhalte. Dies gilt auch im Hinblick auf die Qualität der Drittinhalte und deren Eignung für einen bestimmten Zweck, und auch, soweit es sich um Drittinhalte auf verlinkten externen Webseiten handelt.</p>
-<p>§ 9 Informationen zu Touren, Übernahme von Touren</p>
-<p>(1) Soweit als Funktionalität auf dem Portal verfügbar, kann der Nutzer anderen Nutzern Informationen zu seinen Touren zur Verfügung stellen und die von anderen Nutzern zur Verfügung gestellten Informationen zu deren Touren einsehen.</p>
-<p>(2) Soweit als Funktionalität auf dem Portal verfügbar, kann der Nutzer andere Nutzer des Portals mithilfe der Funktion „Für Angebote öffnen“ zur Abgabe von Angeboten für die Übernahme einer Tour auffordern. Hiernach besteht die Möglichkeit, mithilfe der Funktionen „Angebot abgeben“ und „Angebot annehmen“ einen verbindlichen Vertrag über die Durchführung der Tour zu schließen.</p>
-<p>(3) Soweit als Funktionalität auf dem Portal verfügbar, kann der Nutzer andere Nutzer des Portals mithilfe der Funktion „Preisanfrage“ zur Abgabe von Preisvorschlägen für die Übernahme einer Tour auffordern. Die mithilfe der Funktion „Preisvorschlag“ gemachten Preisvorschläge sind unverbindlich. Erst hiernach besteht die Möglichkeit, mithilfe der Funktionen „Angebot abgeben“ und „Angebot annehmen“ einen verbindlichen Vertrag über die Durchführung der Tour zu schließen.</p>
-<p>(4) Vertragspartner aller über das Portal geschlossenen Verträge über die Durchführung von Touren sind ausschließlich die beteiligten Nutzer. Der Diensteanbieter stellt lediglich die Plattform für diese Vertragsschlüsse zur Verfügung und wird auf keinen Fall selbst Vertragspartner.</p>
+<p>&nbsp;</p>
+<p><strong>§ 9 Informationen zu Touren, Übernahme von Touren</strong></p>
+<p>(1) Soweit als Funktionalität auf dem Portal verfügbar, kann der Nutzer im Rahmen der vorliegenden Nutzungsbedingungen Touren in das Portal einpflegen. Beim Anlegen einer Tour hat der Nutzer diese als „Tour“, als „Verfügbarer Auftrag“ oder als „Preisanfrage“ zu kennzeichnen. Eine „Tour“ dient lediglich Informationszwecken. Für „Verfügbare Aufträge“ und „Preisanfragen“ hingegen stellt das Portal Funktionalitäten zur Verfügung, mit deren Hilfe die Nutzer verbindliche Verträge über die Durchführung der fraglichen Touren schließen können.</p>
+<p>(2) Bei „Verfügbaren Aufträgen“ erfolgt der Vertragsschluss durch das Angebot des Auftragnehmers („Angebot abgeben“) und die Annahme durch den Auftraggeber („Angebot akzeptieren“). Nimmt der Auftraggeber vor der Annahme des Angebots Änderungen an der Tour vor, stellt die hierauf vom Portal generierte Anfrage beim Auftragnehmer kein verbindliches Angebot des Auftraggebers dar; der Vertragsschluss erfolgt vielmehr auch hier wiederum (erst) durch das Angebot des Auftragnehmers („Angebot bestätigen“) und die Annahme durch den Auftraggeber („Angebot akzeptieren“).</p>
+<p>(3) Bei „Preisanfragen“ gibt der Auftragnehmer zunächst einen unverbindlichen Preisvorschlag ab („Unverbindlicher Preisvorschlag“). Der Vertragsschluss erfolgt sodann durch das hierauf bezogene Angebot des Auftraggebers („Auftrag anbieten“) und die Annahme durch den Auftragnehmer („Auftrag akzeptieren“). Nimmt der Auftraggeber vor der Abgabe des Angebots Änderungen an der Tour vor, stellen die hierauf vom Portal generierte Anfrage beim Auftragnehmer und dessen erneuter Preisvorschlag („Preisvorschlag bestätigen“) keine verbindlichen Willenserklärungen dar; der Vertragsschluss erfolgt vielmehr auch hier wiederum (erst) durch das Angebot des Auftraggebers („Auftrag anbieten“) und die Annahme durch den Auftragnehmer („Auftrag akzeptieren“).</p>
+<p>(4) Vertragspartner der über das Portal geschlossenen Verträge über die Durchführung von Touren sind ausschließlich die beteiligten Nutzer. Der Diensteanbieter stellt lediglich die Plattform für diese Vertragsschlüsse zur Verfügung und wird auf keinen Fall selbst Vertragspartner.</p>
 <p>(5) Dier Diensteanbieter übernimmt keinerlei Verantwortung oder Gewährleistung für die Qualität, Leistungsfähigkeit oder Zuverlässigkeit der Nutzer des Portals einschließlich des Bestehens von oder der Angaben zu Transportversicherungen.</p>
-<p>§ 10 Besondere Bedingungen für Verbände und Organisationen</p>
-<p>(1) Verbände und Organisation können für Ihre Mitglieder Gruppen erstellen. Diese Gruppen werden von einem Administrator geleitet, der von dem jeweiligen Verband oder der jeweiligen Organisation bestimmt wird.</p>
+<p>&nbsp;</p>
+<p><strong>§ 10 Besondere Bedingungen für Verbände und Organisationen</strong></p>
+<p>(1) Verbände und Organisationen können für ihre Mitglieder Gruppen erstellen. Diese Gruppen werden von einem Administrator geleitet, der von dem jeweiligen Verband oder der jeweiligen Organisation bestimmt wird.</p>
 <p>(2) Nutzer, die als Mitglied eines Verbands oder einer Organisation angemeldet sind, können mit den anderen Nutzern ihrer Gruppe in Kontakt treten. Eine Kontaktaufnahme zu Nutzern außerhalb der eigenen Gruppe ist nicht möglich. Auch können Informationen zu Touren nur innerhalb der eigenen Gruppe zur Verfügung gestellt und eingesehen werden.</p>
-<p>(3) Der Abschluss von Verträgen mit Nutzern außerhalb der eigenen Gruppe erfolgt ausschließlich unter Vermittlung des Administrators. Die beteiligten Nutzer erlangen erst nach Vertragsschluss Kenntnis der Identität ihres Vertragspartners. Der Administrator ist berechtigt, vor der Abgabe der verbindlichen Vertragserklärungen eine Provision festzulegen, die im Falle eines Vertragsschluss an ihn zu entrichten ist. Schuldner der Provision ist der Nutzer, der die Tour abgibt.</p>
-<p>(4) Im Übrigen richtet sich der Vertragsschluss nach Ziffer 9 dieser Nutzungsbedingungen.</p>
-<p>§ 11 Verfügbarkeit der Dienste, Änderungen von Diensten</p>
-<p>(1) Der Diensteanbieter gewährleistet in seinem Verantwortungsbereich eine Verfügbarkeit von mindestens … Prozent im Monatsmittel. Hiervon ausgenommen sind die Wartungszeiten, die der Diensteanbieter mit einer Vorlaufzeit von mindestens … Tagen ankündigt. Ferner ist der Nutzer selbst für die Schaffung der in seinem Verantwortungsbereich zur vertragsgemäßen Nutzung der Dienste notwendigen technischen Voraussetzungen verantwortlich. Dies gilt insbesondere für die Auswahl, die Beschaffung und den Einsatz der erforderlichen Datenverbindungen.</p>
+<p>(3) Der Abschluss von Verträgen mit Nutzern außerhalb der eigenen Gruppe erfolgt ausschließlich unter Vermittlung des Administrators. Die beteiligten Nutzer erlangen erst nach Vertragsschluss Kenntnis der Identität ihres Vertragspartners. Der Administrator ist berechtigt, vor der Abgabe der verbindlichen Vertragserklärungen eine Provision festzulegen, die im Falle eines Vertragsschlusses an ihn zu entrichten ist. Schuldner der Provision ist der Nutzer, der die Tour abgibt.</p>
+<p>(4) Im Übrigen richtet sich der Vertragsschluss nach § 9 dieser Nutzungsbedingungen.</p>
+<p>&nbsp;</p>
+<p><strong>§ 11 Verfügbarkeit der Dienste, Änderungen von Diensten</strong></p>
+<p>(1) Der Diensteanbieter gewährleistet in seinem Verantwortungsbereich eine Verfügbarkeit von mindestens 99 Prozent im Jahresmittel. Hiervon ausgenommen sind Wartungszeiten, die der Diensteanbieter mit einer Vorlaufzeit von mindestens sieben Tagen ankündigt. Der Nutzer ist selbst für die Schaffung der in seinem Verantwortungsbereich zur vertragsgemäßen Nutzung der Dienste notwendigen technischen Voraussetzungen verantwortlich. Dies gilt insbesondere für die Auswahl, die Beschaffung und den Einsatz der erforderlichen Datenverbindungen.</p>
 <p>(2) Der Diensteanbieter ist berechtigt, Dienste zu erweitern und zu verbessern, wenn diese dem technischen Fortschritt dienen, notwendig erscheinen, um Missbrauch zu verhindern, oder eine gesetzliche Verpflichtung hierzu besteht. Sonstige Änderungen des Vertragsinhalts, einschließlich dieser Nutzungsbedingungen, kann der Diensteanbieter &#8211; mit Zustimmung des Nutzers &#8211; vornehmen, sofern die Änderung unter Berücksichtigung der Interessen des Diensteanbieters für den Nutzer zumutbar ist. Unzumutbar ist insbesondere jede Vertragsänderung, die eine Reduzierung der vertraglichen Hauptleistungen des Diensteanbieters zur Folge hat. Die Zustimmung zur Änderung des Vertrages gilt als erteilt, wenn der Nutzer der Änderung nicht innerhalb eines Monats nach Zugang der Änderungsmitteilung widerspricht. Der Diensteanbieter verpflichtet sich, den Nutzer im Zuge der Änderungsmitteilung auf die Folgen eines unterlassenen Widerspruchs hinzuweisen.</p>
-<p>§ 12 Verbotene Aktivitäten</p>
-<p>(1) Dem Nutzer sind jegliche Aktivitäten auf bzw. im Zusammenhang mit dem Portal untersagt, die gegen geltendes Recht oder die Rechte Dritter verstoßen. </p>
+<p>&nbsp;</p>
+<p><strong>§ 12 Verbotene Aktivitäten</strong></p>
+<p>(1) Dem Nutzer sind jegliche Aktivitäten auf bzw. im Zusammenhang mit dem Portal untersagt, die gegen geltendes Recht oder die Rechte Dritter verstoßen.</p>
 <p>(2) Des Weiteren sind dem Nutzer auch unabhängig von einem eventuellen Gesetzesverstoß die folgenden Aktivitäten untersagt:</p>
-<p>•	das Anbieten oder Bewerben entgeltlicher Inhalte, Dienste und/oder Produkte, soweit dies nicht Teil der bestimmungsgemäßen Nutzung des Portals ist,<br />
-•	die Belästigung anderer Nutzer, z.B. durch mehrfaches persönliches Kontaktieren ohne oder entgegen der Reaktion des anderen Nutzers,<br />
-•	jedwede elektronische bzw. anderweitige Sammlung von Identitäts- und/oder Kontaktdaten von Nutzern (z.B. für den Versand unaufgeforderter E-Mails),<br />
-•	jede Handlung, die geeignet ist, den reibungslosen Betrieb des Portals zu beeinträchtigen, insbesondere die Systeme des Diensteanbieters übermäßig zu belasten.</p>
-<p>§ 13 Sperrung von Zugängen</p>
+<p>• das Anbieten oder Bewerben entgeltlicher Inhalte, Dienste und/oder Produkte, soweit dies nicht Teil der bestimmungsgemäßen Nutzung des Portals ist,<br />
+• die Belästigung anderer Nutzer, z.B. durch mehrfaches persönliches Kontaktieren ohne oder entgegen der Reaktion des anderen Nutzers,<br />
+• jedwede elektronische bzw. anderweitige Sammlung von Identitäts- und/oder Kontaktdaten von Nutzern (z.B. für den Versand unaufgeforderter E-Mails),<br />
+• jede Handlung, die geeignet ist, den reibungslosen Betrieb des Portals zu beeinträchtigen, insbesondere die Systeme des Diensteanbieters übermäßig zu belasten.</p>
+<p>&nbsp;</p>
+<p><strong>§ 13 Sperrung von Zugängen</strong></p>
 <p>(1) Der Diensteanbieter kann den Zugang des Nutzers zu dem Portal vorübergehend oder dauerhaft sperren, wenn konkrete Anhaltspunkte vorliegen, dass der Nutzer gegen diese Nutzungsbedingungen und/oder geltendes Recht verstößt bzw. verstoßen hat, oder wenn der Diensteanbieter ein sonstiges berechtigtes Interesse an der Sperrung hat. Bei der Entscheidung über eine Sperrung wird der Diensteanbieter die berechtigten Interessen des Nutzers angemessen berücksichtigen.</p>
 <p>(2) Im Falle der vorübergehenden bzw. dauerhaften Sperrung sperrt der Diensteanbieter die Zugangsberechtigung des Nutzers und benachrichtigt ihn hierüber per E-Mail.</p>
 <p>(3) Im Falle einer vorübergehenden Sperrung reaktiviert der Diensteanbieter nach Ablauf der Sperrzeit die Zugangsberechtigung und benachrichtigt den Nutzer hierüber per E-Mail. Eine dauerhaft gesperrte Zugangsberechtigung kann nicht wiederhergestellt werden. Dauerhaft gesperrte Nutzer sind von der Nutzung des Portals dauerhaft ausgeschlossen und dürfen sich nicht erneut auf dem Portal anmelden.</p>
-<p>§ 14 Vertragslaufzeit, Beendigung der Nutzung</p>
+<p>&nbsp;</p>
+<p><strong>§ 14 Vertragslaufzeit, Beendigung der Nutzung</strong></p>
 <p>(1) Für alle Zugänge gilt eine Mindestvertragslaufzeit von einem Jahr. Ab dem Ablauf der Mindestvertragslaufzeit verlängert sich der Vertrag jeweils automatisch um ein Jahr, sofern nicht eine Partei den Vertrag unter Einhaltung einer Kündigungsfrist von drei Monaten vor Ablauf der Mindestvertragslaufzeit bzw. der jeweiligen Verlängerungsperiode kündigt.</p>
 <p>(2) Falls der Nutzer seinen Zugang kündigt oder der Diensteanbieter den Zugang des Nutzers gemäß der vorliegenden Nutzungsbedingungen sperrt, hat der Nutzer keinen Anspruch auf Erstattung des Entgelts für Credits, die er zum Zeitpunkt der Beendigung seiner Nutzung noch nicht verbraucht hat. Ein Anspruch auf Erstattung nicht verbrauchter Credits besteht nur im Falle einer ordentlichen Kündigung durch den Diensteanbieter.</p>
 <p>(3) Der Diensteanbieter ist berechtigt, mit Ablauf von 30 Kalendertagen nach Wirksamwerden der Kündigung und nach Ablauf etwaiger gesetzlicher Vorhaltungsfristen sämtliche im Rahmen der Nutzung des Portals durch den Nutzer entstandenen Daten unwiederbringlich zu löschen.</p>
-<p>§ 15 Haftungsbeschränkung</p>
+<p>&nbsp;</p>
+<p><strong>§ 15 Haftungsbeschränkung</strong></p>
 <p>Sollten dem Nutzer durch die Nutzung von auf dem Portal zur Verfügung gestellten Diensten (einschließlich des Abrufs von Inhalten) ein Schaden entstehen, so haftet der Diensteanbieter nach Maßgabe der nachfolgenden Regelungen:</p>
 <p>(1) Für Schäden, die durch den Diensteanbieter oder durch dessen gesetzlichen Vertreter, leitende Angestellte oder einfache Erfüllungsgehilfen vorsätzlich oder grob fahrlässig verursacht wurde, haftet der Diensteanbieter unbeschränkt.</p>
 <p>(2) In Fällen der leicht fahrlässigen Verletzung von nur unwesentlichen Vertragspflichten haftet der Diensteanbieter nicht. Im Übrigen ist die Haftung des Diensteanbieters für leicht fahrlässig verursachte Schäden auf die diejenigen Schäden beschränkt, mit deren Entstehung im Rahmen des jeweiligen Vertragsverhältnisses typischerweise gerechnet werden muss (vertragstypisch vorhersehbare Schäden). Dies gilt auch bei leicht fahrlässigen Pflichtverletzungen der gesetzlichen Vertreter, leitenden Angestellten bzw. einfachen Erfüllungsgehilfen des Diensteanbieters.</p>
 <p>(3) Die vorstehende Haftungsbeschränkung gilt nicht im Falle von Arglist, im Falle von Körper- bzw. Personenschäden, für die Verletzung von Garantien sowie für Ansprüche aus Produkthaftung.</p>
-<p>§ 16 Schriftformerfordernis</p>
+<p>&nbsp;</p>
+<p><strong>§ 16 Schriftformerfordernis</strong></p>
 <p>Sofern in diesen Nutzungsbedingungen nicht ausdrücklich etwas anderes angegeben ist, sind sämtliche Erklärungen, die im Rahmen der Nutzung des Portals abgegeben werden, in Schriftform oder per E-Mail abzugeben. Die postalische Anschrift und die E-Mail-Adresse des Diensteanbieters kann der Nutzer dem Impressum des Portals entnehmen.</p>
-<p>§ 17 Anwendbares Recht</p>
+<p>&nbsp;</p>
+<p><strong>§ 17 Anwendbares Recht</strong></p>
 <p>Diese Nutzungsbedingungen unterliegen dem Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.</p>
-<p>§ 18 Gerichtsstand</p>
+<p>&nbsp;</p>
+<p><strong>§ 18 Gerichtsstand</strong></p>
 <p>Ausschließlicher Gerichtsstand für alle sich aus diesen Nutzungsbedingungen ergebenden Streitigkeiten ist, soweit eine solche Gerichtsstandvereinbarung zulässig ist, der Sitz des Diensteanbieters.</p>

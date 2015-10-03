@@ -1,0 +1,340 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PackR\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Thu Aug 27 2015 02:40:16 GMT+0200 (CEST)\n"
+"PO-Revision-Date: Thu Aug 27 2015 02:40:28 GMT+0200 (CEST)\n"
+"Last-Translator: admin <awaisakhtar16@yahoo.com>\n"
+"Language-Team: \n"
+"Language: German\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: de_DE\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: ../public/class-packr-public.php:135
+msgid "Please select a Package"
+msgstr ""
+
+#: ../public/class-packr-public.php:146
+msgid "method not supported!"
+msgstr ""
+
+#: ../public/class-packr-public.php:201
+msgid "Select Product"
+msgstr ""
+
+#: ../public/class-packr-public.php:202
+msgid "Account & Billing"
+msgstr ""
+
+#: ../public/class-packr-public.php:203
+msgid "Overview"
+msgstr ""
+
+#: ../public/class-packr-public.php:204
+msgid "Confirmation"
+msgstr ""
+
+#: ../public/class-packr-public.php:240
+msgid "Monthly Price: 0 Euro, for first 6 Months then "
+msgstr ""
+
+#: ../public/class-packr-public.php:243
+msgid "Monthly Price: 0 Euro, for first 3 Months then "
+msgstr ""
+
+#: ../public/class-packr-public.php:245
+msgid "Invalid voucher code"
+msgstr ""
+
+#: ../public/class-packr-public.php:292 ../public/class-packr-public.php:303 ..
+#: /public/class-packr-public.php:306 ../public/class-packr-public.php:319 ..
+#: /public/class-packr-public.php:327 ../public/class-packr-public.php:335 ..
+#: /public/class-packr-public.php:343 ../public/class-packr-public.php:351 ..
+#: /public/class-packr-public.php:359 ../public/class-packr-public.php:370 ..
+#: /public/class-packr-public.php:379 ../public/class-packr-public.php:387
+msgid "required"
+msgstr ""
+
+#: ../public/class-packr-public.php:295
+msgid "is invalid"
+msgstr ""
+
+#: ../public/class-packr-public.php:310 ../public/class-packr-public.php:311
+msgid "not matched"
+msgstr ""
+
+#: ../public/class-packr-public.php:468
+msgid "Please agree to SEPA Terms & Conditions."
+msgstr ""
+
+#: ../public/class-packr-public.php:471
+msgid "Please agree to Privacy Policy."
+msgstr ""
+
+#: ../public/class-packr-public.php:474
+msgid "Please agree to Terms & conditions."
+msgstr ""
+
+#: ../public/class-packr-public.php:513 ../public/class-packr-public.php:516
+msgid "Ops, something went wrong, please try again"
+msgstr ""
+
+#: ../public/partials/form3.php:7
+msgid "Your order overview"
+msgstr ""
+
+#: ../public/partials/form3.php:12
+msgid "Billing Address"
+msgstr ""
+
+#: ../public/partials/form3.php:31
+msgid "Product"
+msgstr ""
+
+#: ../public/partials/form3.php:32
+msgid "Price"
+msgstr ""
+
+#: ../public/partials/form3.php:33
+msgid "Tax"
+msgstr ""
+
+#: ../public/partials/form3.php:34
+msgid "Total Price"
+msgstr ""
+
+#: ../public/partials/form3.php:46
+msgid "Monthly fee for"
+msgstr ""
+
+#: ../public/partials/form3.php:47
+msgid "subscription for 1 year"
+msgstr ""
+
+#: ../public/partials/form3.php:69
+msgid "Total Net"
+msgstr ""
+
+#: ../public/partials/form3.php:79
+msgid "Total Gross"
+msgstr ""
+
+#: ../public/partials/form3.php:90 ../public/partials/form2.php:117
+msgid "Payment"
+msgstr ""
+
+#: ../public/partials/form3.php:93
+msgid "Kindly Agree to: "
+msgstr ""
+
+#: ../public/partials/form3.php:93
+msgid "SEPA Terms & Conditions"
+msgstr ""
+
+#: ../public/partials/form3.php:101 ../public/partials/form3.php:109 ..
+#: /public/partials/form3.php:136
+msgid "I Agree to "
+msgstr ""
+
+#: ../public/partials/form3.php:101 ../public/partials/form3.php:176
+msgid "Terms & Conditions"
+msgstr ""
+
+#: ../public/partials/form3.php:109
+msgid "privacy policy"
+msgstr ""
+
+#: ../public/partials/form3.php:116
+msgid "Confirm & Finish"
+msgstr ""
+
+#: ../public/partials/form3.php:154
+msgid "Privacy Policy"
+msgstr ""
+
+#: ../public/partials/form1.php:7
+msgid "Which version of vislog you would like to you use?"
+msgstr "asd"
+
+#: ../public/partials/form1.php:10
+msgid "from"
+msgstr ""
+
+#: ../public/partials/form1.php:11
+msgid "39 €"
+msgstr ""
+
+#: ../public/partials/form1.php:28
+msgid "€ 39 net / month"
+msgstr ""
+
+#: ../public/partials/form1.php:29 ../public/partials/form1.php:53
+msgid "Interactive Map"
+msgstr ""
+
+#: ../public/partials/form1.php:30 ../public/partials/form1.php:54
+msgid "Order Management"
+msgstr ""
+
+#: ../public/partials/form1.php:31 ../public/partials/form1.php:55
+msgid "Marketplace"
+msgstr ""
+
+#: ../public/partials/form1.php:32 ../public/partials/form1.php:56
+msgid "Communication"
+msgstr ""
+
+#: ../public/partials/form1.php:33
+msgid "Up to 5 contacts (outgoing)"
+msgstr ""
+
+#: ../public/partials/form1.php:34
+msgid "Up to 5 contacts (inbound)"
+msgstr ""
+
+#: ../public/partials/form1.php:52
+msgid "€ 69 net / month"
+msgstr ""
+
+#: ../public/partials/form1.php:57
+msgid "Unlimited contacts (outgoing)"
+msgstr ""
+
+#: ../public/partials/form1.php:58
+msgid "Unlimited contacts (inbound)"
+msgstr ""
+
+#: ../public/partials/form1.php:73
+msgid "Period of Validity"
+msgstr ""
+
+#: ../public/partials/form1.php:74
+msgid ""
+"The subscription is initially for one year and will be automatically "
+"extended for another year unless written notice is given within 3 months "
+"before year ends"
+msgstr ""
+
+#: ../public/partials/form1.php:81
+msgid "Details"
+msgstr ""
+
+#: ../public/partials/form1.php:83
+msgid "Voucher:"
+msgstr ""
+
+#: ../public/partials/form1.php:85
+msgid "Enter voucher code"
+msgstr ""
+
+#: ../public/partials/form1.php:88
+msgid "Add Voucher"
+msgstr ""
+
+#: ../public/partials/form1.php:98
+msgid "Go to Address & Payment"
+msgstr ""
+
+#: ../public/partials/form2.php:4
+msgid "Address & Payment"
+msgstr ""
+
+#: ../public/partials/form2.php:5
+msgid "Please fill in your billing, address and your payment details."
+msgstr ""
+
+#: ../public/partials/form2.php:9
+msgid "Account"
+msgstr ""
+
+#: ../public/partials/form2.php:16
+msgid "Email"
+msgstr ""
+
+#: ../public/partials/form2.php:37
+msgid "Billing and Shipping Address"
+msgstr ""
+
+#: ../public/partials/form2.php:44 ../public/partials/form2.php:45
+msgid "Company Name"
+msgstr ""
+
+#: ../public/partials/form2.php:50 ../public/partials/form2.php:51
+msgid "First Name"
+msgstr ""
+
+#: ../public/partials/form2.php:55 ../public/partials/form2.php:56
+msgid "Last Name"
+msgstr ""
+
+#: ../public/partials/form2.php:61 ../public/partials/form2.php:62
+msgid "Street Address"
+msgstr ""
+
+#: ../public/partials/form2.php:67 ../public/partials/form2.php:68
+msgid "Postal Code"
+msgstr ""
+
+#: ../public/partials/form2.php:72 ../public/partials/form2.php:73
+msgid "City"
+msgstr ""
+
+#: ../public/partials/form2.php:101 ../public/partials/form2.php:102
+msgid "Extra address line (Optional)"
+msgstr ""
+
+#: ../public/partials/form2.php:106
+msgid "Message"
+msgstr ""
+
+#: ../public/partials/form2.php:107
+msgid "Your message here"
+msgstr ""
+
+#: ../public/partials/form2.php:123
+msgid "SEPA Direct Debit"
+msgstr ""
+
+#: ../public/partials/form2.php:126 ../public/partials/form2.php:127
+msgid "Account Owner"
+msgstr ""
+
+#: ../public/partials/form2.php:130 ../public/partials/form2.php:131
+msgid "IBAN"
+msgstr ""
+
+#: ../public/partials/form2.php:134 ../public/partials/form2.php:135
+msgid "BIC"
+msgstr ""
+
+#: ../public/partials/form2.php:148
+msgid "UST-IdNr. (for foreign corporate clients)"
+msgstr ""
+
+#: ../public/partials/form2.php:158
+msgid "Proceed to Order Summary"
+msgstr ""
+
+#: ../public/partials/form4.php:3
+msgid "Thank you!"
+msgstr ""
+
+#: ../public/partials/form4.php:6
+msgid "Dear "
+msgstr ""
+
+#: ../public/partials/form4.php:8
+msgid " thank you for your subscription."
+msgstr ""

@@ -71,7 +71,7 @@
                 </tr>
 
                 <tr>
-                    <th colspan="3" class="text-right"><?php _e("plus $tax % vat",$this->plugin_name);?></th>
+                    <th colspan="3" class="text-right"><?php _e("plus 19 % vat",$this->plugin_name);?></th>
                     <td class="text-right"><?php echo $taxPrice." €";?></td>
                 </tr>
 
@@ -91,7 +91,7 @@
     <div class="checkbox disabled">
         <label>
             <!-- won't be posted because disabled -->
-         <input type="checkbox" disabled="disabled" id="cb_sepa"/><?php _e("Kindly Agree to: ",$this->plugin_name);?><a href="" data-toggle="modal" data-target="#sepaModal"> <?php _e("SEPA Terms & Conditions",$this->plugin_name);?> </a>
+         <a href="" data-toggle="modal" data-target="#sepaModal"><input type="checkbox" disabled="disabled" id="cb_sepa"/><span style="color: #333;"><?php _e("Kindly Agree to: ",$this->plugin_name);?> </span> <?php _e("SEPA Terms & Conditions",$this->plugin_name);?> </a>
          <input name="sepa" type="hidden" id="inp_sepa"/>
       </label>
   </div>
@@ -133,7 +133,7 @@
                 <?php include "sepa.php"; ?>
             </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">schliessen</button>
                 </div>
             </div>
         </div>
@@ -154,7 +154,7 @@
 
             </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">schliessen</button>
                 </div>
             </div>
         </div>
@@ -173,7 +173,7 @@
                 <?php include "terms.php"; ?>
             </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">schliessen</button>
                 </div>
             </div>
         </div>
