@@ -13,6 +13,7 @@
 
 require_once(PACKR_BASE_PATH."includes/class-packr-db.php");
 require_once PACKR_BASE_PATH."models/Order.php";
+require_once PACKR_BASE_PATH."models/Voucher.php";
 
 /**
  * The admin-specific functionality of the plugin.
@@ -114,6 +115,8 @@ class PackR_Admin {
 		add_menu_page( $this->plugin_name,$this->plugin_name, 'manage_options', $this->plugin_name.'-admin-menu', array($this,"getAdminPage"));
 	}
 	public function getAdminPage(){
+
+
 		
 		$columns=Order::connection()->columns(PACKR_DB_TABLE_NAME);
 
@@ -121,6 +124,59 @@ class PackR_Admin {
 
 		require_once ("partials/admin-display.php");
 
+		$method=$_SERVER['REQUEST_METHOD'];
+		if(is_super_admin() ){	
+
+			$resp = array();
+			if($method=="POST"){
+				if(isset($_POST["type"]) && $_POST["type"]=="del"){
+					try{
+						$voucher = Voucher::find($_POST["voucher_id"]);
+						$voucher->delete();
+					}catch(Exception $ex){
+						$resp['isError']=true;
+						$resp['errorDescription']=$ex->getMessage();
+					}
+				}else if(isset($_POST["type"]) && $_POST["type"]=="save"){
+
+					if(isset($_POST["voucher_code"]) && strlen($_POST["voucher_code"]) > 0){
+						try{
+							$voucher = new Voucher();
+							$voucher->voucher_code=$_POST["voucher_code"];
+							$voucher->voucher_count=$_POST["voucher_count"];
+							$voucher->voucher_description_basic=$_POST["voucher_description_basic"];
+							$voucher->voucher_description_professional=$_POST["voucher_description_professional"];
+
+							$voucher->save();
+							if($voucher->id>0){
+								$resp['isError']=false;
+								$resp['description']=false;
+							}else{
+								$resp['isError']=true;
+								$resp['errorDescription']=__('Something went wrong while saving,please try again',$this->plugin_name);
+							}
+						}catch(Exception $ex){
+							$resp['isError']=true;
+							$resp['errorDescription']=$ex->getMessage();
+						}
+					}else{
+						$resp['isError']=true;
+						$resp['errorDescription']=__('Enter voucher code',$this->plugin_name);
+					}
+				}
+			}
+			
+			require_once ("partials/admin-voucher.php");
+
+			//load voucher records
+
+			$columns=Voucher::connection()->columns(PACKR_DB_TABLE_VOUCHER);
+
+			$vouchers=Voucher::find('all',array('order' => 'id desc'));
+
+			require_once ("partials/admin-voucher-list.php");
+				
+		}
 	}
 
 }

@@ -505,16 +505,15 @@ private function getForthForm(){
 	try{
 		$order->save();
 		if($order->id>0){
-
 			$form="form4.php";
 			require_once("partials/form-base.php");
-
 		}else{
 			$this->getSecondForm(true,__("Ops, something went wrong, please try again",$this->plugin_name));
 		}
 	}catch(Exception $ex){
 		$this->getSecondForm(true,__("Ops, something went wrong, please try again",$this->plugin_name));
 	}
+
 
 }
 

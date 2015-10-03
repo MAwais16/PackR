@@ -39,7 +39,7 @@ class PackR_Activator {
 
 	public static function createDbTable(){
 		global $wpdb;
-		$table_name = PACKR_DB_TABLE_NAME;
+		$table_name = PACKR_DB_TABLE_NAME; // in ./packr.php
 
 		$charset_collate = $wpdb->get_charset_collate();
 
@@ -68,8 +68,22 @@ class PackR_Activator {
 
 			) $charset_collate;";
 
+		$table_name = PACKR_DB_TABLE_VOUCHER; // in ./packr.php
+
+		$sql2 = "CREATE TABLE IF NOT EXISTS $table_name (
+			id int NOT NULL AUTO_INCREMENT UNIQUE,
+			created_at timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,
+			voucher_code varchar(30) NOT NULL UNIQUE,
+			voucher_count text NOT NULL,
+			voucher_description_basic text NOT NULL,
+			voucher_description_professional text NOT NULL,
+			PRIMARY KEY  (id)
+			) $charset_collate;";
+
+
 		require_once (ABSPATH . 'wp-admin/includes/upgrade.php');
 		dbDelta($sql);
+		dbDelta($sql2);
 
 	}
 
