@@ -18,7 +18,7 @@
 				echo "<tr>";
 				?>
 					<td>
-						<form method="POST" action="#voucher-list">
+						<form method="POST" action="#voucher-list" onsubmit="return confirm('Deleting this wouldnot delete it from orders. Are you sure you want to delete it?');">
 							<input type="hidden" name="voucher_id" value="<?php echo $voucher->id; ?>"/>
 							<input type="hidden" name="type" value="del"/>
 							<button type="submit" class="btn btn-danger">Delete</button>

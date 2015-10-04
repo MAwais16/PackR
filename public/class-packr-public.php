@@ -23,6 +23,7 @@
 
 require_once(PACKR_BASE_PATH."includes/class-packr-db.php");
 require_once PACKR_BASE_PATH."models/Order.php";
+require_once PACKR_BASE_PATH."models/Voucher.php";
 
 
 class PackR_Public {
@@ -228,23 +229,24 @@ class PackR_Public {
 	*/
 	private function validateVoucher($vc,$package){
 		if(isset($vc)){
-			$end=" <i class='voucher-price'> 39 €</i>";
-			if($package=="basic"){
-				$end=" <i class='voucher-price'> 39 €</i>";
-			}else{
-				$end=" <i class='voucher-price'> 69 €</i>";
-			}
+			
+			try{
 
-			if($vc=="EarlyBird2015"){
-				$_SESSION['PackR_voucherCode']=$vc;
-				return  array("valid"=>true,"desc"=>__("Monthly Price: 0 Euro, for first 6 Months then ",$this->plugin_name).$end);	//6months
-			}else if($vc=="Supporter2015"){
-				$_SESSION['PackR_voucherCode']=$vc;
-				return  array("valid"=>true,"desc"=>__("Monthly Price: 0 Euro, for first 3 Months then ",$this->plugin_name).$end); //3 months
-			}else{
+				$voucher= Voucher::find('first', array('conditions' => array('voucher_code=?',$vc)));
+				if($voucher){
+					
+					$_SESSION['PackR_voucherCode']=$vc;
+					return  array("valid"=>true,"descBasic"=>__($voucher->voucher_description_basic,$this->plugin_name),"descPro"=>__($voucher->voucher_description_professional,$this->plugin_name));
+					
+				}else{
+					return  array("valid"=>false,"desc"=>__("Invalid voucher code",$this->plugin_name));
+				}
+
+			}catch(Exception $ex){
 				return  array("valid"=>false,"desc"=>__("Invalid voucher code",$this->plugin_name));
 			}
 		}
+
 	}
 
 	/**

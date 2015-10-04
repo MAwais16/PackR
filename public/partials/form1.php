@@ -89,6 +89,10 @@
             <br/>
             <div class="col-md-12 voucher_result">
                 <br/>
+                <p class="basic"> </p>
+                <p class="pro"> </p>
+                <p class="err"> </p>
+
             </div>
         </div>
         <br/>
