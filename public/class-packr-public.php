@@ -549,6 +549,58 @@ private function validateThirdForm(){
 	}
 }
 
+//TODO: check for security, encryt and then make curl
+
+//http://davidwalsh.name/curl-post
+private function makePostCall(){
+
+	//set POST variables
+	$url = 'http://domain.com/get-post.php';
+
+	$fields = array(
+	"email"=>$_SESSION["PackR_email"],
+	"username"=>$_SESSION["PackR_username"],
+	"company_name"=>$_SESSION["PackR_companyName"],
+	"first_name"=>$_SESSION["PackR_firstName"],
+	"last_name"=>$_SESSION["PackR_lastName"],
+	"street"=>$_SESSION["PackR_street"],
+	"postal_code"=>$_SESSION["PackR_postalCode"],
+	"city"=>$_SESSION["PackR_city"],
+	"country_code"=>$_SESSION["PackR_country"],
+	"extra_address"=>$_SESSION["PackR_extraAddress"],
+
+	"message"=>$_SESSION["PackR_message"],
+
+	"account_name"=>$_SESSION["PackR_accountOwner"],
+	"bic"=>$_SESSION["PackR_bic"],
+	"iban"=>$_SESSION["PackR_iban"],
+	"ust_id"=>$_SESSION["PackR_ustID"],
+	"package"=>$_SESSION["PackR_package"],
+	"voucher_code"=>$_SESSION["PackR_voucherCode"],
+	"sepa_ref_num"=>$_SESSION["PackR_sepa_ref_num"]
+		);
+
+	//url-ify the data for the POST
+	foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+	rtrim($fields_string, '&');
+
+	//open connection
+	$ch = curl_init();
+
+	//set the url, number of POST vars, POST data
+	curl_setopt($ch,CURLOPT_URL, $url);
+	curl_setopt($ch,CURLOPT_POST, count($fields));
+	curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+
+	//execute post
+	$result = curl_exec($ch);
+
+	//close connection
+	curl_close($ch);
+
+	return $result;
+}
+
 private function getForthForm(){
 	$_SESSION['PackR_step']=4;
 	$steps= $this->getSteps(4);
@@ -580,6 +632,9 @@ private function getForthForm(){
 	try{
 		$order->save();
 		if($order->id>0){
+
+			//TODO: call makePostCall
+
 			$form="form4.php";
 			require_once("partials/form-base.php");
 		}else{
