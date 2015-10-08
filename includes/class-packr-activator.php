@@ -47,7 +47,7 @@ class PackR_Activator {
 			id int NOT NULL AUTO_INCREMENT UNIQUE,
 			created_at timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,
 			email text NOT NULL,
-			password text NOT NULL,
+			username text NOT NULL,
 			company_name text NOT NULL,
 			first_name text NOT NULL,
 			last_name text NOT NULL,
@@ -63,7 +63,7 @@ class PackR_Activator {
 			bic text NOT NULL,
 			ust_id text,
 			voucher_code text,
-			
+			sepa_ref_num text NOT NULL,
 			PRIMARY KEY  (id)
 
 			) $charset_collate;";

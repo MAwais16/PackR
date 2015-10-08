@@ -165,6 +165,18 @@ class PackR_Public {
 
 
 	/**
+	*No double hyphens
+	*No beginning/ending hyphens
+	*Works when strlen == 1
+	*
+	*/
+	private function validate_alphanumeric_hyphen($str) 
+	{
+    	return preg_match('/^([a-z0-9]+-)*[a-z0-9]+$/i',$str);
+	}
+
+
+	/**
 	*function to draw the very first form
 	*
 	*
@@ -174,6 +186,8 @@ class PackR_Public {
 		//error_log('mysql://'.DB_USER.':'.DB_PASSWORD.'@'.DB_HOST.'/'.DB_NAME);
 
 		$_SESSION['PackR_step']=1;
+		$_SESSION['PackR_vc_valid']=0;
+
 		$steps= $this->getSteps(1);
 		$form="form1.php";
 		require_once("partials/form-base.php");
@@ -234,15 +248,19 @@ class PackR_Public {
 
 				$voucher= Voucher::find('first', array('conditions' => array('voucher_code=?',$vc)));
 				if($voucher){
-					
 					$_SESSION['PackR_voucherCode']=$vc;
+					$_SESSION['PackR_vc_desc_pro']=$voucher->voucher_description_professional;
+					$_SESSION['PackR_vc_desc_basic']=$voucher->voucher_description_basic;
+					$_SESSION["PackR_vc_valid"]="1";
 					return  array("valid"=>true,"descBasic"=>__($voucher->voucher_description_basic,$this->plugin_name),"descPro"=>__($voucher->voucher_description_professional,$this->plugin_name));
 					
 				}else{
+					$_SESSION["PackR_vc_valid"]="0";
 					return  array("valid"=>false,"desc"=>__("Invalid voucher code",$this->plugin_name));
 				}
 
 			}catch(Exception $ex){
+				$_SESSION["PackR_vc_valid"]="0";
 				return  array("valid"=>false,"desc"=>__("Invalid voucher code",$this->plugin_name));
 			}
 		}
@@ -268,8 +286,9 @@ class PackR_Public {
 	private function validateSecondForm(){
 
 		$email=$this->get("email");
-		$password=$this->get("password");
-		$confirmPassword=$this->get("confirmPassword");
+		// $password=$this->get("password");
+		// $confirmPassword=$this->get("confirmPassword");
+		$username=$this->get("username");
 		$companyName=$this->get("companyName");
 		$firstName=$this->get("firstName");
 		$lastName=$this->get("lastName");
@@ -300,6 +319,35 @@ class PackR_Public {
 			$resp['email'][2]=$email;
 		}
 
+		//TODO: validate for only dash and alphanumeric
+		$username=trim($username);
+		if(!$this->validate_alphanumeric_hyphen($username)){
+			$resp['username'][0]=true;
+			$resp['username'][1]=__("not valid. [Alphanumeric,hyphens only]",$this->plugin_name);
+
+		}else{
+			if($this->isStrEmpty($username)){
+				$resp['username'][0]=true;
+				$resp['username'][1]=__("required",$this->plugin_name);
+			}else{
+				try{				
+					$foundOrder= Order::find('first', array('conditions' => array('username=?',$username)));
+					if($foundOrder!=null){
+						$resp['username'][0]=true;
+						$resp['username'][1]=__("not valid",$this->plugin_name);
+					}else{
+						$resp['username'][0]=false;
+						$resp['username'][2]=$username;	
+					}
+				}catch(Exception $ex){
+					$resp['username'][0]=true;
+					$resp['username'][1]=__("not valid",$this->plugin_name);
+				}
+
+			}
+		}
+
+/*
 		if($this->isStrEmpty($password)){
 			$resp['password'][0]=true;
 			$resp['password'][1]=__("required",$this->plugin_name);
@@ -315,7 +363,7 @@ class PackR_Public {
 			$resp['confirmPassword'][0]=false;
 			$resp['password'][0]=false;
 		}
-
+*/
 		if($this->isStrEmpty($companyName)){
 			$resp['companyName'][0]=true;
 			$resp['companyName'][1]=__("required",$this->plugin_name);
@@ -406,7 +454,8 @@ class PackR_Public {
 
 		if($process){
 			$_SESSION["PackR_email"]=$email;
-			$_SESSION["PackR_password"]=wp_hash_password($password);
+			//$_SESSION["PackR_password"]=wp_hash_password($password);
+			$_SESSION["PackR_username"]=$username;
 			$_SESSION["PackR_companyName"]=$companyName;
 			$_SESSION["PackR_firstName"]=$firstName;
 			$_SESSION["PackR_lastName"]=$lastName;
@@ -423,7 +472,6 @@ class PackR_Public {
 			$_SESSION["PackR_ustID"]=$ustID;
 
 			$this->getThirdForm();
-			//echo "weheh";
 
 		}else{
 			$this->getSecondForm(true,$resp);
@@ -444,15 +492,39 @@ private function getThirdForm($error=false,$errorDescription=""){
 	$price=39;
 
 	$imgSrc=PACKR_BASE_URL. '/public/images/basic.png';
+	$vc_valid=false;
+	if($_SESSION["PackR_vc_valid"]=="1"){
+		$vc_valid=true;
+	}
 
 	$package=$_SESSION['PackR_package'];
+	$voucherDesc="";
 	if($package=="basic"){
 		$price = 39;
 		$imgSrc=PACKR_BASE_URL. '/public/images/basic.png';
+		$voucherDesc=$_SESSION["PackR_vc_desc_basic"];
 	}else{
 		$price = 69;
 		$imgSrc=PACKR_BASE_URL. '/public/images/professional.png';
+		$voucherDesc=$_SESSION["PackR_vc_desc_pro"];
 	}
+
+	
+	$sepaRefNum=date('Ym');
+	$orderId=0;
+
+	try{
+		$orders=Order::find('all',array('order' => 'id desc'));
+		if($orders!=null && count($orders)>0){
+			$orderId=$orders[0]->id;
+		}
+	}catch(Exception $ex){
+			
+	}
+
+	$sepaRefNum=$sepaRefNum.($orderId+1)."";
+
+	$_SESSION["PackR_sepa_ref_num"]=$sepaRefNum;
 
 	$taxPrice=$price*($tax/100);
 	$form="form3.php";
@@ -485,7 +557,7 @@ private function getForthForm(){
 	$order = new Order();
 
 	$order->email=$_SESSION["PackR_email"];
-	$order->password=$_SESSION["PackR_password"];
+	$order->username=$_SESSION["PackR_username"];
 	$order->company_name=$_SESSION["PackR_companyName"];
 	$order->first_name=$_SESSION["PackR_firstName"];
 	$order->last_name=$_SESSION["PackR_lastName"];
@@ -503,6 +575,7 @@ private function getForthForm(){
 	$order->ust_id=$_SESSION["PackR_ustID"];
 	$order->package=$_SESSION["PackR_package"];
 	$order->voucher_code=$_SESSION["PackR_voucherCode"];
+	$order->sepa_ref_num=$_SESSION["PackR_sepa_ref_num"];
 
 	try{
 		$order->save();

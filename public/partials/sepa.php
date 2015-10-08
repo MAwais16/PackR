@@ -4,7 +4,7 @@
 
 
 		<div class="row">
-			<p><b><?php _e("Mandate reference",$this->plugin_name);?>:</b> 200015</p>
+			<p><b><?php _e("Mandate reference",$this->plugin_name);?>:</b> <?php echo $sepaRefNum; ?></p>
 			<p><b><?php _e("Creditor identifier",$this->plugin_name);?>:</b> DE83ZZZ00001786476</p>
 		</div>
 		<br>
@@ -19,7 +19,6 @@
 		<div class="row">
 			<p>
 				<?php
-
 				_e("By signing this mandate form, you authorise (A) NETVAI UG to send instructions to your bank to debit your account and (B) your bank to debit your account in accordance with the instructions from NETVAI UG.",$this->plugin_name);
 				?>
 			</p>

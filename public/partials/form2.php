@@ -16,20 +16,15 @@
 				<label for="email"><?php _e("Email",$this->plugin_name);?></label>
 				<input type="text" class="form-control" id="email" placeholder="Email" name="email" value="<?php if(!$resp['email'][0]){echo $resp['email'][2];}?>"/>
 			</div>
-
 		</div>
 
 		<div class="col-md-4 col-md-offset-1">
-			<div class="form-group <?php if($resp['password'][0]){echo "has-error";}?>">
-				<label for="password"><?php _e("Password",$this->plugin_name);?></label>
-				<input type="password" class="form-control" id="password" name="password" placeholder="Passwort"/>
-			</div>
-
-			<div class="form-group <?php if($resp['confirmPassword'][0]){echo "has-error";}?>">
-				<label for="confirmPassword"><?php _e("Confirm Password",$this->plugin_name);?></label>
-				<input type="password" class="form-control" id="confirmPassword" placeholder="Passwort bestätigen" name="confirmPassword"/>
+			<div class="form-group <?php if($resp['username'][0]){echo "has-error";}?>">
+				<label for="username"><?php _e("Username",$this->plugin_name);?></label>
+				<input type="username" class="form-control" id="username" name="username" placeholder="username" value="<?php if(!$resp['username'][0]){echo $resp['username'][2];}?>"/>
 			</div>
 		</div>
+
 	</div>
 
 	<div class="row">
@@ -154,7 +149,7 @@
 		</div>
 		
 	</div>
-
+	<input type="hidden" value="<?php echo $sepaRefNum;?>" name="sepaRefNum" />
 	<br/>
 	<div class="row">
 		<div class="col-md-12">

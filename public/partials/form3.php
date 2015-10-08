@@ -44,7 +44,21 @@
                             <div class="col-md-2">
                                 <h4><?php echo $package;?></h4>
                                 <p><?php echo __("Monthly fee for",$this->plugin_name)." $package version";?></p>
-                                <small><?php echo __("subscription for 1 year",$this->plugin_name) ?></small>
+                                <small><?php echo __("subscription for 1 year",$this->plugin_name); ?></small>
+                                <br/>
+                                <?php
+                                if($vc_valid){
+
+                                    ?>
+                                    <small class="bg-success">
+                                    <?php
+                                        echo __($voucherDesc,$this->plugin_name);
+                                        echo "</small>";
+                                    
+                                }
+                                ?>
+
+                                
                             </div>
 
                             <!-- <div class="media">
