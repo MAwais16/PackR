@@ -554,8 +554,10 @@ private function validateThirdForm(){
 //http://davidwalsh.name/curl-post
 private function makePostCall(){
 
+	$API_KEY="3owcpb10dc";
 	//set POST variables
-	$url = 'http://domain.com/get-post.php';
+	$url = 'http://dev02.vislog.net/user/api/create/'.$API_KEY;
+	
 
 	$fields = array(
 	"email"=>$_SESSION["PackR_email"],
@@ -578,7 +580,7 @@ private function makePostCall(){
 	"package"=>$_SESSION["PackR_package"],
 	"voucher_code"=>$_SESSION["PackR_voucherCode"],
 	"sepa_ref_num"=>$_SESSION["PackR_sepa_ref_num"]
-		);
+	);
 
 	//url-ify the data for the POST
 	foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
@@ -591,55 +593,69 @@ private function makePostCall(){
 	curl_setopt($ch,CURLOPT_URL, $url);
 	curl_setopt($ch,CURLOPT_POST, count($fields));
 	curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 	//execute post
 	$result = curl_exec($ch);
-
 	//close connection
 	curl_close($ch);
-
 	return $result;
 }
 
 private function getForthForm(){
-	$_SESSION['PackR_step']=4;
-	$steps= $this->getSteps(4);
-
-	//save all the data in table;
-	$order = new Order();
-
-	$order->email=$_SESSION["PackR_email"];
-	$order->username=$_SESSION["PackR_username"];
-	$order->company_name=$_SESSION["PackR_companyName"];
-	$order->first_name=$_SESSION["PackR_firstName"];
-	$order->last_name=$_SESSION["PackR_lastName"];
-	$order->street=$_SESSION["PackR_street"];
-	$order->postal_code=$_SESSION["PackR_postalCode"];
-	$order->city=$_SESSION["PackR_city"];
-	$order->country_code=$_SESSION["PackR_country"];
-	$order->extra_address=$_SESSION["PackR_extraAddress"];
-
-	$order->message=$_SESSION["PackR_message"];
-
-	$order->account_name=$_SESSION["PackR_accountOwner"];
-	$order->bic=$_SESSION["PackR_bic"];
-	$order->iban=$_SESSION["PackR_iban"];
-	$order->ust_id=$_SESSION["PackR_ustID"];
-	$order->package=$_SESSION["PackR_package"];
-	$order->voucher_code=$_SESSION["PackR_voucherCode"];
-	$order->sepa_ref_num=$_SESSION["PackR_sepa_ref_num"];
+	
 
 	try{
-		$order->save();
-		if($order->id>0){
 
+		$r=$this->makePostCall();
+		error_log($r);
+		
+		if(intval($r)>0){
+			//done
+			$_SESSION['PackR_step']=4;
+			$steps= $this->getSteps(4);
+
+			//save all the data in table;
+			$order = new Order();
+
+			$order->email=$_SESSION["PackR_email"];
+			$order->username=$_SESSION["PackR_username"];
+			$order->company_name=$_SESSION["PackR_companyName"];
+			$order->first_name=$_SESSION["PackR_firstName"];
+			$order->last_name=$_SESSION["PackR_lastName"];
+			$order->street=$_SESSION["PackR_street"];
+			$order->postal_code=$_SESSION["PackR_postalCode"];
+			$order->city=$_SESSION["PackR_city"];
+			$order->country_code=$_SESSION["PackR_country"];
+			$order->extra_address=$_SESSION["PackR_extraAddress"];
+
+			$order->message=$_SESSION["PackR_message"];
+
+			$order->account_name=$_SESSION["PackR_accountOwner"];
+			$order->bic=$_SESSION["PackR_bic"];
+			$order->iban=$_SESSION["PackR_iban"];
+			$order->ust_id=$_SESSION["PackR_ustID"];
+			$order->package=$_SESSION["PackR_package"];
+			$order->voucher_code=$_SESSION["PackR_voucherCode"];
+			$order->sepa_ref_num=$_SESSION["PackR_sepa_ref_num"];
+
+			$order->vislog_id=$r;
+
+			$order->save();
+			if($order->id>0){
 			//TODO: call makePostCall
 
-			$form="form4.php";
-			require_once("partials/form-base.php");
+				$form="form4.php";
+				require_once("partials/form-base.php");
+			}else{
+				$this->getSecondForm(true,__("Ops, something went wrong, please try again",$this->plugin_name));
+			}
 		}else{
+			//failed to make at portal.
+			error_log("failed to curl portal");
 			$this->getSecondForm(true,__("Ops, something went wrong, please try again",$this->plugin_name));
 		}
+
 	}catch(Exception $ex){
 		$this->getSecondForm(true,__("Ops, something went wrong, please try again",$this->plugin_name));
 	}

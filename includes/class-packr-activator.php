@@ -63,6 +63,7 @@ class PackR_Activator {
 			bic text NOT NULL,
 			ust_id text,
 			voucher_code text,
+			vislog_id text,
 			sepa_ref_num text NOT NULL,
 			PRIMARY KEY  (id)
 
