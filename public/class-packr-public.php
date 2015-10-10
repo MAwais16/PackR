@@ -321,29 +321,23 @@ class PackR_Public {
 
 		//TODO: validate for only dash and alphanumeric
 		$username=trim($username);
-		if(!$this->validate_alphanumeric_hyphen($username)){
+		if(!$this->validate_alphanumeric_hyphen($username) || $this->isStrEmpty($username)){
 			$resp['username'][0]=true;
 			$resp['username'][1]=__("not valid. [Alphanumeric,hyphens only]",$this->plugin_name);
 
 		}else{
-			if($this->isStrEmpty($username)){
-				$resp['username'][0]=true;
-				$resp['username'][1]=__("required",$this->plugin_name);
-			}else{
-				try{				
-					$foundOrder= Order::find('first', array('conditions' => array('username=?',$username)));
-					if($foundOrder!=null){
-						$resp['username'][0]=true;
-						$resp['username'][1]=__("not valid",$this->plugin_name);
-					}else{
-						$resp['username'][0]=false;
-						$resp['username'][2]=$username;	
-					}
-				}catch(Exception $ex){
+			try{				
+				$foundOrder= Order::find('first', array('conditions' => array('username=?',$username)));
+				if($foundOrder!=null){
 					$resp['username'][0]=true;
 					$resp['username'][1]=__("not valid",$this->plugin_name);
+				}else{
+					$resp['username'][0]=false;
+					$resp['username'][2]=$username;	
 				}
-
+			}catch(Exception $ex){
+				$resp['username'][0]=true;
+				$resp['username'][1]=__("not valid",$this->plugin_name);
 			}
 		}
 
@@ -579,7 +573,8 @@ private function makePostCall(){
 	"ust_id"=>$_SESSION["PackR_ustID"],
 	"package"=>$_SESSION["PackR_package"],
 	"voucher_code"=>$_SESSION["PackR_voucherCode"],
-	"sepa_ref_num"=>$_SESSION["PackR_sepa_ref_num"]
+	"sepa_ref_num"=>$_SESSION["PackR_sepa_ref_num"],
+	"language"=>get_locale()
 	);
 
 	//url-ify the data for the POST
@@ -608,7 +603,7 @@ private function getForthForm(){
 	try{
 
 		$r=$this->makePostCall();
-		error_log($r);
+		error_log("response:".$r);
 		
 		if(intval($r)>0){
 			//done
@@ -648,16 +643,16 @@ private function getForthForm(){
 				$form="form4.php";
 				require_once("partials/form-base.php");
 			}else{
-				$this->getSecondForm(true,__("Ops, something went wrong, please try again",$this->plugin_name));
+				$this->getThirdForm(true,__("Ops, something went wrong, please try again",$this->plugin_name));
 			}
 		}else{
 			//failed to make at portal.
 			error_log("failed to curl portal");
-			$this->getSecondForm(true,__("Ops, something went wrong, please try again",$this->plugin_name));
+			$this->getThirdForm(true,__("Ops, something went wrong, please try again",$this->plugin_name));
 		}
 
 	}catch(Exception $ex){
-		$this->getSecondForm(true,__("Ops, something went wrong, please try again",$this->plugin_name));
+		$this->getThirdForm(true,__("Ops, something went wrong, please try again",$this->plugin_name));
 	}
 
 
