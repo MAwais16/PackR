@@ -550,9 +550,8 @@ private function makePostCall(){
 
 	$API_KEY="3owcpb10dc";
 	//set POST variables
-	$url = 'http://dev02.vislog.net/user/api/create/'.$API_KEY;
+	$url = 'http://portal.vislog.net/user/api/create/'.$API_KEY
 	
-
 	$fields = array(
 	"email"=>$_SESSION["PackR_email"],
 	"username"=>$_SESSION["PackR_username"],
@@ -599,11 +598,10 @@ private function makePostCall(){
 
 private function getForthForm(){
 	
-
 	try{
 
 		$r=$this->makePostCall();
-		error_log("response:".$r);
+		error_log("curl response:".$r);
 		
 		if(intval($r)>0){
 			//done
@@ -647,7 +645,7 @@ private function getForthForm(){
 			}
 		}else{
 			//failed to make at portal.
-			error_log("failed to curl portal");
+			error_log("failed to curl to portal");
 			$this->getThirdForm(true,__("Ops, something went wrong, please try again",$this->plugin_name));
 		}
 
