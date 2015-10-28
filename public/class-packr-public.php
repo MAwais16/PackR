@@ -550,8 +550,8 @@ private function makePostCall(){
 
 	$API_KEY="3owcpb10dc";
 	//set POST variables
-	$url = 'http://portal.vislog.net/user/api/create/'.$API_KEY
-	
+	$url = 'http://portal.vislog.net/user/api/create/'.$API_KEY;
+
 	$fields = array(
 	"email"=>$_SESSION["PackR_email"],
 	"username"=>$_SESSION["PackR_username"],
